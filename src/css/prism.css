@@ -1,0 +1,241 @@
+/* :root {
+	--h-text-color: 0, 0%;
+	--h-base-color: 213, 36%;
+	--h-accent-color: 358, 70%;
+
+	--h-attr-name-string: hsl(var(--h-text-color), 30%);
+	--h-punctuation: hsl(var(--h-text-color), 40%);
+	--h-comment: hsl(var(--h-text-color), 50%);
+
+	--h-function-attr-value: hsl(var(--h-base-color), 45%);
+
+	--h-regex-important: hsl(var(--h-accent-color), 70%);
+	--h-keyword-property: hsl(var(--h-accent-color), 45%);
+	--h-tag: hsl(var(--h-accent-color), 30%);
+	--h-atrule: hsl(var(--h-accent-color), 20%);
+
+	--h-select: hsl(0, 0%, 82%);
+	--h-bg: var(--bg);
+} */
+
+:root {
+	--h-text-color: 0, 0%;
+	--h-base-color: 276, 16%;
+	--h-accent-color: 213, 36%;
+
+	--h-string-attr-name: hsl(var(--h-text-color), 30%);
+	--h-punctuation: hsl(var(--h-text-color), 40%);
+	--h-comment: hsl(var(--h-text-color), 50%);
+
+	--h-function-attr-value: hsl(var(--h-base-color), 41%);
+	--h-namespace: hsl(var(--h-base-color), 48%);
+
+	--h-regex-important: hsl(var(--h-accent-color), 61%);
+	--h-keyword-property: hsl(var(--h-accent-color), 48%);
+	--h-tag: hsl(var(--h-accent-color), 36%);
+	--h-atrule: hsl(var(--h-accent-color), 26%);
+
+	--h-select: hsl(0, 0%, 88%);
+	--h-bg: var(--bg);
+}
+
+html.dark {
+	--h-text-color: 0, 0%;
+	--h-base-color: 60, 100%;
+	--h-accent-color: 200, 130%;
+
+	--h-string-attr-name: hsl(var(--h-text-color), 75%);
+	--h-punctuation: hsl(var(--h-text-color), 45%);
+	--h-comment: hsl(var(--h-text-color), 55%);
+
+	--h-function-attr-value: hsl(var(--h-base-color), 82%);
+	--h-atrule: hsl(var(--h-base-color), 72%);
+	--h-regex-important: hsl(var(--h-base-color), 40%);
+
+	--h-keyword-property: hsl(var(--h-accent-color), 75%);
+	--h-tag: hsl(var(--h-accent-color), 44%);
+	--h-namespace: hsl(var(--h-accent-color), 68%);
+
+	--h-select: hsl(200, 130%, 5%);
+	--h-bg: var(--bg-darker);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--h-comment);
+}
+
+.token.punctuation {
+	color: var(--h-punctuation);
+}
+
+.token.variable,
+.token.namespace {
+	color: var(--h-namespace);
+}
+
+.token.tag,
+.token.boolean,
+.token.number,
+.token.selector,
+.token.deleted {
+	color: var(--h-tag);
+}
+
+.token.keyword,
+.token.property,
+.token.constant,
+.token.symbol,
+.token.builtin {
+	color: var(--h-keyword-property);
+}
+
+.token.attr-name,
+.token.string,
+.token.char,
+.token.operator,
+.token.entity,
+.token.url,
+.token.parameter,
+.language-css .token.string,
+.style .token.string,
+.token.inserted {
+	color: var(--h-string-attr-name);
+}
+
+.token.function,
+.token.attr-value {
+	color: var(--h-function-attr-value);
+}
+
+.token.atrule {
+	color: var(--h-atrule);
+}
+
+.token.regex,
+.token.important {
+	color: var(--h-regex-important);
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+/* box */
+code,
+pre[class*='language-'] {
+	color: var(--text);
+	background: var(--h-bg);
+
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: 2;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+	overflow: auto;
+
+	border: 1px solid var(--line);
+	border-radius: 0.5rem;
+
+	margin: 1.5rem 0;
+	padding: 1.5em var(--space-x);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: var(--h-select);
+}
+
+pre::-webkit-scrollbar-thumb {
+	border-color: var(--h-bg);
+}
+
+/* Inline code */
+:not(pre) > code {
+	padding: 0.15em 0.2em 0.05em;
+	white-space: normal;
+	background: var(--bg-darker);
+}
+
+/* pre[data-line] {
+	padding: 1em 0 1em 3em;
+	position: relative;
+} */
+
+/* Markup */
+/* .language-markup .token.tag,
+.language-markup .token.attr-name,
+.language-markup .token.punctuation {
+	color: hsl(33, 33%, 52%); 
+} */
+
+/* Make the tokens sit above the line highlight so the colours don't look faded. */
+/* .token {
+	position: relative;
+	z-index: 1;
+}
+
+.line-highlight {
+	background: hsla(0, 0%, 33%, 0.25); 
+	background: linear-gradient(
+		to right,
+		hsla(0, 0%, 33%, 0.1) 70%,
+		hsla(0, 0%, 33%, 0)
+	); 
+	border-bottom: 1px dashed hsl(0, 0%, 33%); 
+	border-top: 1px dashed hsl(0, 0%, 33%); 
+	left: 0;
+	line-height: inherit;
+	margin-top: 0.75em; 
+	padding: inherit 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	white-space: pre;
+	z-index: 0;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+	background-color: hsl(215, 15%, 59%); 
+	border-radius: 999px;
+	box-shadow: 0 1px white;
+	color: hsl(24, 20%, 95%); 
+	content: attr(data-start);
+	font: bold 65%/1.5 sans-serif;
+	left: 0.6em;
+	min-width: 1em;
+	padding: 0 0.5em;
+	position: absolute;
+	text-align: center;
+	text-shadow: none;
+	top: 0.4em;
+	vertical-align: 0.3em;
+}
+
+.line-highlight[data-end]:after {
+	bottom: 0.4em;
+	content: attr(data-end);
+	top: auto;
+} */
