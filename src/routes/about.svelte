@@ -27,121 +27,145 @@
 
 <h1>Future About Page</h1>
 
-<div class="ce g1">
-	<button class="btn">click</button>
-	<button class="btn">click</button>
-	<button class="btn brand">click</button>
-</div>
+<svg style="display: none;">
+	<symbol id="check">
+		<path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+	</symbol>
+
+	<symbol id="circle">
+		<circle cx="12" cy="12" r="8" />
+	</symbol>
+</svg>
+
+<form>
+	<h2>Radio</h2>
+
+	<section class="field-with-boxes">
+		<div class="box-item">
+			<input id="q1" type="radio" name="q" />
+			<div class="icon-holder round">
+				<svg viewBox="0 0 24 24"><use href="#circle" /></svg>
+			</div>
+			<label for="q1"> Yes </label>
+		</div>
+
+		<div class="box-item">
+			<input id="q2" type="radio" name="q" />
+			<div class="icon-holder round">
+				<svg viewBox="0 0 24 24"><use href="#circle" /></svg>
+			</div>
+			<label for="q2"> No </label>
+		</div>
+	</section>
+
+	<h2>Checkbox</h2>
+
+	<section class="field-with-boxes">
+		<div class="box-item">
+			<input id="html" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="html"> HTML </label>
+		</div>
+
+		<div class="box-item">
+			<input id="css" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="css"> CSS </label>
+		</div>
+
+		<div class="box-item">
+			<input id="js" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="js"> JS </label>
+		</div>
+	</section>
+</form>
 
 <!-- <BtnGroup />
 <Colors /> -->
 <style>
-	/* PRESET */
-	button {
-		border: none;
-		outline: none;
-		cursor: pointer;
-		text-decoration: none;
+	form {
+		--icon-size: 1.5rem;
+		color: black;
+		background-color: white;
 	}
 
-	button,
-	button:hover,
-	button:focus {
-		outline: none;
+	/* Checkboxes & Radio */
+	.field-with-boxes {
+		--gap: 0.66rem;
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
 	}
 
-	button:disabled {
-		cursor: not-allowed;
-		opacity: 0.5;
-	}
-	/* PRESET */
-
-	/* COLORS */
-	:root {
-		--btn-color: black;
-		--btn-bg: hsl(0, 0%, 80%);
-		--btn-bg-hover: hsl(0, 0%, 70%);
-	}
-
-	:global(html.dark) {
-		--btn-color: white;
-		--btn-bg: hsl(150, 20%, 10%);
-		--btn-bg-hover: hsl(150, 20%, 12%);
-	}
-	/* COLORS */
-
-	:root {
-		--btn-min-height: 3em;
-		--btn-outline-shadow-size: 0 0 0.05rem 0.15rem;
-	}
-
-	.btn {
+	.box-item {
 		position: relative;
-
-		display: inline-flex;
+		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: 1em;
-
-		min-height: var(--btn-min-height);
-
-		padding: 0.1em 1.5em;
-
-		color: var(--btn-color);
-		background-color: var(--btn-bg);
-
-		text-transform: uppercase;
-		line-height: 1;
-		letter-spacing: 2px;
-
-		border-radius: 0.5rem;
-
-		/* font-size: calc(1rem + 2px); */
-
-		/* if `outlined` btns is needed: */
-		/* border: thin solid transparent; */
-		/* then change border-color on `outlined` class .. */
 	}
 
-	/* HOVER & FOCUS */
-	.btn:hover {
-		background-color: var(--btn-bg-hover);
+	.box-item label {
+		cursor: pointer;
+		padding: 0.1em 1em 0.1em var(--gap);
+		transition: color 250ms ease-in;
 	}
 
-	.btn:focus-visible {
+	.box-item input {
+		position: absolute;
+		inset: unset;
 		z-index: 1;
-		/* ajust --color depending on btn background, here for blue one */
-		--btn-outline-shadow-color: hsla(240, 100%, 50%, 0.5);
-		box-shadow: var(--btn-outline-shadow-size) var(--btn-outline-shadow-color);
+		opacity: 0;
+		cursor: pointer;
+		margin: 0;
 	}
 
-	:global(html.dark) .btn:focus-visible {
-		/* reset to gray shadow, colored one have bad visiblity on dark background*/
-		--btn-outline-shadow-color: hsla(0, 0%, 80%, 0.5);
+	.icon-holder {
+		color: gray;
+		border: 2px solid currentColor;
+		border-radius: 4px;
 	}
 
-	.btn:focus:not(:focus-visible) {
-		z-index: 1;
-		filter: brightness(90%);
-	}
-	/* HOVER & FOCUS */
-
-	/* .btn.brand {
-		--btn-color: white;
-		--btn-bg: hsl(280, 50%, 35%);
-		--btn-bg-hover: hsl(280, 30%, 40%);
-		--btn-outline-shadow-color: hsl(280, 30%, 35%, 0.5);
-	} */
-
-	/* even better */
-	.btn {
-		--hue-sat-brand: 280, 50%;
+	.icon-holder.round {
+		border-radius: 50%;
 	}
 
-	.btn.brand {
-		--btn-color: white;
-		--btn-bg: hsl(var(--hue-sat-brand), 35%);
-		--btn-bg-hover: hsl(var(--hue-sat-brand), 45%);
-		--btn-outline-shadow-color: hsla(var(--hue-sat-brand), 35%, 0.5);
+	.box-item input,
+	.icon-holder {
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
+
+	.box-item input:hover ~ label,
+	.box-item label:hover {
+		color: blue;
+	}
+
+	input:checked + .icon-holder {
+		color: blue;
+	}
+
+	input:focus-visible + .icon-holder {
+		box-shadow: 0 0 0.05rem 0.2rem lightskyblue;
+	}
+
+	/* Checkbox & radio icon */
+	input + .icon-holder svg {
+		width: 100%;
+		height: auto;
+		fill: currentColor;
+
+		transform: scale(0);
+		transition: transform 250ms ease-in;
+	}
+
+	input:checked + .icon-holder svg {
+		transform: scale(1);
+	}
+	/* Checkbox & radio icon */
 </style>
