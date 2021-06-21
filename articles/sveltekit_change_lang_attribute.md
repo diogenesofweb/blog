@@ -7,6 +7,15 @@ tags:
   - 'SSG'
 ---
 
+<iframe src="https://demo-sveltekit-lang-attr.pages.dev/"
+        title="iframe Example 1" 
+        width="300" height="400">
+</iframe>
+
+[Demo](https://demo-sveltekit-lang-attr.pages.dev/) & [Repo](https://github.com/diogenesofweb/demo-sveltekit-lang-attr)
+
+---
+
 I wondered, if I'm asked to build a showcase website with internationalisation, what tech should I choose? Since I really like component base flow, like in Svelte and Vue, especially scoped styling, I was curious to see if it will be a hassle to do with SvelteKit, a project I'm quite interested in.
 
 [SvelteKit](https://kit.svelte.dev) doesn't have, at least in time of writing, the option to change the lang attribute of `<html>` depending on route path. But it's easily doable with [hooks](https://kit.svelte.dev/docs#hooks).

@@ -62,6 +62,8 @@
 <style>
 	article {
 		padding: 3rem 0;
+
+		/* background-color: rgba(137, 43, 226, 0.418); */
 	}
 
 	article > :global(hr) {
@@ -77,6 +79,9 @@
 		max-width: var(--content-max-width);
 		margin-left: auto;
 		margin-right: auto;
+	}
+	article > :global(:is(iframe, hr)) {
+		max-width: 100%;
 	}
 
 	article > :global(p a) {
@@ -100,7 +105,10 @@
 
 	article :global(iframe) {
 		width: 100%;
-		height: min(100vh, 600px);
+		/* height: 100vh;
+		max-height: 600px; */
+		max-height: 600px;
+		border: 1px solid var(--line);
 	}
 
 	p.created {

@@ -1,15 +1,23 @@
 ---
 title: Checkboxes and radio
-description: Checkboxes and radio
+description: Making checkboxes and radio buttons
 created: 2021-06-20
 tags:
   - 'HTML'
   - 'CSS'
 ---
 
-## lorem
+<iframe src="https://diogenesofweb.github.io/demo-form-checkbox-radio/"
+        title="iframe Example 1" 
+        width="300" height="420">
+</iframe>
+
+[Demo](https://diogenesofweb.github.io/demo-form-checkbox-radio/) & [Repo](https://github.com/diogenesofweb/demo-form-checkbox-radio)
 
 ---
+
+Put icons inside the `<body>` tag for reuse and cleaner code.\
+**Check** icon for checkboxes and **circle** for radio.
 
 ```html
 <svg style="display: none;">
@@ -23,6 +31,10 @@ tags:
 </svg>
 ```
 
+Let's call _boxes_ - form fields with input types checkbox and radio.
+
+While the usual field would look something like this
+
 ```html
 <div class="field">
 	<input id="a" type="text" name="a" />
@@ -30,11 +42,18 @@ tags:
 </div>
 ```
 
+For _boxes_, let’s add icons to visually replace default markers, and therefore make them consistent through all browsers.
+Icons like this
+
 ```html
 <div class="icon-holder">
 	<svg viewBox="0 0 24 24"><use href="#id" /></svg>
 </div>
 ```
+
+---
+
+So, let’s make HTML. One section with checkboxes and one with radio.
 
 ```html
 <form>
@@ -88,6 +107,8 @@ tags:
 </form>
 ```
 
+Layout elements
+
 ```css
 form {
 	--icon-size: 1.5rem;
@@ -109,6 +130,10 @@ form {
 }
 ```
 
+Clicking **input** and **label** triggers state change, so their cursors will be **pointers**.
+Input is not taken away, just made _transparent_ and placed above for clicks and on hover cursor change.
+Labels have some padding for largering space to click on.
+
 ```css
 .box-item label {
 	cursor: pointer;
@@ -126,6 +151,8 @@ form {
 }
 ```
 
+The icon holder has a border, color of which will be changed depending on state. Holder for the radio button is round
+
 ```css
 .icon-holder {
 	color: gray;
@@ -138,6 +165,8 @@ form {
 }
 ```
 
+Icon holders and inputs have the same size
+
 ```css
 .box-item input,
 .icon-holder {
@@ -145,6 +174,9 @@ form {
 	height: var(--icon-size);
 }
 ```
+
+While hovering over labels and inputs, let’s make some signaling (color change) that the click will actually do something and what value it corresponds to.\
+Focus on click is redundant, so only display sort of outline for keyboard navigation.
 
 ```css
 .box-item input:hover ~ label,
@@ -160,6 +192,8 @@ input:focus-visible + .icon-holder {
 	box-shadow: 0 0 0.05rem 0.2rem lightskyblue;
 }
 ```
+
+The icon will appear or disappear depending on the form field being checked or not.
 
 ```css
 input + .icon-holder svg {
