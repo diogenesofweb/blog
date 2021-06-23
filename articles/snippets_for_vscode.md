@@ -3,8 +3,10 @@ title: Snippets for vscode
 description: My javascript & vue snippets for vscode
 created: 2021-06-01
 tags:
+  - 'VSCode'
   - 'JS'
   - 'Vue'
+  - 'CSS'
 ---
 
 ## `javascript.json`
@@ -114,6 +116,35 @@ Vue:
 		"prefix": "vsetup",
 		"body": "setup(${1:props}) {\n\t${2}\n}",
 		"description": "vue setup"
+	}
+}
+```
+
+## `css.json`
+
+CSS:
+
+```json
+{
+	"Variable": {
+		"prefix": "var",
+		"body": ["var(--$1)"],
+		"description": "Variable"
+	},
+	"Clamp": {
+		"prefix": "clamp",
+		"body": ["clamp(${1:1rem}, ${2:5vw}, ${3:2.5rem})"],
+		"description": "Clamp"
+	},
+	"Media screen": {
+		"prefix": "media screen",
+		"body": ["@media only screen and (${1|min-width,max-width|}: ${2:740}px) { \n\t$3\n}"],
+		"description": "Media screen"
+	},
+	"Supports hover": {
+		"prefix": "media hover",
+		"body": ["@media (hover: hover) { \n\t$1\n}"],
+		"description": "Supports hover"
 	}
 }
 ```

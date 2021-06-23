@@ -61,7 +61,7 @@
 
 <section class="font2 max-content top maxx mx">
 	<h1>
-		My notes in the form of a blog on
+		My notes on
 		<span>web development</span>
 		and related topics.
 	</h1>

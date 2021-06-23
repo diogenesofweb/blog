@@ -84,6 +84,12 @@
 		max-width: 100%;
 	}
 
+	article :global(iframe) {
+		width: 100%;
+		max-height: 100vh;
+		border: 1px solid var(--line);
+	}
+
 	article > :global(p a) {
 		color: var(--text-accent);
 	}
@@ -101,14 +107,6 @@
 		border-left: 3px solid var(--line);
 		padding: 1px 1rem;
 		background-color: var(--bg-darker);
-	}
-
-	article :global(iframe) {
-		width: 100%;
-		/* height: 100vh;
-		max-height: 600px; */
-		max-height: 600px;
-		border: 1px solid var(--line);
 	}
 
 	p.created {

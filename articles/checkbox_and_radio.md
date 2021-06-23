@@ -1,6 +1,6 @@
 ---
-title: Checkboxes and radio
-description: Making checkboxes and radio buttons
+title: Checkbox and radio
+description: Making checkbox and radio buttons
 created: 2021-06-20
 tags:
   - 'HTML'
@@ -8,7 +8,7 @@ tags:
 ---
 
 <iframe src="https://diogenesofweb.github.io/demo-form-checkbox-radio/"
-        title="iframe Example 1" 
+        title="Demo: checkbox and radio " 
         width="300" height="420">
 </iframe>
 
@@ -17,7 +17,7 @@ tags:
 ---
 
 Put icons inside the `<body>` tag for reuse and cleaner code.\
-**Check** icon for checkboxes and **circle** for radio.
+**#check** icon for checkboxes and **#circle** for radio.
 
 ```html
 <svg style="display: none;">
@@ -130,9 +130,8 @@ form {
 }
 ```
 
-Clicking **input** and **label** triggers state change, so their cursors will be **pointers**.
-Input is not taken away, just made _transparent_ and placed above for clicks and on hover cursor change.
-Labels have some padding for largering space to click on.
+Clicking `<input>` and `<label>` triggers state change, so their cursors will be **pointers**.
+`<input>` is not taken away, just made **transparent** and placed above for clicks and on hover cursor change.`<label>` has some padding for largering space to click on.
 
 ```css
 .box-item label {

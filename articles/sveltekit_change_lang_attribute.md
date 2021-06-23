@@ -8,7 +8,7 @@ tags:
 ---
 
 <iframe src="https://demo-sveltekit-lang-attr.pages.dev/"
-        title="iframe Example 1" 
+        title="Demo: SvelteKit change lang attribute" 
         width="300" height="400">
 </iframe>
 

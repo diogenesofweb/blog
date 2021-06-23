@@ -17,7 +17,7 @@ Yes, I know we can't animate `<details>`’s height on state change (open-close)
 Now, let’s build an **accordion** with `<details>`. Here [Demo](https://diogenesofweb.github.io/demo-accordion-expantion/) and [Repo](https://github.com/diogenesofweb/demo-accordion-expantion)
 
 <iframe src="https://diogenesofweb.github.io/demo-accordion-expantion/"
-        title="iframe Example 1" 
+        title="Demo: Accordion and Expansion Panel" 
         width="300" height="600">
 </iframe>
 
