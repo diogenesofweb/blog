@@ -15,5 +15,13 @@
 
 <h1>Future About Page</h1>
 
+<article class="brand">
+	<p>some <span class="accentuate">text</span></p>
+	<p>some <span class="accentuate">text</span></p>
+</article>
+
 <style>
+	h1 {
+		color: lightpink;
+	}
 </style>
