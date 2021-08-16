@@ -156,7 +156,7 @@ pre[class*='language-'] {
 	border-radius: 0.5rem;
 
 	margin: 1.5rem 0;
-	padding: 1.5em var(--space-x);
+	padding: 1em var(--space-x);
 }
 
 pre[class*='language-']::selection,

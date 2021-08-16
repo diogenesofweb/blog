@@ -33,15 +33,16 @@ Sometimes he bringed new files.
 ```shell
 git add .
 git commit -m 'added: .gitignore'
+git push
 ```
 
 Sometimes he polished existing ones.
 
 ```shell
-git commit -am 'up'
+git commit -am 'my message'
 ```
 
-When he had forgotten to add some files or written a hazy message, he would amend.
+When he had forgotten to add some files or wrote a bad message, he would correct himself.
 
 ```shell
 git add .
@@ -55,22 +56,36 @@ git commit -a --amend --no-edit
 ```
 
 He also has to make **contact** and **about** pages, which were not production ready just yet.
-So he created a new branch _DEV_ where the working code lived.
+So he created a new branch _DEV_ where the “actively developed” code lived.
 
 ```shell
 git checkout -b dev
 git push -u origin dev
 ```
 
-He was busy working and regularly pushing to the remote.
+He worked in sessions using pomodoro technique, 30 min work / 3 min break. One session usually took 2-3 hours followed by a minimum 1 hour break or change activity (nothing to do with coding or sitting).\
+At the end of each session he had the urge to commit, even without a meaningful message.
 
 ```shell
 git commit -am 'up'
-git push
+```
+
+It was ok to use dummy commits, because he could always clean up history.
+
+```shell
+git rebase -i HEAD~3
+```
+
+More often than not he checked out.
+
+```shell
+git status
+git log --graph --decorate --pretty=oneline --abbrev-commit
 ```
 
 At last, pages were production ready and craved to be introduced to WWW.
-So he merged _DEV_ with _MAIN_.
+
+And he joined _DEV_ with _MAIN_.
 
 ```shell
 git checkout main
@@ -88,13 +103,13 @@ git branch new-about-page dev
 git branch new-contact-page dev
 ```
 
-At some point the **new contact** page looked good, there was nothing to improve. So he pushed it to production and cleaned up the repo, deleting the _NEW-CONTACT-PAGE_ branch.
+At some point the **new contact** page looked good, there was nothing to improve. So he joined the _NEW-CONTACT-PAGE_ branch with _DEV_ as a single commit. Then he pushed it all to production and cleaned up the repo, deleting the _NEW-CONTACT-PAGE_ branch.
 
 ```shell
 # make sure everything is good, some adjustment is needed?
 git checkout dev
-git merge new-contact-page
-git push
+git merge --squash new-contact-page
+git commit -m "merge new-contact-page"
 
 # deploy
 git checkout main
@@ -136,6 +151,7 @@ Displays all commits in the current branch’s history
 
 ```shell
 git log
+git log --graph --decorate --pretty=oneline --abbrev-commit
 ```
 
 ---
@@ -163,6 +179,12 @@ Trivial amendments
 
 ```shell
 git commit -a --amend --no-edit
+```
+
+Add, remove, or combine Git commits
+
+```shell
+git rebase -i HEAD~[num of commits]
 ```
 
 ---
@@ -196,6 +218,15 @@ Merge (join) a specified branch (**feature**) into your current branch (**dev**)
 ```shell
 git checkout dev
 git merge feature
+```
+
+Merge a specified branch (**feature**) into your current branch (**dev**)
+as a single commit
+
+```shell
+git checkout dev
+git merge --squash feature
+git commit -m "merge feature"
 ```
 
 Delete a local branch (**feature**)
