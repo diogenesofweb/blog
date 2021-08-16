@@ -17,7 +17,26 @@
 </div>
 
 <footer class="ce">
-	<p>DelphicTop</p>
+	<div>DelphicTop,</div>
+
+	<div>
+		<span> built with </span>
+		<a class="link" href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer">
+			SvelteKit
+		</a>
+		,
+	</div>
+
+	<div>
+		<a
+			class="link"
+			href="https://github.com/diogenesofweb/blog"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Repo in Github
+		</a>
+	</div>
 </footer>
 
 <style>
@@ -34,10 +53,16 @@
 		text-align: center;
 		border-top: 1px solid var(--line);
 
+		gap: 1ch;
+
 		background-color: var(--bg-darker);
 	}
 
 	:global(html.dark) footer {
 		background-color: var(--bg-darker);
+	}
+
+	.link {
+		color: var(--text);
 	}
 </style>

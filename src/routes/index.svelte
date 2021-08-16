@@ -108,7 +108,7 @@
 
 		padding: 0.3rem 0.6rem;
 
-		transform: rotate(2deg);
+		transform: rotate(-3deg);
 	}
 
 	/* h1 > span {

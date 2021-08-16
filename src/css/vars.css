@@ -32,28 +32,18 @@
 }
 
 html.dark {
-	--primary: hsl(40, 100%, 75%);
-	--primary: hsl(51, 100%, 70%);
-	--primary: hsl(276, 100%, 70%);
 	--primary: hsl(298, 100%, 70%);
 	--secondary: hsl(80, 61%, 75%);
-
-	/* --bg: hsl(210, 8%, 15%);
-	--bg-darker: hsl(210, 8%, 12%); */
 
 	--bg: hsl(247, 12%, 15%);
 	--bg-darker: hsl(249, 11%, 12%);
 
 	--text: hsl(0, 0%, 94%);
 	--text-accent: var(--primary);
-	--text-hover: var(--secondary);
-	--text-hover: hsl(276, 16%, 70%);
-	--text-hover: hsl(200, 100%, 70%);
-
 	--text-hover: hsl(298, 100%, 75%);
+
 	--primary: hsl(200, 100%, 75%);
 
-	/* --scrollbar-thumb: hsla(0, 0%, 50%); */
 	--scrollbar-thumb-hover: hsla(0, 0%, 30%);
 	--scrollbar-thumb-firefox: gray;
 }

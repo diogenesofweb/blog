@@ -8,7 +8,7 @@
 		<ul>
 			<!-- <li class:active={$page.path === '/'}><a href="/">Home</a></li> -->
 			<!-- <li class:active={$page.path === '/'}><a href="/">DelphicTop</a></li> -->
-			<li class:active={$page.path === '/'}><a href="/">DT</a></li>
+			<li class:active={$page.path === '/'}><a href="/">DelphicTop</a></li>
 			<!-- <li class:active={$page.path === '/blogs'}><a href="/blogs">Blogs</a></li> -->
 			<li class:active={$page.path === '/about'}><a href="/about">About</a></li>
 		</ul>
@@ -19,7 +19,7 @@
 
 <style>
 	header {
-		background-color: var(--bg);
+		background-color: var(--bg-darker);
 		box-shadow: 0 0 0.6rem -0.2rem var(--text-accent);
 		transition: box-shadow 300ms ease-in;
 	}

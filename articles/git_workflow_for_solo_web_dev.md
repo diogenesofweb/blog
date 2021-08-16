@@ -8,9 +8,9 @@ tags:
 
 ## Workflow tale
 
-Once upon a time, a dwarf named Krevorook decided to build a static website and host it in CDN like Netlify.
+Once upon a time, a dwarf named Krevorook took a quest from a tree elf to build a static website and host it in CDN like Netlify. His journey was full of new discoveries… And befriending a ferocious beast, called GIT, was one of those. Following is a small account of the time they spend together.
 
-He created a new git project.
+After setting up the project, Krevorook created a new git repo.
 So he had his _MAIN_ branch, where deployable (production) code lived.
 
 ```shell
@@ -19,7 +19,7 @@ git add .
 git commit -m 'init'
 ```
 
-After creating a new Github (Gitlab) repository, he added a remote.
+After creating a new Github repository, he added a remote.
 
 ```shell
 git remote add origin https://github.com/user/repo.git
@@ -42,7 +42,7 @@ Sometimes he polished existing ones.
 git commit -am 'my message'
 ```
 
-When he had forgotten to add some files or wrote a bad message, he would correct himself.
+When Krevorook had forgotten to add some files or wrote a inaccurate message, he would correct himself.
 
 ```shell
 git add .
@@ -55,7 +55,7 @@ But more often he just made trivial amendments.
 git commit -a --amend --no-edit
 ```
 
-He also has to make **contact** and **about** pages, which were not production ready just yet.
+He also has to make **contact** and **about** pages, which were obviously not production ready just yet.
 So he created a new branch _DEV_ where the “actively developed” code lived.
 
 ```shell
@@ -64,7 +64,7 @@ git push -u origin dev
 ```
 
 He worked in sessions using pomodoro technique, 30 min work / 3 min break. One session usually took 2-3 hours followed by a minimum 1 hour break or change activity (nothing to do with coding or sitting).\
-At the end of each session he had the urge to commit, even without a meaningful message.
+At the end of each session Krevorook had the urge to commit, even without a meaningful message.
 
 ```shell
 git commit -am 'up'
@@ -76,7 +76,7 @@ It was ok to use dummy commits, because he could always clean up history.
 git rebase -i HEAD~3
 ```
 
-More often than not he checked out.
+More often than not he checked out the current state.
 
 ```shell
 git status
@@ -85,7 +85,7 @@ git log --graph --decorate --pretty=oneline --abbrev-commit
 
 At last, pages were production ready and craved to be introduced to WWW.
 
-And he joined _DEV_ with _MAIN_.
+And Krevorook joined _DEV_ with _MAIN_.
 
 ```shell
 git checkout main
@@ -96,7 +96,7 @@ git push
 He has the website live with 3 pages: **home**, **contact** and **about**.
 But **contact** and **about** pages were fast made, and maybe he should try to make them better.
 
-So he made two new branches, _NEW-ABOUT-PAGE_ and _NEW-CONTACT-PAGE_, based on _DEV_, and worked on them.
+So he made two new branches, _NEW-ABOUT-PAGE_ and _NEW-CONTACT-PAGE_, based on _DEV_, and worked tremendously on them.
 
 ```shell
 git branch new-about-page dev
