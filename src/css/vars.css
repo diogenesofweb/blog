@@ -1,11 +1,9 @@
 :root {
 	/* CSS HSL */
 	--y-in-mn-blue: hsl(213, 36%, 32%);
-	--chinese-violet: hsl(276, 16%, 41%);
 	--chinese-violet: hsl(276, 95%, 35%);
 	--rose-dust: hsl(347, 35%, 55%);
 	--candy-pink: hsl(358, 70%, 66%);
-	--tumbleweed: hsl(21, 69%, 73%);
 	--tumbleweed: hsl(41, 99%, 73%);
 
 	--primary: var(--y-in-mn-blue);

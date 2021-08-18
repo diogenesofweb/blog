@@ -17,6 +17,6 @@
 
 <style>
 	h1 {
-		color: lightpink;
+		color: var(--text-hover);
 	}
 </style>

@@ -3,13 +3,12 @@
 	import '../css/vars.css'
 	import '../css/app.css'
 	import '../css/utils.css'
-	// import '../css/highlight.css'
 
-	import Header from '$lib/header.svelte'
+	import MyHeader from '$lib/Header.svelte'
 </script>
 
 <div class="wrap">
-	<Header />
+	<MyHeader />
 
 	<main>
 		<slot />
@@ -45,20 +44,18 @@
 	}
 
 	main {
-		padding: 0 var(--space-x) max(6rem, 33vh);
+		padding: 0 var(--space-x);
 	}
 
 	footer {
+		gap: 1ch;
+
 		min-height: 33vh;
+		margin-top: 33vh;
+
 		text-align: center;
 		border-top: 1px solid var(--line);
 
-		gap: 1ch;
-
-		background-color: var(--bg-darker);
-	}
-
-	:global(html.dark) footer {
 		background-color: var(--bg-darker);
 	}
 

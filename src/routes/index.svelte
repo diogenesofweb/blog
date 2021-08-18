@@ -1,13 +1,6 @@
 <script context="module">
-	// import { browser, dev } from '$app/env'
-	// export const hydrate = dev
-	// export const router = browser
-
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
+	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ fetch }) {
-		// const url = `/blog/${page.params.slug}.json`;
 		const url = `/blogs.json`
 		const res = await fetch(url)
 
@@ -29,12 +22,10 @@
 <script>
 	import { page } from '$app/stores'
 
-	import BlogList from '$lib/blogList.svelte'
-	import TagList from '$lib/tagList.svelte'
+	import BlogList from '$lib/BlogList.svelte'
+	import TagList from '$lib/TagList.svelte'
 
-	/**
-	 * @type {import('../typings/types').BlogMetadata[]}
-	 */
+	/** @type {import('../typings/types').BlogMetadata[]} */
 	export let blogs
 	// console.log(JSON.stringify(blogs[0]))
 	const tagSet = new Set()
@@ -56,7 +47,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>DelphicTop | Index</title>
+	<meta name="description" content="Webdev and related topics notes" />
 </svelte:head>
 
 <section class="font2 max-content top maxx mx">
@@ -81,14 +73,12 @@
 
 <style>
 	section.top {
-		margin-top: 15vh;
-		margin-bottom: 15vh;
+		margin-block: 15vh;
 		padding: 0 var(--rsx);
 	}
 
 	section.tags {
-		margin-top: 15vh;
-		margin-bottom: 15vh;
+		margin-block: 15vh;
 	}
 
 	section.maxx {
@@ -101,23 +91,11 @@
 
 	h1 > span {
 		display: inline-block;
+		padding: 0.3rem 0.6rem;
 
 		background-color: var(--bg-darker);
-		color: var(--text-accent);
 		color: var(--text-hover);
-
-		padding: 0.3rem 0.6rem;
 
 		transform: rotate(-3deg);
 	}
-
-	/* h1 > span {
-		display: inline-block;
-
-		background-color: var(--bg-darker);
-		color: var(--text-hover);
-		background: linear-gradient(to bottom, var(--text-hover), var(--text-accent));
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	} */
 </style>

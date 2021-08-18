@@ -1,6 +1,4 @@
 <script context="module">
-	// import '../../css/code-dark.css'
-	// import '../../css/code-light.css'
 	import '../../css/prism.css'
 
 	import { browser, dev } from '$app/env'
@@ -26,7 +24,7 @@
 </script>
 
 <script>
-	import TagList from '$lib/tagList.svelte'
+	import TagList from '$lib/TagList.svelte'
 	/**
 	 * @typedef {import('../../typings/types').BlogMetadata} BlogMetadata
 	 */

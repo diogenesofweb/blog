@@ -49,7 +49,7 @@
 
 	button.sun {
 		display: none;
-		background-color: var(--bg-darker);
+		background-color: var(--bg);
 	}
 
 	:global(html.dark) button.moon {

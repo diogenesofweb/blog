@@ -48,10 +48,7 @@
 		position: absolute;
 		z-index: -1;
 		content: '';
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		inset: 0;
 
 		background: linear-gradient(
 			100deg,
@@ -64,8 +61,6 @@
 
 	li:hover {
 		box-shadow: 0 0 1.6rem -0.4rem var(--text-hover);
-
-		background-color: var(--bg);
 		background-color: var(--bg-darker);
 	}
 
@@ -94,8 +89,6 @@
 	.tags a {
 		padding: 0.4rem 1rem;
 		border-radius: 1rem 0;
-
-		/* transform: rotate(-3deg); */
 
 		box-shadow: 3px 3px 1.5rem -1rem inset var(--text-accent);
 		transition: box-shadow 300ms ease-in;

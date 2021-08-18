@@ -59,7 +59,7 @@ export async function get({ params }) {
 	// console.log(doc)
 
 	/* 2. Extract content {String} 
-				Extract and process fornt-matter {JSON} */
+				Extract and process front-matter {JSON} */
 	const { data: metadata, content } = matter(doc)
 	// console.log(metadata)
 	// console.log(content)

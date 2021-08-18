@@ -42,7 +42,7 @@ Sometimes he polished existing ones.
 git commit -am 'my message'
 ```
 
-When Krevorook had forgotten to add some files or wrote a inaccurate message, he would correct himself.
+When Krevorook had forgotten to add some files or wrote an inaccurate message, he would correct himself.
 
 ```shell
 git add .
