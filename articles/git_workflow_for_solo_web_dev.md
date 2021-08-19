@@ -232,8 +232,11 @@ git commit -m "merge feature"
 Delete a local branch (**feature**)
 
 ```shell
+# safe delete
 git branch -d feature
-git branch -D <failed-feature-branch>
+
+# delete without questions
+git branch -D [failed-feature-branch]
 ```
 
 Delete a remote branch (**feature**)

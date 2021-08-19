@@ -1,7 +1,7 @@
 ---
 title: Intermediate classes for setting variables
 description: Intermediate helper classes just for setting CSS custom properties.
-created: 2021-07-24
+created: 2021-07-26
 tags:
   - 'CSS'
 ---
@@ -32,30 +32,31 @@ Let’s have a **class** that only defines / redefines variables. Sort of **inte
 }
 ```
 
-So, now if I want to accentuate `<span>` tags.
+So, now if I want to accentuate some text, I add a helper class to the tag.
 
 ```css
-span.brand {
+/* colorize-text */
+.ct {
 	color: var(--accent);
 }
 ```
 
-But if I have an `<article>` and want to accentuate all `<span>` tags, I can just add an **intermediate class** to the `<article>`.
+```html
+<span class="brand ct">brand color</span>
+```
+
+But if I have an `<article>` and want to accentuate some `<span>` tags, I can just add an **intermediate class** to the `<article>`.
 
 ```html
 <article class="brand">
-	<p>lorem... <span>brand color</span></p>
-	<p>lorem... <span>brand color</span></p>
+	<p>lorem... <span class="ct">brand color</span></p>
+	<p>lorem... <span>default color</span></p>
 </article>
 ```
 
-```css
-article span {
-	color: var(--accent);
-}
-```
+Just for one tag this approach is useless. But if I have large sections, cards, it’s nice just to define color for the component, then reuse it for its elements.
 
-But now I would have to add a **class** that resets variables.
+Also I would have to add a **class** that resets variables.
 
 ```css
 .base {
@@ -65,13 +66,12 @@ But now I would have to add a **class** that resets variables.
 }
 ```
 
-So now if I need to, I can reset the elements I choose.
+So now if I need to, I can reset elements I choose.
 
 ```html
-<article class="brand">
-	<p>lorem... <span>brand color</span></p>
-	<p>lorem... <span>brand color</span></p>
-	<p>lorem... <span class="base">default color</span></p>
+<article class="brand ct">
+	<span>brand color</span>
+	<span class="base">default color</span>
 </article>
 ```
 
@@ -99,15 +99,19 @@ It still works.
 
 ```html
 <article class="brand">
-	<p>lorem... <span>brand color</span></p>
-	<p>lorem... <span>brand color</span></p>
-	<p>lorem... <span class="base">default color</span></p>
-	<p class="danger">lorem... <span>danger color</span></p>
-	<p class="danger">
-		<span>danger color</span>
-		<span class="base">default color</span>
-		<span class="brand">brand color</span>
-	</p>
+	<p>default color <span class="ct">brand color</span></p>
+
+	<p class="ct">brand color<span class="base">default color</span></p>
+
+	<section class="danger">
+		<span>default color</span>
+		<span class="ct">danger color</span>
+
+		<div class="ct">
+			<span>danger color</span>
+			<b class="brand">brand color</b>
+		</div>
+	</section>
 </article>
 ```
 
@@ -132,7 +136,7 @@ html.dark :is(.brand, .danger) {
 And then
 
 ```css
-article span {
+.ct {
 	color: var(--accent-text);
 }
 ```
