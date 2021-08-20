@@ -83,6 +83,16 @@ git status
 git log --graph --decorate --pretty=oneline --abbrev-commit
 ```
 
+It was very repetitive. Therefore Krevorook turned to his precious pet, Bash, who was of great help for that sort of thing.
+
+```shell
+# ~/.bash_aliases
+alias gs='git status'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gc='git commit -m'
+alias gca='git commit -am'
+```
+
 At last, pages were production ready and craved to be introduced to WWW.
 
 And Krevorook joined _DEV_ with _MAIN_.

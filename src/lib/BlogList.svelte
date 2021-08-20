@@ -96,7 +96,9 @@
 		background-color: var(--bg);
 	}
 
-	li:hover .tags a {
-		box-shadow: 3px 3px 1.5rem -0.8rem inset var(--text-hover);
+	@media (hover: hover) {
+		li:hover .tags a {
+			box-shadow: 3px 3px 1.5rem -0.8rem inset var(--text-hover);
+		}
 	}
 </style>
