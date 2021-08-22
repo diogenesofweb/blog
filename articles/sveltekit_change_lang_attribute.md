@@ -37,7 +37,7 @@ We have our english version at `/`, then french at `/fr`, and ukrainian at `/ua`
 
 Routes folder looks like this
 
-```text
+```shell
 routes
  └─ ua
      └─ index.svelte
@@ -50,58 +50,58 @@ routes
 
 Now markup
 
-```markup
+```html
 <!-- ~/routes/__layouts.svelte -->
 
 <main>
-	<nav class="ce">
-		<a href="/">🇬🇧</a>
-		<a href="/fr">🇫🇷</a>
-		<a href="/ua">🇺🇦</a>
-	</nav>
+  <nav class="ce">
+    <a href="/">🇬🇧</a>
+    <a href="/fr">🇫🇷</a>
+    <a href="/ua">🇺🇦</a>
+  </nav>
 
-	<section>
-		<slot />
-	</section>
+  <section>
+    <slot />
+  </section>
 </main>
 ```
 
 All `.svelte` files in routes directory should include
 
-```markup
+```html
 <script context="module">
-	import { browser, dev } from '$app/env'
+  import { browser, dev } from '$app/env'
 
-	export const hydrate = dev
-	export const router = browser
-	export const prerender = true
+  export const hydrate = dev
+  export const router = browser
+  export const prerender = true
 </script>
 ```
 
 A little bit of **HTML** for each route
 
-```markup
+```html
 <!-- ~/routes/index.svelte -->
 <svelte:head>
-	<title>Hello</title>
+  <title>Hello</title>
 </svelte:head>
 
 <h1>Hello World</h1>
 ```
 
-```markup
+```html
 <!-- ~/routes/fr/index.svelte -->
 <svelte:head>
-	<title>Bonjour</title>
+  <title>Bonjour</title>
 </svelte:head>
 
 <h1>Bonjour le Monde</h1>
 ```
 
-```markup
+```html
 <!-- ~/routes/ua/index.svelte -->
 <svelte:head>
-	<title>Привіт</title>
+  <title>Привіт</title>
 </svelte:head>
 
 <h1>Привіт Світе</h1>
@@ -144,8 +144,6 @@ npm run preview
 ```
 
 The site is not in SPA mode, so on every navigation page will reload.
-
-Demo & Repo
 
 How to do it in SPA mode and change lang on the fly?
 I suppose we can just watch the `path` property in the [page](https://kit.svelte.dev/docs#loading-input-page) object inside **\_\_layout.svelte** and then update `<html>` accordingly.
