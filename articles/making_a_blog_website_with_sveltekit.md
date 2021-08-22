@@ -19,7 +19,7 @@ Projects used:
 
 Changes to directory structure after initializing SvelteKit project.
 
-```text
+```shell
 articles
 └─ sveltekit_is_amazing.md
 
@@ -57,11 +57,11 @@ File name should match article title ( transformed to lowercase, and empty strin
 
 Two [endpoints](https://kit.svelte.dev/docs#routing-endpoints) are to be made.\
 One for a blog page `[slug].json.js`.\
-And one for index page `blogs.json.js` (getting blogs metadata).
+And one for an index page `blogs.json.js` (getting blogs metadata).
 
 Following docs, endpoint files have to export the `get` function for **GET** requests.
 
-Then, inside `get` function for fetching a blog:
+Then, inside the `get` function for fetching a blog:
 
 1. Load corresponding `.md` file as string
 2. Process separately front-matter and content
@@ -79,29 +79,29 @@ import matter from 'gray-matter'
 
 // Init markdown-it
 const md = mi({
-	html: true,
-	linkify: true,
-	typographer: true
+  html: true,
+  linkify: true,
+  typographer: true
 })
 
 // Remember old renderer, if overridden, or proxy to default renderer
 const defaultRender =
-	md.renderer.rules.link_open ||
-	function (tokens, idx, options, env, self) {
-		return self.renderToken(tokens, idx, options)
-	}
+  md.renderer.rules.link_open ||
+  function (tokens, idx, options, env, self) {
+    return self.renderToken(tokens, idx, options)
+  }
 
 // Make external (http(s)://) links open in a new window
 md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-	const href = tokens[idx].attrs[tokens[idx].attrIndex('href')][1]
-	// console.log(href)
-	if (href.startsWith('http')) {
-		tokens[idx].attrPush(['rel', 'noopener noreferrer'])
-		tokens[idx].attrPush(['target', '_blank'])
-		// tokens[idx].attrPush(['class', 'external-link'])
-	}
-	// pass token to default renderer.
-	return defaultRender(tokens, idx, options, env, self)
+  const href = tokens[idx].attrs[tokens[idx].attrIndex('href')][1]
+  // console.log(href)
+  if (href.startsWith('http')) {
+    tokens[idx].attrPush(['rel', 'noopener noreferrer'])
+    tokens[idx].attrPush(['target', '_blank'])
+    // tokens[idx].attrPush(['class', 'external-link'])
+  }
+  // pass token to default renderer.
+  return defaultRender(tokens, idx, options, env, self)
 }
 
 // Use Prism for syntax highlighting
@@ -109,17 +109,17 @@ md.use(prism)
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ params }) {
-	const { slug } = params
-	const doc = await fs.promises.readFile(`articles/${slug}.md`, 'utf8')
-	// console.log(doc)
-	const { data: metadata, content } = matter(doc)
-	// console.log(metadata)
-	// console.log(content)
-	const html = md.render(content)
+  const { slug } = params
+  const doc = await fs.promises.readFile(`articles/${slug}.md`, 'utf8')
+  // console.log(doc)
+  const { data: metadata, content } = matter(doc)
+  // console.log(metadata)
+  // console.log(content)
+  const html = md.render(content)
 
-	return {
-		body: JSON.stringify({ metadata, html })
-	}
+  return {
+    body: JSON.stringify({ metadata, html })
+  }
 }
 ```
 
@@ -138,21 +138,21 @@ import matter from 'gray-matter'
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get() {
-	const fileNames = await fs.promises.readdir('articles')
-	// If there are not only .md files: fileNames.filter((fileName) => /.+\.md$/.test(fileName))
-	const blogs = await Promise.all(
-		fileNames.map(async (fileName) => {
-			const doc = await fs.promises.readFile(`articles/${fileName}`, 'utf8')
-			const { data } = matter(doc)
-			// console.log({ data })
-			return data
-		})
-	)
-	blogs.sort((a, b) => b.created - a.created)
-	// console.log({ blogs })
-	return {
-		body: JSON.stringify(blogs)
-	}
+  const fileNames = await fs.promises.readdir('articles')
+  // If there are not only .md files: fileNames.filter((fileName) => /.+\.md$/.test(fileName))
+  const blogs = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const doc = await fs.promises.readFile(`articles/${fileName}`, 'utf8')
+      const { data } = matter(doc)
+      // console.log({ data })
+      return data
+    })
+  )
+  blogs.sort((a, b) => b.created - a.created)
+  // console.log({ blogs })
+  return {
+    body: JSON.stringify(blogs)
+  }
 }
 ```
 
@@ -160,136 +160,132 @@ export async function get() {
 
 ### Markup
 
-```markup
+```html
 <!-- __layout.svelte -->
 
 <a href="/">Index</a>
 <main>
-	<slot />
+  <slot />
 </main>
 ```
 
 Defining [load](https://kit.svelte.dev/docs#loading-input) function to fetch corresponding endpoints.\
 Then list all tags and filter blogs by route param (?tag=) if there is one.
 
-```markup
+```html
 <!-- index.svelte -->
 
 <script context="module">
-	/** @type {import('@sveltejs/kit').Load} */
-	export async function load({ fetch }) {
-		const url = `/blogs.json`
-		const res = await fetch(url)
+  /** @type {import('@sveltejs/kit').Load} */
+  export async function load({ fetch }) {
+    const url = `/blogs.json`
+    const res = await fetch(url)
 
-		if (res.ok) {
-			const blogs = await res.json()
-			// console.log({ blogs })
-			return { props: { blogs } }
-		}
+    if (res.ok) {
+      const blogs = await res.json()
+      // console.log({ blogs })
+      return { props: { blogs } }
+    }
 
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${url}`)
-		}
-	}
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
+    }
+  }
 </script>
 
 <script>
-	import { page } from '$app/stores'
-	/** @type {import('../typings/types').BlogMetadata[]} */
-	export let blogs
+  import { page } from '$app/stores'
+  /** @type {import('../typings/types').BlogMetadata[]} */
+  export let blogs
 
-	const tagSet = new Set()
-	blogs.forEach((blog) => {
-		blog.tags.forEach((tag) => tagSet.add(tag))
-	})
-	const tags = [...tagSet].sort()
+  const tagSet = new Set()
+  blogs.forEach((blog) => {
+    blog.tags.forEach((tag) => tagSet.add(tag))
+  })
+  const tags = [...tagSet].sort()
 
-	let tag
-	page.subscribe(({ query }) => {
-		tag = query.get('tag')
-	})
+  let tag
+  page.subscribe(({ query }) => {
+    tag = query.get('tag')
+  })
 
-	$: blogsFilteredByTag = tagSet.has(tag) ? blogs.filter((p) => p.tags.includes(tag)) : blogs
+  $: blogsFilteredByTag = tagSet.has(tag) ? blogs.filter((p) => p.tags.includes(tag)) : blogs
 </script>
 
 <svelte:head>
-	<title>Index</title>
+  <title>Index</title>
 </svelte:head>
 
 <ol>
-	{#each tags as tag}
-		<li><a href="/?tag={tag}"> #{tag} </a></li>
-	{/each}
+  {#each tags as tag}
+  <li><a href="/?tag={tag}"> #{tag} </a></li>
+  {/each}
 </ol>
 
 <ol>
-	{#each blogsFilteredByTag as blog}
-		<li>
-			<a href="/blog/{blog.title.replaceAll(' ', '_').toLowerCase()}">
-				{blog.title}
-			</a>
+  {#each blogsFilteredByTag as blog}
+  <li>
+    <a href="/blog/{blog.title.replaceAll(' ', '_').toLowerCase()}"> {blog.title} </a>
 
-			<p>{blog.description}</p>
+    <p>{blog.description}</p>
 
-			<div class="tags">
-				{#each blog.tags as tag}
-					<a href="/?tag={tag}"> #{tag} </a>
-				{/each}
-			</div>
-		</li>
-	{/each}
+    <div class="tags">
+      {#each blog.tags as tag}
+      <a href="/?tag={tag}"> #{tag} </a>
+      {/each}
+    </div>
+  </li>
+  {/each}
 </ol>
 ```
 
 Just fetching a blog
 
-```markup
+```html
 <!-- [slug].svelte -->
 
 <script context="module">
-	import { browser, dev } from '$app/env'
-	export const hydrate = dev
-	export const router = browser
+  import { browser, dev } from '$app/env'
+  export const hydrate = dev
+  export const router = browser
 
-	export async function load({ page, fetch }) {
-		const url = `/blog/${page.params.slug}.json`
-		const res = await fetch(url)
-		if (res.ok) {
-			const blog = await res.json()
-			// console.log({ blog })
-			return { props: { blog } }
-		}
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${url}`)
-		}
-	}
+  export async function load({ page, fetch }) {
+    const url = `/blog/${page.params.slug}.json`
+    const res = await fetch(url)
+    if (res.ok) {
+      const blog = await res.json()
+      // console.log({ blog })
+      return { props: { blog } }
+    }
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
+    }
+  }
 </script>
 
 <script>
-	/** @typedef {import('../../typings/types').BlogMetadata} BlogMetadata */
-	/** @type {{ metadata: BlogMetadata, html: String}} */
-	export let blog
+  /** @typedef {import('../../typings/types').BlogMetadata} BlogMetadata */
+  /** @type {{ metadata: BlogMetadata, html: String}} */
+  export let blog
 </script>
 
 <svelte:head>
-	<title>{blog.metadata.title}</title>
-	<meta name="description" content={blog.metadata.description} />
+  <title>{blog.metadata.title}</title>
+  <meta name="description" content="{blog.metadata.description}" />
 </svelte:head>
 
 <article>
-	<h1>{blog.metadata.title}</h1>
-	<p>
-		<i>Created:</i> <time>{new Date(blog.metadata.created).toLocaleDateString()}</time>
-	</p>
-	{@html blog.html}
+  <h1>{blog.metadata.title}</h1>
+  <p><i>Created:</i> <time>{new Date(blog.metadata.created).toLocaleDateString()}</time></p>
+  {@html blog.html}
 </article>
 
 <ol>
-	{#each blog.metadata.tags as tag}
-		<li><a href="/?tag={tag}"> #{tag} </a></li>
-	{/each}
+  {#each blog.metadata.tags as tag}
+  <li><a href="/?tag={tag}"> #{tag} </a></li>
+  {/each}
 </ol>
 ```
 
@@ -299,10 +295,10 @@ Types for vscode.
 /* ~/typings/types.d.ts' */
 
 export interface BlogMetadata {
-	title: string
-	description: string
-	created: Date
-	tags: string[]
+  title: string
+  description: string
+  created: Date
+  tags: string[]
 }
 ```
 
@@ -316,4 +312,4 @@ All pages will be [prerendered](https://kit.svelte.dev/docs#ssr-and-javascript-p
 Only the index page will load JS, make [hydration](https://kit.svelte.dev/docs#ssr-and-javascript-hydrate), turning the website into SPA.\
 Every blog page will go with 0 JS, so no hydration and traditional navigation.
 
-This website is actually built this way. Repo.
+This website is actually built this way.

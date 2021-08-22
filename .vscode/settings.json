@@ -1,10 +1,10 @@
 {
-	"search.exclude": {
-		"build": true,
-		".svelte-kit": true
-	},
-	"files.exclude": {
-		".svelte-kit": true,
-		"node_modules": true
-	}
+  "search.exclude": {
+    "build": true,
+    ".svelte-kit": true
+  },
+  "files.exclude": {
+    ".svelte-kit": true,
+    "node_modules": true
+  }
 }

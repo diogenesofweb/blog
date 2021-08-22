@@ -78,10 +78,10 @@ main.js
 // ~/data/constants.js
 
 export const ROUTES = {
-	about: '/about',
-	dashboard: '/dashboard',
-	index: '/',
-	user: '/user'
+  about: '/about',
+  dashboard: '/dashboard',
+  index: '/',
+  user: '/user'
 }
 
 export const DEFAULT_ERROR = 'Something went wrong 👿'

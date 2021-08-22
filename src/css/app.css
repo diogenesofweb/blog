@@ -1,66 +1,66 @@
 html {
-	font-size: 16px;
+  font-size: 16px;
 
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-	min-height: 100vh;
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 
-	color: var(--text);
-	background-color: var(--bg);
+  color: var(--text);
+  background-color: var(--bg);
 }
 
 p {
-	line-height: 1.7;
+  line-height: 1.7;
 }
 
 a {
-	transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
 }
 
 button {
-	border: none;
-	cursor: pointer;
-	text-decoration: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 button:hover,
 button:focus {
-	outline: none;
+  outline: none;
 }
 
 button:disabled {
-	cursor: not-allowed;
-	opacity: 0.5;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 /* scrollbar */
 html,
 body {
-	scrollbar-color: var(--scrollbar-thumb-firefox) var(--scrollbar-track);
-	scrollbar-width: thick;
+  scrollbar-color: var(--scrollbar-thumb-firefox) var(--scrollbar-track);
+  scrollbar-width: thick;
 }
 
 ::-webkit-scrollbar {
-	width: 16px;
-	height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--scrollbar-track);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--scrollbar-thumb);
-	border-radius: 16px;
-	border: 4px solid var(--bg);
+  background: var(--scrollbar-thumb);
+  border-radius: 16px;
+  border: 4px solid var(--bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--scrollbar-thumb-hover);
+  background: var(--scrollbar-thumb-hover);
 }
 /* scrollbar */

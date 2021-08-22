@@ -19,61 +19,61 @@
 } */
 
 :root {
-	--h-text-color: 0, 0%;
-	--h-base-color: 276, 16%;
-	--h-accent-color: 213, 36%;
+  --h-text-color: 0, 0%;
+  --h-base-color: 276, 16%;
+  --h-accent-color: 213, 36%;
 
-	--h-string-attr-name: hsl(var(--h-text-color), 30%);
-	--h-punctuation: hsl(var(--h-text-color), 40%);
-	--h-comment: hsl(var(--h-text-color), 50%);
+  --h-string-attr-name: hsl(var(--h-text-color), 30%);
+  --h-punctuation: hsl(var(--h-text-color), 40%);
+  --h-comment: hsl(var(--h-text-color), 50%);
 
-	--h-function-attr-value: hsl(var(--h-base-color), 41%);
-	--h-namespace: hsl(var(--h-base-color), 48%);
+  --h-function-attr-value: hsl(var(--h-base-color), 41%);
+  --h-namespace: hsl(var(--h-base-color), 48%);
 
-	--h-regex-important: hsl(var(--h-accent-color), 61%);
-	--h-keyword-property: hsl(var(--h-accent-color), 48%);
-	--h-tag: hsl(var(--h-accent-color), 36%);
-	--h-atrule: hsl(var(--h-accent-color), 26%);
+  --h-regex-important: hsl(var(--h-accent-color), 61%);
+  --h-keyword-property: hsl(var(--h-accent-color), 48%);
+  --h-tag: hsl(var(--h-accent-color), 36%);
+  --h-atrule: hsl(var(--h-accent-color), 26%);
 
-	--h-select: hsl(0, 0%, 88%);
-	--h-bg: var(--bg);
+  --h-select: hsl(0, 0%, 88%);
+  --h-bg: var(--bg);
 }
 
 html.dark {
-	--h-text-color: 0, 0%;
-	--h-base-color: 60, 100%;
-	--h-accent-color: 200, 130%;
+  --h-text-color: 0, 0%;
+  --h-base-color: 60, 100%;
+  --h-accent-color: 200, 130%;
 
-	--h-string-attr-name: hsl(var(--h-text-color), 75%);
-	--h-punctuation: hsl(var(--h-text-color), 45%);
-	--h-comment: hsl(var(--h-text-color), 55%);
+  --h-string-attr-name: hsl(var(--h-text-color), 75%);
+  --h-punctuation: hsl(var(--h-text-color), 45%);
+  --h-comment: hsl(var(--h-text-color), 55%);
 
-	--h-function-attr-value: hsl(var(--h-base-color), 82%);
-	--h-atrule: hsl(var(--h-base-color), 72%);
-	--h-regex-important: hsl(var(--h-base-color), 40%);
+  --h-function-attr-value: hsl(var(--h-base-color), 82%);
+  --h-atrule: hsl(var(--h-base-color), 72%);
+  --h-regex-important: hsl(var(--h-base-color), 40%);
 
-	--h-keyword-property: hsl(var(--h-accent-color), 75%);
-	--h-tag: hsl(var(--h-accent-color), 44%);
-	--h-namespace: hsl(var(--h-accent-color), 68%);
+  --h-keyword-property: hsl(var(--h-accent-color), 75%);
+  --h-tag: hsl(var(--h-accent-color), 44%);
+  --h-namespace: hsl(var(--h-accent-color), 68%);
 
-	--h-select: hsl(200, 130%, 5%);
-	--h-bg: var(--bg-darker);
+  --h-select: hsl(200, 130%, 5%);
+  --h-bg: var(--bg-darker);
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--h-comment);
+  color: var(--h-comment);
 }
 
 .token.punctuation {
-	color: var(--h-punctuation);
+  color: var(--h-punctuation);
 }
 
 .token.variable,
 .token.namespace {
-	color: var(--h-namespace);
+  color: var(--h-namespace);
 }
 
 .token.tag,
@@ -81,7 +81,7 @@ html.dark {
 .token.number,
 .token.selector,
 .token.deleted {
-	color: var(--h-tag);
+  color: var(--h-tag);
 }
 
 .token.keyword,
@@ -89,7 +89,7 @@ html.dark {
 .token.constant,
 .token.symbol,
 .token.builtin {
-	color: var(--h-keyword-property);
+  color: var(--h-keyword-property);
 }
 
 .token.attr-name,
@@ -102,80 +102,80 @@ html.dark {
 .language-css .token.string,
 .style .token.string,
 .token.inserted {
-	color: var(--h-string-attr-name);
+  color: var(--h-string-attr-name);
 }
 
 .token.function,
 .token.attr-value {
-	color: var(--h-function-attr-value);
+  color: var(--h-function-attr-value);
 }
 
 .token.atrule {
-	color: var(--h-atrule);
+  color: var(--h-atrule);
 }
 
 .token.regex,
 .token.important {
-	color: var(--h-regex-important);
+  color: var(--h-regex-important);
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 /* box */
 code,
 pre[class*='language-'] {
-	color: var(--text);
-	background: var(--h-bg);
+  color: var(--text);
+  background: var(--h-bg);
 
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	tab-size: 2;
-	hyphens: none;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 2;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*='language-'] {
-	overflow: auto;
+  overflow: auto;
 
-	border: 1px solid var(--line);
-	border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
 
-	margin: 1.5rem 0;
-	padding: 1em var(--space-x);
+  margin: 1.5rem 0;
+  padding: 1em var(--space-x);
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
-	text-shadow: none;
-	background: var(--h-select);
+  text-shadow: none;
+  background: var(--h-select);
 }
 
 pre::-webkit-scrollbar-thumb {
-	border-color: var(--h-bg);
+  border-color: var(--h-bg);
 }
 
 /* Inline code */
 :not(pre) > code {
-	padding: 0.15em 0.2em 0.05em;
-	white-space: normal;
-	background: var(--bg-darker);
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+  background: var(--bg-darker);
 }
 
 /* pre[data-line] {

@@ -17,33 +17,33 @@ First, let's define some variables, in _~/vars.css_ or _~/highlight.css_
 ```css
 /* light (default) theme */
 :root {
-	--highlight-bg: #f6f6f6;
-	--highlight-color: #2f3337;
-	--highlight-comment: #656e77;
-	--highlight-keyword: #015692;
-	--highlight-attribute: #015692;
-	--highlight-symbol: #803378;
-	--highlight-namespace: #b75501;
-	--highlight-variable: #54790d;
-	--highlight-literal: #b75501;
-	--highlight-punctuation: #535a60;
-	--highlight-deletion: #c02d2e;
-	--highlight-addition: #8dad98;
+  --highlight-bg: #f6f6f6;
+  --highlight-color: #2f3337;
+  --highlight-comment: #656e77;
+  --highlight-keyword: #015692;
+  --highlight-attribute: #015692;
+  --highlight-symbol: #803378;
+  --highlight-namespace: #b75501;
+  --highlight-variable: #54790d;
+  --highlight-literal: #b75501;
+  --highlight-punctuation: #535a60;
+  --highlight-deletion: #c02d2e;
+  --highlight-addition: #8dad98;
 }
 /* dark theme */
 html.dark {
-	--highlight-bg: #1c1b1b;
-	--highlight-color: #ffffff;
-	--highlight-comment: #999999;
-	--highlight-keyword: #88aece;
-	--highlight-attribute: #88aece;
-	--highlight-symbol: #c59bc1;
-	--highlight-namespace: #f08d49;
-	--highlight-variable: #b5bd68;
-	--highlight-literal: #f08d49;
-	--highlight-punctuation: #cccccc;
-	--highlight-deletion: #de7176;
-	--highlight-addition: #76c490;
+  --highlight-bg: #1c1b1b;
+  --highlight-color: #ffffff;
+  --highlight-comment: #999999;
+  --highlight-keyword: #88aece;
+  --highlight-attribute: #88aece;
+  --highlight-symbol: #c59bc1;
+  --highlight-namespace: #f08d49;
+  --highlight-variable: #b5bd68;
+  --highlight-literal: #f08d49;
+  --highlight-punctuation: #cccccc;
+  --highlight-deletion: #de7176;
+  --highlight-addition: #76c490;
 }
 ```
 
@@ -51,16 +51,16 @@ Then in _~/highlight.css_
 
 ```css
 .hljs {
-	color: var(--highlight-color);
-	background: var(--highlight-bg);
+  color: var(--highlight-color);
+  background: var(--highlight-bg);
 }
 
 .hljs-subst {
-	color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .hljs-comment {
-	color: var(--highlight-comment);
+  color: var(--highlight-comment);
 }
 
 .hljs-keyword,
@@ -68,15 +68,15 @@ Then in _~/highlight.css_
 .hljs-meta .hljs-keyword,
 .hljs-doctag,
 .hljs-section {
-	color: var(--highlight-keyword);
+  color: var(--highlight-keyword);
 }
 
 .hljs-attr {
-	color: var(--highlight-attribute);
+  color: var(--highlight-attribute);
 }
 
 .hljs-attribute {
-	color: var(--highlight-symbol);
+  color: var(--highlight-symbol);
 }
 
 .hljs-name,
@@ -85,11 +85,11 @@ Then in _~/highlight.css_
 .hljs-selector-id,
 .hljs-quote,
 .hljs-template-tag {
-	color: var(--highlight-namespace);
+  color: var(--highlight-namespace);
 }
 
 .hljs-selector-class {
-	color: var(--highlight-keyword);
+  color: var(--highlight-keyword);
 }
 
 .hljs-string,
@@ -99,43 +99,43 @@ Then in _~/highlight.css_
 .hljs-template-variable,
 .hljs-link,
 .hljs-selector-attr {
-	color: var(--highlight-variable);
+  color: var(--highlight-variable);
 }
 
 .hljs-meta,
 .hljs-selector-pseudo {
-	color: var(--highlight-keyword);
+  color: var(--highlight-keyword);
 }
 
 .hljs-built_in,
 .hljs-title,
 .hljs-literal {
-	color: var(--highlight-literal);
+  color: var(--highlight-literal);
 }
 
 .hljs-bullet,
 .hljs-code {
-	color: var(--highlight-punctuation);
+  color: var(--highlight-punctuation);
 }
 
 .hljs-meta .hljs-string {
-	color: var(--highlight-variable);
+  color: var(--highlight-variable);
 }
 
 .hljs-deletion {
-	color: var(--highlight-deletion);
+  color: var(--highlight-deletion);
 }
 
 .hljs-addition {
-	color: var(--highlight-addition);
+  color: var(--highlight-addition);
 }
 
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 ```
 
@@ -143,10 +143,10 @@ Also, to make it all a little bit nicer
 
 ```css
 pre {
-	margin: 1.5rem 0;
-	padding: 1.5rem clamp(1rem, 5%, 2.5rem);
-	tab-size: 2;
-	overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1.5rem clamp(1rem, 5%, 2.5rem);
+  tab-size: 2;
+  overflow-x: auto;
 }
 ```
 
@@ -154,9 +154,9 @@ And sync colors with `<code>` tags in article paragraphs (but not inside `<pre>`
 
 ```css
 article > p code {
-	color: var(--highlight-keyword);
-	background-color: var(--highlight-bg);
-	padding: 0.2rem 0.4rem;
+  color: var(--highlight-keyword);
+  background-color: var(--highlight-bg);
+  padding: 0.2rem 0.4rem;
 }
 ```
 

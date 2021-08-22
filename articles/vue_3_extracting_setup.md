@@ -40,6 +40,6 @@ export default {
 /* ~/largeComponent.setup.js */
 
 export default function setup(props, { attrs, slots, emit }) {
-	//
+  //
 }
 ```

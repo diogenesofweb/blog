@@ -20,20 +20,20 @@ skeleton
 
 ```html
 <details class="dropdown">
-	<summary>
-		<span>dropdown</span>
+  <summary>
+    <span>dropdown</span>
 
-		<span class="up"> ⬆️ </span>
-		<span class="down"> ⬇️ </span>
-	</summary>
+    <span class="up"> ⬆️ </span>
+    <span class="down"> ⬇️ </span>
+  </summary>
 
-	<div class="menu">
-		<div class="menu-list">
-			<a href="#!" class="menu-list-item">item 0</a>
-			<a href="#!" class="menu-list-item">item 1</a>
-			<a href="#!" class="menu-list-item">item 2</a>
-		</div>
-	</div>
+  <div class="menu">
+    <div class="menu-list">
+      <a href="#!" class="menu-list-item">item 0</a>
+      <a href="#!" class="menu-list-item">item 1</a>
+      <a href="#!" class="menu-list-item">item 2</a>
+    </div>
+  </div>
 </details>
 ```
 
@@ -41,28 +41,28 @@ make look like a button
 
 ```css
 details.dropdown {
-	display: inline;
+  display: inline;
 }
 
 details.dropdown > summary {
-	position: relative;
+  position: relative;
 
-	overflow: hidden;
+  overflow: hidden;
 
-	display: flex;
-	gap: 1rem;
-	padding: 1rem 2rem;
-	border-radius: 1rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 
-	text-transform: capitalize;
+  text-transform: capitalize;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	background-color: white;
+  background-color: white;
 }
 
 details.dropdown > summary:hover {
-	background-color: lightblue;
+  background-color: lightblue;
 }
 ```
 
@@ -70,15 +70,15 @@ if arrows
 
 ```css
 details.dropdown > summary span.up {
-	display: none;
+  display: none;
 }
 
 details.dropdown[open] > summary span.up {
-	display: inline;
+  display: inline;
 }
 
 details.dropdown[open] > summary span.down {
-	display: none;
+  display: none;
 }
 ```
 
@@ -86,15 +86,15 @@ add overlay on open
 
 ```css
 details.dropdown[open] > summary::before {
-	z-index: 100;
+  z-index: 100;
 
-	position: fixed;
-	inset: 0;
-	content: ' ';
+  position: fixed;
+  inset: 0;
+  content: ' ';
 
-	background-color: hsla(0, 0%, 50%, 0.66);
+  background-color: hsla(0, 0%, 50%, 0.66);
 
-	cursor: default;
+  cursor: default;
 }
 ```
 
@@ -102,13 +102,13 @@ menu
 
 ```css
 details.dropdown[open] .menu {
-	z-index: 101;
-	position: absolute;
-	display: block;
+  z-index: 101;
+  position: absolute;
+  display: block;
 }
 
 details.dropdown.right[open] .menu {
-	right: 0;
+  right: 0;
 }
 ```
 
@@ -116,37 +116,37 @@ menu list
 
 ```css
 details.dropdown .menu-list {
-	max-height: 20rem;
-	overflow-y: auto;
+  max-height: 20rem;
+  overflow-y: auto;
 
-	margin-top: 0.5rem;
-	padding: 0.33rem 0;
+  margin-top: 0.5rem;
+  padding: 0.33rem 0;
 
-	border-radius: 1rem;
+  border-radius: 1rem;
 
-	box-shadow: 0 0 0.9rem -0.1rem hsla(0, 0%, 0%, 0.75);
+  box-shadow: 0 0 0.9rem -0.1rem hsla(0, 0%, 0%, 0.75);
 
-	background-color: white;
+  background-color: white;
 }
 
 details.dropdown .menu-list-item {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
-	width: 100%;
-	padding: 1rem 1.2rem;
+  width: 100%;
+  padding: 1rem 1.2rem;
 
-	color: var(--text);
-	background-color: transparent;
+  color: var(--text);
+  background-color: transparent;
 
-	text-decoration: none;
-	line-height: 1;
+  text-decoration: none;
+  line-height: 1;
 }
 
 details.dropdown .menu-list-item:is(:hover, :focus) {
-	color: blue;
-	background-color: hsla(0, 0%, 50%, 0.1);
+  color: blue;
+  background-color: hsla(0, 0%, 50%, 0.1);
 }
 ```
 
@@ -154,15 +154,15 @@ js util: close dropdown when clicked inside menu
 
 ```js
 function closeDropdown(id) {
-	console.log('closeDropdown', id)
+  console.log('closeDropdown', id)
 
-	if (id) {
-		document.getElementById(id)?.removeAttribute('open')
-	} else {
-		document.querySelectorAll('details.dropdown')?.forEach((el) => {
-			el.removeAttribute('open')
-		})
-	}
+  if (id) {
+    document.getElementById(id)?.removeAttribute('open')
+  } else {
+    document.querySelectorAll('details.dropdown')?.forEach((el) => {
+      el.removeAttribute('open')
+    })
+  }
 }
 ```
 
@@ -170,6 +170,6 @@ add util
 
 ```html
 <div class="menu" onclick="closeDropdown()">
-	<!--  -->
+  <!--  -->
 </div>
 ```

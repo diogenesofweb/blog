@@ -1,68 +1,68 @@
 /* https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.css */
 :root {
-	--hl-comment: #396439;
-	--hl-class-name: #2b91af;
-	--hl-deleted: #2e7286;
-	--hl-func: #2816c5;
-	--hl-name: #ca3333;
-	--hl-punctuation: #393a34;
-	--hl-tag: #800000;
-	--hl-selector: #7e3838;
-	--hl-regex: #ff0000;
+  --hl-comment: #396439;
+  --hl-class-name: #2b91af;
+  --hl-deleted: #2e7286;
+  --hl-func: #2816c5;
+  --hl-name: #ca3333;
+  --hl-punctuation: #393a34;
+  --hl-tag: #800000;
+  --hl-selector: #7e3838;
+  --hl-regex: #ff0000;
 }
 
 html.dark {
-	--hl-comment: #6a9955;
-	--hl-class-name: #4ec9b0;
-	--hl-deleted: #ce9178;
-	--hl-func: #dcdcaa;
-	--hl-name: #9cdcfe;
-	--hl-punctuation: #d4d4d4;
-	--hl-tag: #569cd6;
-	--hl-selector: #d7ba7d;
-	--hl-regex: #d16969;
+  --hl-comment: #6a9955;
+  --hl-class-name: #4ec9b0;
+  --hl-deleted: #ce9178;
+  --hl-func: #dcdcaa;
+  --hl-name: #9cdcfe;
+  --hl-punctuation: #d4d4d4;
+  --hl-tag: #569cd6;
+  --hl-selector: #d7ba7d;
+  --hl-regex: #d16969;
 }
 
 pre[class*='language-'],
 code[class*='language-'] {
-	color: var(--text);
-	text-shadow: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-	tab-size: 2;
-	hyphens: none;
+  color: var(--text);
+  text-shadow: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 2;
+  hyphens: none;
 }
 
 pre[class*='language-']::selection,
 code[class*='language-']::selection,
 pre[class*='language-'] *::selection,
 code[class*='language-'] *::selection {
-	text-shadow: none;
-	background: hsla(205, 45%, 63%, 0.2);
+  text-shadow: none;
+  background: hsla(205, 45%, 63%, 0.2);
 }
 
 pre[class*='language-'] {
-	padding: 1em;
-	margin: 0.5em 0;
-	overflow: auto;
-	background: var(--bg-darker);
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: var(--bg-darker);
 }
 
 /* :not(pre) > code[class*='language-'] { */
 :not(pre) > code {
-	padding: 0.1em 0.3em;
-	border-radius: 0.3em;
-	background: var(--bg-darker);
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  background: var(--bg-darker);
 }
 /*********************************************************
 * Tokens
 */
 .namespace {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 .token.doctype .token.doctype-tag,
@@ -74,7 +74,7 @@ pre[class*='language-'] {
 .token.tag .token.punctuation,
 .token.entity,
 .token.punctuation.interpolation-punctuation {
-	color: var(--hl-tag);
+  color: var(--hl-tag);
 }
 
 .token.doctype .token.name,
@@ -88,12 +88,12 @@ pre[class*='language-'] {
 .token.variable,
 .token.imports .token.maybe-class-name,
 .token.exports .token.maybe-class-name {
-	color: var(--hl-name);
+  color: var(--hl-name);
 }
 
 .token.comment,
 .token.prolog {
-	color: var(--hl-comment);
+  color: var(--hl-comment);
 }
 
 .token.punctuation,
@@ -103,7 +103,7 @@ pre[class*='language-'] {
 .token.entity,
 .token.atrule .token.url .token.punctuation,
 .token.attr-value .token.punctuation.attr-equals {
-	color: var(--hl-punctuation);
+  color: var(--hl-punctuation);
 }
 
 /* .token.number,
@@ -121,7 +121,7 @@ pre[class*='language-'] {
 .token.atrule,
 .token.attr-value,
 .token.attr-value .token.punctuation {
-	color: var(--hl-deleted);
+  color: var(--hl-deleted);
 }
 /* .token.atrule .token.rule,
 .token.keyword.module,
@@ -132,21 +132,21 @@ pre[class*='language-'] {
 .token.atrule .token.url .token.function,
 .token.function,
 .token.function .token.maybe-class-name {
-	color: var(--hl-func);
+  color: var(--hl-func);
 }
 
 .token.regex {
-	color: var(--hl-regex);
+  color: var(--hl-regex);
 }
 
 .token.class-name,
 .token.maybe-class-name,
 .token.namespace {
-	color: var(--hl-class-name);
+  color: var(--hl-class-name);
 }
 .token.selector,
 .token.escape {
-	color: var(--hl-selector);
+  color: var(--hl-selector);
 }
 
 /* .token.cdata {
@@ -154,11 +154,11 @@ pre[class*='language-'] {
 } */
 
 .language-css .token.string.url {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 /*********************************************************
