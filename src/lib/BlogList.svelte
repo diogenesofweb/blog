@@ -82,6 +82,7 @@
     padding: 1rem 0 1.5rem;
 
     display: flex;
+    flex-wrap: wrap;
     gap: 1ch;
     /* background-color: rgba(240, 248, 255, 0.356); */
   }
@@ -96,9 +97,7 @@
     background-color: var(--bg);
   }
 
-  @media (hover: hover) {
-    li:hover .tags a {
-      box-shadow: 3px 3px 1.5rem -0.8rem inset var(--text-hover);
-    }
+  li:hover .tags a {
+    box-shadow: 3px 3px 1.5rem -0.8rem inset var(--text-hover);
   }
 </style>

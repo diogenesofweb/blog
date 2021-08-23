@@ -34,6 +34,7 @@
     line-height: 1;
     height: var(--x);
     border-radius: var(--x);
+    border: 1px solid transparent;
 
     background-color: var(--text-accent);
     color: var(--bg);
@@ -47,7 +48,7 @@
   :global(html.dark) a {
     color: var(--text-accent);
     background-color: var(--bg);
-    border: 1px solid currentColor;
+    border-color: currentColor;
     transition: all 300ms ease-in;
   }
 
