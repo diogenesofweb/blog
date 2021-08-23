@@ -24,7 +24,7 @@ For this example, [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tre
 
 ---
 
-Let’s begin by creating a SvelteKit project and installing the above-mentioned adapter
+Let’s begin by creating a SvelteKit project and installing the above-mentioned adapter (don’t forget to follow instructions on how to use it).
 
 ```shell
 npm init svelte@next demo
@@ -35,7 +35,7 @@ npm i -D @sveltejs/adapter-static@next
 
 We have our english version at `/`, then french at `/fr`, and ukrainian at `/ua`
 
-Routes folder looks like this
+Routes folder looks like this.
 
 ```shell
 routes
@@ -48,7 +48,7 @@ routes
 
 ```
 
-Now markup
+Now markup.
 
 ```html
 <!-- ~/routes/__layouts.svelte -->
@@ -66,7 +66,7 @@ Now markup
 </main>
 ```
 
-All `.svelte` files in routes directory should include
+All `.svelte` files in routes directory should include.
 
 ```html
 <script context="module">
@@ -78,7 +78,7 @@ All `.svelte` files in routes directory should include
 </script>
 ```
 
-A little bit of **HTML** for each route
+A little bit of **HTML** for each route.
 
 ```html
 <!-- ~/routes/index.svelte -->
@@ -107,7 +107,7 @@ A little bit of **HTML** for each route
 <h1>Привіт Світе</h1>
 ```
 
-And finally `hooks.js`
+And finally `hooks.js`.
 
 ```js
 /* ~/src/hooks.js */
@@ -136,7 +136,7 @@ export async function handle({ request, resolve }) {
 }
 ```
 
-To build and then preview on `localhost:3000`
+To build and then preview on `localhost:3000`.
 
 ```shell
 npm run build

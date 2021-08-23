@@ -1,6 +1,6 @@
 ---
 title: Making a blog website with SvelteKit
-description: Making a blog website with SvelteKit, statically generated from markdown
+description: Build a simple blog website with SvelteKit, statically generated (SSG) from markdown
 created: 2021-06-10
 tags:
   - 'SvelteKit'
@@ -8,7 +8,7 @@ tags:
   - 'Markdown'
 ---
 
-Projects used:
+List of projects used.
 
 [SvelteKit](https://kit.svelte.dev)\
 [gray-matter](https://github.com/jonschlinkert/gray-matter) - parse front-matter\
@@ -25,15 +25,23 @@ articles
 
 src
 └─ routes
-	 └─ blog
-			├─ [slug].svelte
-			└─ [slug].json.js
+	 └─ __layout.svelte
 	 └─ index.svelte
 	 └─ blogs.json.js
-	 └─ __layout.svelte
+	 └─ blog
+     ├─ [slug].svelte
+     └─ [slug].json.js
 ```
 
-`~/articles/sveltekit_is_amazing.md` :
+Create **articles** folder in your **root** directory. It is home for all future blog posts. Then create the first article, **"SvelteKit is amazing"**.
+
+```shell
+mkdir articles
+cd articles
+touch sveltekit_is_amazing.md
+```
+
+Add front-matter and content to the article.
 
 ```md
 ---
@@ -49,7 +57,7 @@ Why SvelteKit is absolutely amazing?
 ...
 ```
 
-File name should match article title ( transformed to lowercase, and empty strings replaced with \_ ).
+**File name** should match **article title** ( transformed to lowercase, and empty strings replaced with \_ ).
 
 ---
 
@@ -59,15 +67,14 @@ Two [endpoints](https://kit.svelte.dev/docs#routing-endpoints) are to be made.\
 One for a blog page `[slug].json.js`.\
 And one for an index page `blogs.json.js` (getting blogs metadata).
 
-Following docs, endpoint files have to export the `get` function for **GET** requests.
+Following docs, endpoint files have to export the `get` function for **GET** requests.\
+So, inside the `get` function for fetching a blog, following steps are performed.
 
-Then, inside the `get` function for fetching a blog:
-
-1. Load corresponding `.md` file as string
-2. Process separately front-matter and content
-3. Parse front-matter with 'gray-matter’ as JSON object
-4. Parse file content with 'markdown-it' returning HTML as string
-5. Return processed data
+1. Load corresponding `.md` file as string.
+2. Process separately front-matter and content.
+3. Parse front-matter with 'gray-matter’ as JSON object.
+4. Parse file content with 'markdown-it' returning HTML as string.
+5. Return processed data.
 
 ```js
 /* ~/src/routes/blog/[slug].json.js */
@@ -125,10 +132,10 @@ export async function get({ params }) {
 
 As all blog posts are placed in **articles** folder, and only there, and only in **.md** format, the `get` function for fetching blogs metadata is much simpler. Steps:
 
-1. Get file names of all blog posts
-2. Load each file and parse front-matter
-3. Sort by creation date
-4. Return blogs as array
+1. Get file names of all blog posts.
+2. Load each file and parse front-matter.
+3. Sort by creation date.
+4. Return blogs as array.
 
 ```js
 /* ~/src/routes/blogs.json.js */
@@ -169,8 +176,9 @@ export async function get() {
 </main>
 ```
 
-Defining [load](https://kit.svelte.dev/docs#loading-input) function to fetch corresponding endpoints.\
-Then list all tags and filter blogs by route param (?tag=) if there is one.
+As the [load](https://kit.svelte.dev/docs#loading-input) function fetches corresponding endpoints, the index page receives all posts from it.
+
+Then all tags are listed and blogs are filtered by route param (?tag=) if there is one.
 
 ```html
 <!-- index.svelte -->
@@ -240,10 +248,11 @@ Then list all tags and filter blogs by route param (?tag=) if there is one.
 </ol>
 ```
 
-Just fetching a blog
+Just fetching and displaying a blog.
 
 ```html
 <!-- [slug].svelte -->
+<!-- slug = file name of the article -->
 
 <script context="module">
   import { browser, dev } from '$app/env'
@@ -310,6 +319,4 @@ Install [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/p
 
 All pages will be [prerendered](https://kit.svelte.dev/docs#ssr-and-javascript-prerender).\
 Only the index page will load JS, make [hydration](https://kit.svelte.dev/docs#ssr-and-javascript-hydrate), turning the website into SPA.\
-Every blog page will go with 0 JS, so no hydration and traditional navigation.
-
-This website is actually built this way.
+Every blog page will go with 0 JS, so traditional navigation and no hydration.
