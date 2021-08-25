@@ -33,12 +33,23 @@
    */
 
   export let blog
+
+  const titleURL = blog.metadata.title.replaceAll(' ', '_').toLowerCase()
 </script>
 
 <svelte:head>
   <title>{blog.metadata.title}</title>
   <meta name="description" content={blog.metadata.description} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@diogenesofweb" />
+  <meta name="twitter:creator" content="@diogenesofweb" />
+  <meta property="og:url" content="https://www.delphic.top/blog/{titleURL}/" />
+  <meta property="og:title" content={blog.metadata.title} />
+  <meta property="og:description" content={blog.metadata.description} />
+  <meta property="og:image" content="https://www.delphic.top/og-images/{titleURL}.png" />
 </svelte:head>
+
+<!-- <img src="/og-images/{titleURL}.png" /> -->
 
 <div class="max-content">
   <article>

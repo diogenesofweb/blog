@@ -41,14 +41,15 @@ html.dark {
 
 /* Firefox */
 * {
-  scrollbar-width: thick;
+  scrollbar-width: thick; /* none | auto  */
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 /* Firefox */
 
 /* Chrome, Edge, Safari */
 *::-webkit-scrollbar {
-  width: var(--scrollbar-width);
+  width: var(--scrollbar-width); /* vertical scrollbar */
+  height: var(--scrollbar-width); /* horizontal scrollbar */
 }
 
 *::-webkit-scrollbar-track {
