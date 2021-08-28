@@ -99,6 +99,11 @@
     border: 1px solid var(--line);
   }
 
+  article :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
   article > :global(p a) {
     color: var(--text-accent);
   }
