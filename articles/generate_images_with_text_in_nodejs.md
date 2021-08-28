@@ -11,11 +11,11 @@ Sometimes, you may want to make cards with a nice background and some text on it
 
 For example, there is an empty card (1200x630), a png image created in Inkscape.
 
-<img  src="/images/demo-card-empty.png" alt="empty card" />
+<img  src="/images/demo-card-empty.png" alt="empty card" width="1200" height="630" />
 
 And “to be or not to be” is generated on it.
 
-<img  src="/images/demo-card-with-text.png" alt="card with text" />
+<img  src="/images/demo-card-with-text.png" alt="card with text" width="1200" height="630" />
 
 Before diving into nodejs, we can make it work first in the browser, with live updates. It would be a much better experience. For this we’ll be using [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
