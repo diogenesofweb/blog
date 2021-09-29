@@ -3,6 +3,7 @@
   import '../css/vars.css'
   import '../css/app.css'
   import '../css/utils.css'
+  import '../css/card.css'
 
   import MyHeader from '$lib/Header.svelte'
 </script>

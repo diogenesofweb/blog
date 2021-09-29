@@ -7,6 +7,7 @@
   <nav class="maxy font2">
     <ul>
       <li class:active={$page.path === '/'}><a href="/">DelphicTop</a></li>
+      <li class:active={$page.path === '/projects'}><a href="/projects">Projects</a></li>
       <li class:active={$page.path === '/about'}><a href="/about">About</a></li>
     </ul>
 
