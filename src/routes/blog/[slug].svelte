@@ -39,6 +39,7 @@
 
 <svelte:head>
   <title>{blog.metadata.title}</title>
+  <link rel="canonical" href="https://www.delphic.top/blog/{titleURL}" />
   <meta name="description" content={blog.metadata.description} />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- <meta name="twitter:site" content="@diogenesofweb" /> -->

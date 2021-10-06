@@ -9,6 +9,13 @@
 <script>
   const arr = [
     {
+      name: 'Tabulamax',
+      desc: 'Quickly design DB tables and generate code snippets for migrations (SQL, Knex.js)',
+      link: 'https://www.tabulamax.com/',
+      repo: 'https://github.com/tabulamax/app',
+      npm: ''
+    },
+    {
       name: 'Dwarform',
       desc:
         'Generate Svelte, Vue, HTML code snippets for making forms with Bootstrap, Bulma or custom CSS',
@@ -28,6 +35,7 @@
 
 <svelte:head>
   <title>Projects</title>
+  <meta name="description" content="My side projects" />
 </svelte:head>
 
 <div class="container">
@@ -69,5 +77,9 @@
   h1 {
     padding-top: 1rem;
     color: var(--text);
+  }
+
+  h2 .link {
+    border-bottom: 2px solid currentColor;
   }
 </style>
