@@ -22,14 +22,14 @@
       link: 'https://dwarform.pages.dev/',
       repo: 'https://github.com/diogenesofweb/dwarform',
       npm: ''
+    },
+    {
+      name: 'Kazkadien',
+      desc: 'Personal CSS & Svelte Component Library',
+      link: 'https://kazkadien.pages.dev/',
+      // repo: 'https://github.com/kazkadien/svelte',
+      npm: 'https://www.npmjs.com/package/@kazkadien/svelte'
     }
-    // {
-    //   name: 'Kazkadien',
-    //   desc: 'Svelte Component Library',
-    //   link: 'https://kazkadien.pages.dev/',
-    //   repo: 'https://github.com/kazkadien/svelte',
-    //   npm: 'https://www.npmjs.com/package/@kazkadien/svelte'
-    // }
   ]
 </script>
 
@@ -57,7 +57,7 @@
         {/if}
 
         {#if proj.npm}
-          <a class="link" href={proj.npm} target="_blank" rel="noopener noreferrer"> Repo </a>
+          <a class="link" href={proj.npm} target="_blank" rel="noopener noreferrer"> NPM </a>
         {/if}
       </div>
     </div>
