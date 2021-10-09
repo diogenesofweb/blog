@@ -19,7 +19,7 @@
       name: 'Dwarform',
       desc:
         'Generate Svelte, Vue, HTML code snippets for making forms with Bootstrap, Bulma or custom CSS',
-      link: 'https://dwarform.pages.dev/',
+      link: 'https://dwarform.delphic.top/',
       repo: 'https://github.com/diogenesofweb/dwarform',
       npm: ''
     },
