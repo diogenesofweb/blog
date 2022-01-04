@@ -105,12 +105,12 @@
     height: auto;
   }
 
-  article > :global(p a) {
+  article :global(a) {
     color: var(--text-accent);
   }
 
   /* article > :global(p a:visited), */
-  article > :global(p a:hover) {
+  article :global(a:hover) {
     color: var(--text-hover);
   }
 
