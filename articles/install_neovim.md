@@ -9,8 +9,8 @@ tags:
 
 ## Install
 
-Install Neovim as an appimage in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
-`~/.local/bin/`, or in `~/bin/` (OpenSUSE).
+Install Neovim on linux as an appimage in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
+`~/.local/bin/` (Ubuntu), or in `~/bin/` (OpenSUSE).
 
 ```bash
 cd .local/bin/
@@ -23,7 +23,7 @@ chmod u+x nvim.appimage
 This should install and open Neovim. Then run a health check. You may need to install additional dependencies, like **build-essential** or equivalent.
 
 ```bash
-:healthcheck
+:checkhealth
 ```
 
 Update shell aliases.
