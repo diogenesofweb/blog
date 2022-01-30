@@ -2,6 +2,7 @@
 title: Making a blog website with SvelteKit
 description: Build a simple blog website with SvelteKit, statically generated (SSG) from markdown
 created: 2021-06-10
+updated: 2022-01-22
 tags:
   - 'SvelteKit'
   - 'SSG'
@@ -203,6 +204,7 @@ Then all tags are listed and blogs are filtered by route param (?tag=) if there 
 </script>
 
 <script>
+  import { browser } from '$app/env'
   import { page } from '$app/stores'
   /** @type {import('../typings/types').BlogMetadata[]} */
   export let blogs
@@ -214,11 +216,21 @@ Then all tags are listed and blogs are filtered by route param (?tag=) if there 
   const tags = [...tagSet].sort()
 
   let tag
-  page.subscribe(({ query }) => {
-    tag = query.get('tag')
-  })
 
   $: blogsFilteredByTag = tagSet.has(tag) ? blogs.filter((p) => p.tags.includes(tag)) : blogs
+
+  let unsub
+
+  if (browser) {
+    unsub = page.subscribe(({ url }) => {
+      tag = url.searchParams.get('tag')
+      // console.log({ tag })
+    })
+  }
+
+  onDestroy(() => {
+    unsub && unsub()
+  })
 </script>
 
 <svelte:head>
@@ -259,8 +271,8 @@ Just fetching and displaying a blog.
   export const hydrate = dev
   export const router = browser
 
-  export async function load({ page, fetch }) {
-    const url = `/blog/${page.params.slug}.json`
+  export async function load({ params, fetch }) {
+    const url = `/blog/${params.slug}.json`
     const res = await fetch(url)
     if (res.ok) {
       const blog = await res.json()
