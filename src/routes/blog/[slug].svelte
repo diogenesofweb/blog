@@ -6,8 +6,8 @@
   export const hydrate = dev
   export const router = browser
 
-  export async function load({ page, fetch }) {
-    const url = `/blog/${page.params.slug}.json`
+  export async function load({ params, fetch }) {
+    const url = `/blog/${params.slug}.json`
     const res = await fetch(url)
 
     if (res.ok) {

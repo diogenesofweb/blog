@@ -20,10 +20,11 @@
 </script>
 
 <script>
+  import { browser } from '$app/env'
   import { page } from '$app/stores'
-
   import BlogList from '$lib/BlogList.svelte'
   import TagList from '$lib/TagList.svelte'
+  import { onDestroy } from 'svelte'
 
   /** @type {import('../typings/types').BlogMetadata[]} */
   export let blogs
@@ -38,12 +39,20 @@
 
   export let tag
 
-  page.subscribe(({ query }) => {
-    tag = query.get('tag')
-    // console.log({ tag })
-  })
-
   $: blogsFilteredByTag = tagSet.has(tag) ? blogs.filter((p) => p.tags.includes(tag)) : blogs
+
+  let unsub
+
+  if (browser) {
+    unsub = page.subscribe(({ url }) => {
+      tag = url.searchParams.get('tag')
+      // console.log({ tag })
+    })
+  }
+
+  onDestroy(() => {
+    unsub && unsub()
+  })
 </script>
 
 <svelte:head>
