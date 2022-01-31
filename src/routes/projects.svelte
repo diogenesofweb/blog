@@ -16,6 +16,13 @@
       npm: ''
     },
     {
+      name: 'Focus',
+      desc: 'Productivity timer with focus on breaks',
+      link: 'https://focus.delphic.top/',
+      repo: 'https://github.com/diogenesofweb/focus',
+      npm: ''
+    },
+    {
       name: 'Dwarform',
       desc:
         'Generate Svelte, Vue, HTML code snippets for making forms with Bootstrap, Bulma or custom CSS',
