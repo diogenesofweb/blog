@@ -1,7 +1,8 @@
 ---
 title: Multiple git accounts
-description: Manage multiple git accounts on same linux machine
+description: Manage multiple git (Github & Gitlab) accounts on same Linux machine via HTTPS
 created: 2022-01-30
+updated: 2022-02-12
 tags:
   - 'git'
   - 'linux'
@@ -9,7 +10,7 @@ tags:
 
 # Multiple git accounts
 
-Recently, I've reinstalled linux on my old laptop. And I wanted to set up git in a way that I could manage multiple accounts. Essentially, I aimed to be able to do `git pull & push` without typing every time username and password.
+Recently, I've reinstalled Linux (Kubuntu) on my old laptop. And I wanted to set up git in a way that I could manage multiple accounts. Essentially, I aimed to be able to do `git pull & push` without typing every time username and password.
 
 So, I googled a little bit and found a good starting point - make separation by directories. Example: `~/code/work/` and `~/code/personal/` - for work and personal usage respectively.
 
@@ -77,7 +78,9 @@ Fourth, I grab PAT and store it in `~/code/epicurus/.git-credentials`
 https://epicurus:[ACCES_TOKEN]@gitlab.com
 ```
 
-And now in directory tree `~/code/epicurus/` I can `git pull & push` to gitlab without typing credentials as Epicurus, and everywhere else as Diogenes.
+And now in the directory tree `~/code/epicurus/` I can `git pull & push` to gitlab without typing credentials as Epicurus, and everywhere else as Diogenes.
+
+Side note. I find it more convenient to use PATs via HTTPS than SSH keys. Mainly because both [Github](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and [Gitlab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) make it easy to manage personal access tokens.
 
 ---
 
