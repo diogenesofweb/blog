@@ -137,3 +137,7 @@ Clipboard copy/paste support.
 ```shell
 sudo apt install xsel
 ```
+
+---
+
+Here [my nvim config](https://github.com/diogenesofweb/dotfiles/tree/main/nvim)
