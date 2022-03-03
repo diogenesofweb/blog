@@ -6,7 +6,10 @@
   import '../css/card.css'
 
   import MyHeader from '$lib/Header.svelte'
+  import StopWar from '$lib/StopWar.svelte'
 </script>
+
+<StopWar />
 
 <div class="wrap">
   <MyHeader />
@@ -40,6 +43,10 @@
 </footer>
 
 <style>
+  :global(#svelte) {
+    position: relative;
+  }
+
   .wrap {
     min-height: 100vh;
   }
