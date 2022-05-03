@@ -1,7 +1,8 @@
 ---
 title: Install Neovim
-description: Install Neovim on a linux distro
+description: Install Neovim on a linux distro as an appimage
 created: 2021-12-27
+updated: 2022-05-03
 tags:
   - 'linux'
   - 'neovim'
@@ -10,7 +11,7 @@ tags:
 ## Install
 
 Install Neovim on linux as an appimage in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
-`~/.local/bin/` (Ubuntu), or in `~/bin/` (OpenSUSE).
+`~/.local/bin/` (Ubuntu / Debian), or in `~/bin/` (OpenSUSE).
 
 ```bash
 cd .local/bin/
@@ -83,13 +84,13 @@ endif
 
 Make CapsLock an additional Esc.
 
-May need some build libs for tree-sitter to compile (for Ubuntu).
+May need some build libs for tree-sitter to compile (for Ubuntu / Debian).
 
 ```bash
 sudo apt install build-essential
 ```
 
-Install [Plug](https://github.com/junegunn/vim-plug)
+Install plugin manager [Plug](https://github.com/junegunn/vim-plug).
 
 ```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -118,6 +119,9 @@ npm i -g svelte-language-server
 
 # vim
 npm i -g vim-language-server
+
+# all
+npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server
 ```
 
 Install [prettierd](https://github.com/fsouza/prettierd), for instant formatting.
@@ -126,10 +130,10 @@ Install [prettierd](https://github.com/fsouza/prettierd), for instant formatting
 npm install -g @fsouza/prettierd
 ```
 
-Install [ripgrep](https://github.com/BurntSushi/ripgrep) for faster search with [Telescope](https://github.com/nvim-telescope/telescope.nvim).
+Install [ripgrep](https://github.com/BurntSushi/ripgrep) & [fd](https://github.com/sharkdp/fd) for faster search with [Telescope](https://github.com/nvim-telescope/telescope.nvim).
 
 ```bash
-sudo apt install ripgrep
+sudo apt install ripgrep fd-find
 ```
 
 Clipboard copy/paste support.
@@ -137,6 +141,16 @@ Clipboard copy/paste support.
 ```shell
 sudo apt install xsel
 ```
+
+All deps for Ubuntu / Debian
+
+```shell
+sudo apt install build-essential xsel ripgrep fd-find
+```
+
+---
+
+Recommended terminal: [kitty](https://sw.kovidgoyal.net/kitty/binary/)
 
 ---
 

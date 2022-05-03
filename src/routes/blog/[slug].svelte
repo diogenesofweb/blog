@@ -58,6 +58,10 @@
 
     <p class="created">
       <i>Created:</i> <time>{new Date(blog.metadata.created).toLocaleDateString()}</time>
+      {#if blog.metadata.updated}
+        <b>|</b>
+        <i>Updated:</i> <time>{new Date(blog.metadata.updated).toLocaleDateString()}</time>
+      {/if}
     </p>
 
     <hr />

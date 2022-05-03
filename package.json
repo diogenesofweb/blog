@@ -12,7 +12,7 @@
     "@sveltejs/adapter-static": "^1.0.0-next.12",
     "@sveltejs/kit": "next",
     "@types/markdown-it": "^12.0.1",
-    "@types/node": "^15.12.0",
+    "@types/node": "^15.14.9",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0"
