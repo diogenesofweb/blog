@@ -1,6 +1,7 @@
 import fs from 'fs'
 import mi from 'markdown-it'
 import prism from 'markdown-it-prism'
+import 'prism-svelte'
 import matter from 'gray-matter'
 
 const md = mi({

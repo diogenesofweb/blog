@@ -16,6 +16,13 @@
       npm: ''
     },
     {
+      name: 'Hotatap',
+      desc: 'Web-based REST API client',
+      link: 'https://hotatap.pages.dev/app',
+      repo: 'https://github.com/diogenesofweb/hotatap',
+      npm: ''
+    },
+    {
       name: 'Focus',
       desc: 'Productivity timer with focus on breaks',
       link: 'https://focus.delphic.top/',

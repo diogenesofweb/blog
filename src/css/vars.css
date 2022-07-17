@@ -42,6 +42,7 @@ html.dark {
 
   --primary: hsl(200, 100%, 75%);
 
-  --scrollbar-thumb-hover: hsla(0, 0%, 30%);
+  --scrollbar-thumb-hover: var(--primary);
+  /* --scrollbar-thumb-hover: hsla(0, 0%, 30%); */
   --scrollbar-thumb-firefox: gray;
 }
