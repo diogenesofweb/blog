@@ -54,15 +54,15 @@ Now markup.
 <!-- ~/routes/__layouts.svelte -->
 
 <main>
-  <nav class="ce">
-    <a href="/">🇬🇧</a>
-    <a href="/fr">🇫🇷</a>
-    <a href="/ua">🇺🇦</a>
-  </nav>
+	<nav class="ce">
+		<a href="/">🇬🇧</a>
+		<a href="/fr">🇫🇷</a>
+		<a href="/ua">🇺🇦</a>
+	</nav>
 
-  <section>
-    <slot />
-  </section>
+	<section>
+		<slot />
+	</section>
 </main>
 ```
 
@@ -70,11 +70,11 @@ All `.svelte` files in routes directory should include.
 
 ```html
 <script context="module">
-  import { browser, dev } from '$app/env'
+	import { browser, dev } from '$app/env';
 
-  export const hydrate = dev
-  export const router = browser
-  export const prerender = true
+	export const hydrate = dev;
+	export const router = browser;
+	export const prerender = true;
 </script>
 ```
 
@@ -83,7 +83,7 @@ A little bit of **HTML** for each route.
 ```html
 <!-- ~/routes/index.svelte -->
 <svelte:head>
-  <title>Hello</title>
+	<title>Hello</title>
 </svelte:head>
 
 <h1>Hello World</h1>
@@ -92,7 +92,7 @@ A little bit of **HTML** for each route.
 ```html
 <!-- ~/routes/fr/index.svelte -->
 <svelte:head>
-  <title>Bonjour</title>
+	<title>Bonjour</title>
 </svelte:head>
 
 <h1>Bonjour le Monde</h1>
@@ -101,7 +101,7 @@ A little bit of **HTML** for each route.
 ```html
 <!-- ~/routes/ua/index.svelte -->
 <svelte:head>
-  <title>Привіт</title>
+	<title>Привіт</title>
 </svelte:head>
 
 <h1>Привіт Світе</h1>
@@ -114,25 +114,25 @@ And finally `hooks.js`.
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ request, resolve }) {
-  const response = await resolve(request)
+	const response = await resolve(request);
 
-  if (request.path.startsWith('/fr')) {
-    return {
-      ...response,
-      // @ts-ignore
-      body: response.body?.replace('<html lang="en">', '<html lang="fr">')
-    }
-  }
+	if (request.path.startsWith('/fr')) {
+		return {
+			...response,
+			// @ts-ignore
+			body: response.body?.replace('<html lang="en">', '<html lang="fr">'),
+		};
+	}
 
-  if (request.path.startsWith('/ua')) {
-    return {
-      ...response,
-      // @ts-ignore
-      body: response.body?.replace('<html lang="en">', '<html lang="uk">')
-    }
-  }
+	if (request.path.startsWith('/ua')) {
+		return {
+			...response,
+			// @ts-ignore
+			body: response.body?.replace('<html lang="en">', '<html lang="uk">'),
+		};
+	}
 
-  return response
+	return response;
 }
 ```
 

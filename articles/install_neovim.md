@@ -2,7 +2,7 @@
 title: Install Neovim
 description: Install Neovim on a linux distro as an appimage
 created: 2021-12-27
-updated: 2022-05-03
+updated: 2022-11-04
 tags:
   - 'linux'
   - 'neovim'
@@ -67,10 +67,10 @@ endif
 
 ```json
 {
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/[USERNAME]/.local/bin/nvim.appimage",
+	"vscode-neovim.neovimExecutablePaths.linux": "/home/[USERNAME]/.local/bin/nvim.appimage",
 
-  "editor.cursorBlinking": "solid",
-  "keyboard.dispatch": "keyCode" // if CapsLock changed to Esc
+	"editor.cursorBlinking": "solid",
+	"keyboard.dispatch": "keyCode" // if CapsLock changed to Esc
 }
 ```
 
@@ -108,8 +108,11 @@ Prerequisites: Node and NPM to use LSP, install with [FNM](https://github.com/Sc
 Install [LSP servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
 ```bash
-# javascript & typescript
+# javascript & typescript (.js & .ts)
 npm i -g typescript typescript-language-server
+
+# typescript (.ts)
+npm i -g ts-node @swc/core @swc/helpers
 
 # css & html & json
 npm i -g vscode-langservers-extracted
@@ -120,8 +123,11 @@ npm i -g svelte-language-server
 # vim
 npm i -g vim-language-server
 
+# emmet
+npm i -g emmet-ls
+
 # all
-npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server
+npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server emmet-ls ts-node @swc/core @swc/helpers
 ```
 
 Install [prettierd](https://github.com/fsouza/prettierd), for instant formatting.

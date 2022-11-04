@@ -25,19 +25,19 @@ First, we would need some html
 
 ```html
 <details>
-  <summary>
-    <span>Some text ...</span>
+	<summary>
+		<span>Some text ...</span>
 
-    <svg class="plus" viewBox="0 0 16 16">
-      <path
-        d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-      />
-    </svg>
-  </summary>
+		<svg class="plus" viewBox="0 0 16 16">
+			<path
+				d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
+			/>
+		</svg>
+	</summary>
 
-  <div class="content">
-    <span>Some text ...</span>
-  </div>
+	<div class="content">
+		<span>Some text ...</span>
+	</div>
 </details>
 ```
 
@@ -48,22 +48,22 @@ Let's define variables. It helps me to update / finetune styling.
 
 ```css
 :root {
-  --text-color: hsl(0, 0%, 20%);
-  --bg-color: hsl(0, 0%, 100%);
+	--text-color: hsl(0, 0%, 20%);
+	--bg-color: hsl(0, 0%, 100%);
 
-  --hs-base: 300, 100%;
-  --primary: hsl(var(--hs-base), 15%);
+	--hs-base: 300, 100%;
+	--primary: hsl(var(--hs-base), 15%);
 
-  --summary-bg-color: hsl(var(--hs-base), 98%);
-  --summary-hover-bg-color: hsl(var(--hs-base), 90%);
+	--summary-bg-color: hsl(var(--hs-base), 98%);
+	--summary-hover-bg-color: hsl(var(--hs-base), 90%);
 
-  --border: 3px solid hsl(var(--hs-base), 80%);
-  --border-radius: 0.66rem;
+	--border: 3px solid hsl(var(--hs-base), 80%);
+	--border-radius: 0.66rem;
 
-  --padding-x: clamp(1rem, 5%, 2.5rem);
+	--padding-x: clamp(1rem, 5%, 2.5rem);
 
-  --transition-duration: 300ms;
-  --transition-timing-function: ease-in;
+	--transition-duration: 300ms;
+	--transition-timing-function: ease-in;
 }
 ```
 
@@ -71,18 +71,18 @@ Let's define variables. It helps me to update / finetune styling.
 
 ```css
 details {
-  overflow: hidden;
-  border: var(--border);
-  border-top: none;
+	overflow: hidden;
+	border: var(--border);
+	border-top: none;
 }
 
 details:first-child {
-  border: var(--border);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border: var(--border);
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 details:last-child {
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 ```
 
@@ -90,52 +90,52 @@ And now `<details>`’s children elements
 
 ```css
 summary {
-  display: grid;
-  grid-template-columns: 1fr 1em;
-  align-items: center;
-  gap: 2em;
+	display: grid;
+	grid-template-columns: 1fr 1em;
+	align-items: center;
+	gap: 2em;
 
-  font-size: calc(1rem + 2px);
-  font-weight: bold;
+	font-size: calc(1rem + 2px);
+	font-weight: bold;
 
-  cursor: pointer; /* I wonder why is this not default behavior */
+	cursor: pointer; /* I wonder why is this not default behavior */
 
-  background-color: var(--summary-bg-color);
-  padding: 1.25rem var(--padding-x);
+	background-color: var(--summary-bg-color);
+	padding: 1.25rem var(--padding-x);
 
-  transition-property: color, background-color;
+	transition-property: color, background-color;
 }
 
 details[open] > summary {
-  font-style: italic;
+	font-style: italic;
 }
 
 summary:focus,
 summary:hover {
-  outline: none;
-  background-color: var(--summary-hover-bg-color);
-  color: var(--primary); /* Icon also will change color */
+	outline: none;
+	background-color: var(--summary-hover-bg-color);
+	color: var(--primary); /* Icon also will change color */
 }
 
 details .content {
-  position: relative;
-  z-index: -1; /* for animation, hide behind summary */
+	position: relative;
+	z-index: -1; /* for animation, hide behind summary */
 
-  background-color: var(--bg-color);
-  color: var(--text-color);
+	background-color: var(--bg-color);
+	color: var(--text-color);
 
-  padding: 1px var(--padding-x);
+	padding: 1px var(--padding-x);
 }
 
 svg {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
 }
 
 details[open] svg.plus {
-  transform: rotate(45deg);
-  transition-property: transform;
+	transform: rotate(45deg);
+	transition-property: transform;
 }
 ```
 
@@ -145,24 +145,26 @@ Some animation if dear user is ok with it.
 
 ```css
 @keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(max(-2rem, -100%));
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(1);
-  }
+	0% {
+		opacity: 0;
+		transform: translateY(max(-2rem, -100%));
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(1);
+	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  details * {
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--transition-timing-function);
-  }
+	details * {
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+	}
 
-  details[open] .content {
-    animation: appear var(--transition-duration) var(--transition-timing-function);
-  }
+	details[open] .content {
+		animation: appear var(--transition-duration) var(
+				--transition-timing-function
+			);
+	}
 }
 ```

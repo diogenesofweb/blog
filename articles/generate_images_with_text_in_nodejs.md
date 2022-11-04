@@ -34,69 +34,69 @@ To make our background, we had to load an empty card image and draw it. The imag
 <div style="display: none"><img id="source" src="card.png" /></div>
 
 <script>
-  const width = 1200
-  const height = 630
+	const width = 1200;
+	const height = 630;
 
-  const canvas = document.getElementById('myCanvas')
-  const ctx = canvas.getContext('2d')
+	const canvas = document.getElementById('myCanvas');
+	const ctx = canvas.getContext('2d');
 
-  const image = document.getElementById('source')
+	const image = document.getElementById('source');
 
-  image.addEventListener('load', (e) => {
-    ctx.drawImage(image, 0, 0, width, height)
-  })
+	image.addEventListener('load', (e) => {
+		ctx.drawImage(image, 0, 0, width, height);
+	});
 </script>
 ```
 
 Before we draw out text we have to set properties.
 
 ```js
-ctx.textAlign = 'center'
-ctx.textBaseline = 'top'
+ctx.textAlign = 'center';
+ctx.textBaseline = 'top';
 ```
 
 And choose the font family available in your machine.
 
 ```js
-ctx.font = 'bold 60pt Nimbus Mono PS'
+ctx.font = 'bold 60pt Nimbus Mono PS';
 ```
 
 We could simply paint text in monotone color.
 
 ```js
-ctx.fillStyle = 'hsla(298, 100%, 75%, 1)'
+ctx.fillStyle = 'hsla(298, 100%, 75%, 1)';
 ```
 
 Or make it gradient like so.
 
 ```js
-const gradient = ctx.createLinearGradient(0, 0, width, 0)
-gradient.addColorStop('.33', 'hsla(200, 100%, 75%, 1)')
-gradient.addColorStop('.66', 'hsla(300, 100%, 75%, 1)')
-ctx.fillStyle = gradient
+const gradient = ctx.createLinearGradient(0, 0, width, 0);
+gradient.addColorStop('.33', 'hsla(200, 100%, 75%, 1)');
+gradient.addColorStop('.66', 'hsla(300, 100%, 75%, 1)');
+ctx.fillStyle = gradient;
 ```
 
 We can't directly set line breaks, so we will split out text in lines and display them one by one, from top to bottom, using [fillText](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText). First and last lines will contain only asterisks, and between them the text. Line height should be greater than font-size.
 
 ```js
-const text = '*** /To be /or /not to be /***'
+const text = '*** /To be /or /not to be /***';
 
-const lines = text.split(' /')
+const lines = text.split(' /');
 
-const paddingTop = 60
-const lineHeight = 90
+const paddingTop = 60;
+const lineHeight = 90;
 
 lines.forEach((line, i) => {
-  ctx.fillText(line, midWidth, paddingTop + lineHeight * i)
-})
+	ctx.fillText(line, midWidth, paddingTop + lineHeight * i);
+});
 ```
 
 The final touch, we add a small section, at the center bottom, with a URL.
 
 ```js
-ctx.fillStyle = 'hsla(3, 100%, 75%, .75)'
-ctx.font = 'bold 30pt monospace'
-ctx.fillText('*** www.example.com ***', midWidth, height - 100)
+ctx.fillStyle = 'hsla(3, 100%, 75%, .75)';
+ctx.font = 'bold 30pt monospace';
+ctx.fillText('*** www.example.com ***', midWidth, height - 100);
 ```
 
 At the end we have.
@@ -106,42 +106,42 @@ At the end we have.
 <div style="display: none"><img id="source" src="card.png"</div>
 
 <script>
-  const width = 1200
-  const height = 630
+	const width = 1200;
+	const height = 630;
 
-  const midWidth = width / 2
+	const midWidth = width / 2;
 
-  const canvas = document.getElementById('myCanvas')
-  const ctx = canvas.getContext('2d')
+	const canvas = document.getElementById('myCanvas');
+	const ctx = canvas.getContext('2d');
 
-  const image = document.getElementById('source')
+	const image = document.getElementById('source');
 
-  image.addEventListener('load', (e) => {
-    ctx.drawImage(image, 0, 0, width, height)
+	image.addEventListener('load', (e) => {
+		ctx.drawImage(image, 0, 0, width, height);
 
-    ctx.font = 'bold 60pt Nimbus Mono PS'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'top'
+		ctx.font = 'bold 60pt Nimbus Mono PS';
+		ctx.textAlign = 'center';
+		ctx.textBaseline = 'top';
 
-    const gradient = ctx.createLinearGradient(0, 0, width, 0)
-    gradient.addColorStop(0.33, 'hsla(200, 100%, 75%, 1)')
-    gradient.addColorStop(0.66, 'hsla(300, 100%, 75%, 1)')
-    ctx.fillStyle = gradient
+		const gradient = ctx.createLinearGradient(0, 0, width, 0);
+		gradient.addColorStop(0.33, 'hsla(200, 100%, 75%, 1)');
+		gradient.addColorStop(0.66, 'hsla(300, 100%, 75%, 1)');
+		ctx.fillStyle = gradient;
 
-    const text = '*** /To be /or /not to be /***'
-    const lines = text.split(' /')
+		const text = '*** /To be /or /not to be /***';
+		const lines = text.split(' /');
 
-    const paddingTop = 60
-    const lineHeight = 90
+		const paddingTop = 60;
+		const lineHeight = 90;
 
-    lines.forEach((line, i) => {
-      ctx.fillText(line, midWidth, paddingTop + lineHeight * i)
-    })
+		lines.forEach((line, i) => {
+			ctx.fillText(line, midWidth, paddingTop + lineHeight * i);
+		});
 
-    ctx.fillStyle = 'hsla(300, 100%, 75%, .75)'
-    ctx.font = 'bold 30pt monospace'
-    ctx.fillText('*** www.example.com ***', midWidth, height - 100)
-  })
+		ctx.fillStyle = 'hsla(300, 100%, 75%, .75)';
+		ctx.font = 'bold 30pt monospace';
+		ctx.fillText('*** www.example.com ***', midWidth, height - 100);
+	});
 </script>
 ```
 
@@ -156,45 +156,45 @@ npm i canvas
 Let's create a make.js file and do little adjustments.
 
 ```js
-const fs = require('fs')
-const { createCanvas, loadImage } = require('canvas')
+const fs = require('fs');
+const { createCanvas, loadImage } = require('canvas');
 
-const width = 1200
-const height = 630
-const midWidth = width / 2
+const width = 1200;
+const height = 630;
+const midWidth = width / 2;
 
-const canvas = createCanvas(width, height)
-const ctx = canvas.getContext('2d')
+const canvas = createCanvas(width, height);
+const ctx = canvas.getContext('2d');
 
 loadImage('./card-empty.png').then((image) => {
-  ctx.drawImage(image, 0, 0, width, height)
+	ctx.drawImage(image, 0, 0, width, height);
 
-  ctx.font = 'bold 60pt Nimbus Mono PS'
-  ctx.textAlign = 'center'
-  ctx.textBaseline = 'top'
+	ctx.font = 'bold 60pt Nimbus Mono PS';
+	ctx.textAlign = 'center';
+	ctx.textBaseline = 'top';
 
-  const gradient = ctx.createLinearGradient(0, 0, width, 0)
-  gradient.addColorStop(0.33, 'hsla(200, 100%, 75%, 1)')
-  gradient.addColorStop(0.66, 'hsla(300, 100%, 75%, 1)')
-  ctx.fillStyle = gradient
+	const gradient = ctx.createLinearGradient(0, 0, width, 0);
+	gradient.addColorStop(0.33, 'hsla(200, 100%, 75%, 1)');
+	gradient.addColorStop(0.66, 'hsla(300, 100%, 75%, 1)');
+	ctx.fillStyle = gradient;
 
-  const paddingTop = 60
-  const lineHeight = 90
+	const paddingTop = 60;
+	const lineHeight = 90;
 
-  const text = '*** /To be /or /not to be /***'
-  const lines = text.split(' /')
+	const text = '*** /To be /or /not to be /***';
+	const lines = text.split(' /');
 
-  lines.forEach((line, i) => {
-    ctx.fillText(line, midWidth, paddingTop + lineHeight * i)
-  })
+	lines.forEach((line, i) => {
+		ctx.fillText(line, midWidth, paddingTop + lineHeight * i);
+	});
 
-  ctx.fillStyle = 'hsla(300, 100%, 75%, .75)'
-  ctx.font = 'bold 30pt monospace'
-  ctx.fillText('*** www.example.com ***', midWidth, height - 100)
+	ctx.fillStyle = 'hsla(300, 100%, 75%, .75)';
+	ctx.font = 'bold 30pt monospace';
+	ctx.fillText('*** www.example.com ***', midWidth, height - 100);
 
-  const buffer = canvas.toBuffer('image/png')
-  fs.writeFileSync('card-with-text.png', buffer)
-})
+	const buffer = canvas.toBuffer('image/png');
+	fs.writeFileSync('card-with-text.png', buffer);
+});
 ```
 
 Then run.

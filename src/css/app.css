@@ -1,67 +1,60 @@
-html {
-  font-size: 16px;
+:root {
+	font-size: 16px;
+	/* font-size: 14px; */
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+
+	scrollbar-gutter: stable;
+
+	text-rendering: optimizeSpeed;
+	line-height: 1;
+
+	color: var(--fg);
+	background-color: var(--bg);
+
+	accent-color: var(--fg-alpha);
 }
 
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-
-  color: var(--text);
-  background-color: var(--bg);
+	position: relative;
+	line-height: 1.5;
 }
 
 p {
-  line-height: 1.7;
+	line-height: 1.7;
 }
 
-a {
-  transition: color 300ms ease-in;
+:where(h1, h2, h3, h4, h5) {
+	color: var(--fg1);
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
+:where(.font2, .serif) {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.mono {
+	font-family: 'Courier New', Courier, monospace;
 }
 
-button:hover,
-button:focus {
-  outline: none;
-}
+:root {
+	/* spacing x-axis */
+	--sx-s: clamp(1ch, 1.5vw, 1rem);
+	--sx-m: clamp(1rem, 3vw, 1.5rem);
+	--sx-l: clamp(3rem, 6vw, 6rem);
 
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+	--sx-s: clamp(1ch, 1.75vw, 1rem);
+	--sx-m: clamp(1.5ch, 3vw, 1.75rem);
 
-/* scrollbar */
-html,
-body {
-  --sw: 8px;
-  scrollbar-color: var(--scrollbar-thumb-firefox) var(--scrollbar-track);
-  scrollbar-width: var(--sw);
-}
+	/* spacing y-axis */
+	--sy-s: min(0.75rem, 1.5vh);
+	--sy-m: min(1.5rem, 3vh);
+	--sy-l: min(3rem, 6vh);
 
-::-webkit-scrollbar {
-  width: var(--sw);
-  height: var(--sw);
-}
+	--g-s: clamp(1ch, 1.5vmax, 2ch);
+	/* --g-s: clamp(1rem, 3vmax, 1.5rem); */
+	--g-m: clamp(1rem, 3vmax, 1.5rem);
+	/* --g-m: clamp(1.5rem, 6vmax, 3rem); */
+	--g-l: clamp(3rem, 8vmax, 4rem);
 
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
+	--content-max-width: 50rem; /* ~ 90ch */
 }
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: var(--sw);
-  border: 2px solid var(--bg);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
-}
-/* scrollbar */

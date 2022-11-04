@@ -21,13 +21,13 @@ Put icons inside the `<body>` tag for reuse and cleaner code.\
 
 ```html
 <svg style="display: none;">
-  <symbol id="check">
-    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-  </symbol>
+	<symbol id="check">
+		<path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+	</symbol>
 
-  <symbol id="circle">
-    <circle cx="12" cy="12" r="8" />
-  </symbol>
+	<symbol id="circle">
+		<circle cx="12" cy="12" r="8" />
+	</symbol>
 </svg>
 ```
 
@@ -37,8 +37,8 @@ While the usual field would look something like this
 
 ```html
 <div class="field">
-  <input id="a" type="text" name="a" />
-  <label for="a"> text </label>
+	<input id="a" type="text" name="a" />
+	<label for="a"> text </label>
 </div>
 ```
 
@@ -47,7 +47,7 @@ Icons like this
 
 ```html
 <div class="icon-holder">
-  <svg viewBox="0 0 24 24"><use href="#id" /></svg>
+	<svg viewBox="0 0 24 24"><use href="#id" /></svg>
 </div>
 ```
 
@@ -57,53 +57,53 @@ So, let’s make HTML. One section with checkboxes and one with radio.
 
 ```html
 <form>
-  <h2>Checkbox</h2>
+	<h2>Checkbox</h2>
 
-  <section class="field-with-boxes">
-    <div class="box-item">
-      <input id="html" type="checkbox" name="tech" />
-      <div class="icon-holder">
-        <svg viewBox="0 0 24 24"><use href="#check" /></svg>
-      </div>
-      <label for="html"> HTML </label>
-    </div>
+	<section class="field-with-boxes">
+		<div class="box-item">
+			<input id="html" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="html"> HTML </label>
+		</div>
 
-    <div class="box-item">
-      <input id="css" type="checkbox" name="tech" />
-      <div class="icon-holder">
-        <svg viewBox="0 0 24 24"><use href="#check" /></svg>
-      </div>
-      <label for="css"> CSS </label>
-    </div>
+		<div class="box-item">
+			<input id="css" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="css"> CSS </label>
+		</div>
 
-    <div class="box-item">
-      <input id="js" type="checkbox" name="tech" />
-      <div class="icon-holder">
-        <svg viewBox="0 0 24 24"><use href="#check" /></svg>
-      </div>
-      <label for="js"> JS </label>
-    </div>
-  </section>
+		<div class="box-item">
+			<input id="js" type="checkbox" name="tech" />
+			<div class="icon-holder">
+				<svg viewBox="0 0 24 24"><use href="#check" /></svg>
+			</div>
+			<label for="js"> JS </label>
+		</div>
+	</section>
 
-  <h2>Radio</h2>
+	<h2>Radio</h2>
 
-  <section class="field-with-boxes">
-    <div class="box-item">
-      <input id="q1" type="radio" name="q" />
-      <div class="icon-holder round">
-        <svg viewBox="0 0 24 24"><use href="#circle" /></svg>
-      </div>
-      <label for="q1"> Yes </label>
-    </div>
+	<section class="field-with-boxes">
+		<div class="box-item">
+			<input id="q1" type="radio" name="q" />
+			<div class="icon-holder round">
+				<svg viewBox="0 0 24 24"><use href="#circle" /></svg>
+			</div>
+			<label for="q1"> Yes </label>
+		</div>
 
-    <div class="box-item">
-      <input id="q2" type="radio" name="q" />
-      <div class="icon-holder round">
-        <svg viewBox="0 0 24 24"><use href="#circle" /></svg>
-      </div>
-      <label for="q2"> No </label>
-    </div>
-  </section>
+		<div class="box-item">
+			<input id="q2" type="radio" name="q" />
+			<div class="icon-holder round">
+				<svg viewBox="0 0 24 24"><use href="#circle" /></svg>
+			</div>
+			<label for="q2"> No </label>
+		</div>
+	</section>
 </form>
 ```
 
@@ -111,22 +111,22 @@ Layout elements
 
 ```css
 form {
-  --icon-size: 1.5rem;
-  color: black;
-  background-color: white;
+	--icon-size: 1.5rem;
+	color: black;
+	background-color: white;
 }
 
 .field-with-boxes {
-  --gap: 0.66rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
+	--gap: 0.66rem;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
 }
 
 .box-item {
-  position: relative;
-  display: flex;
-  align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 ```
 
@@ -135,18 +135,18 @@ Clicking `<input>` and `<label>` triggers state change, so their cursors will be
 
 ```css
 .box-item label {
-  cursor: pointer;
-  padding: 0.1em 1em 0.1em var(--gap);
-  transition: color 250ms ease-in;
+	cursor: pointer;
+	padding: 0.1em 1em 0.1em var(--gap);
+	transition: color 250ms ease-in;
 }
 
 .box-item input {
-  position: absolute;
-  inset: unset;
-  z-index: 1;
-  opacity: 0;
-  cursor: pointer;
-  margin: 0;
+	position: absolute;
+	inset: unset;
+	z-index: 1;
+	opacity: 0;
+	cursor: pointer;
+	margin: 0;
 }
 ```
 
@@ -154,13 +154,13 @@ The icon holder has a border, color of which will be changed depending on state.
 
 ```css
 .icon-holder {
-  color: gray;
-  border: 2px solid currentColor;
-  border-radius: 4px;
+	color: gray;
+	border: 2px solid currentColor;
+	border-radius: 4px;
 }
 
 .icon-holder.round {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 ```
 
@@ -169,8 +169,8 @@ Icon holders and inputs have the same size
 ```css
 .box-item input,
 .icon-holder {
-  width: var(--icon-size);
-  height: var(--icon-size);
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
 ```
 
@@ -180,15 +180,15 @@ Focus on click is redundant, so only display sort of outline for keyboard naviga
 ```css
 .box-item input:hover ~ label,
 .box-item label:hover {
-  color: blue;
+	color: blue;
 }
 
 input:checked + .icon-holder {
-  color: blue;
+	color: blue;
 }
 
 input:focus-visible + .icon-holder {
-  box-shadow: 0 0 0.05rem 0.2rem lightskyblue;
+	box-shadow: 0 0 0.05rem 0.2rem lightskyblue;
 }
 ```
 
@@ -196,15 +196,15 @@ The icon will appear or disappear depending on the form field being checked or n
 
 ```css
 input + .icon-holder svg {
-  width: 100%;
-  height: auto;
-  fill: currentColor;
+	width: 100%;
+	height: auto;
+	fill: currentColor;
 
-  transform: scale(0);
-  transition: transform 250ms ease-in;
+	transform: scale(0);
+	transition: transform 250ms ease-in;
 }
 
 input:checked + .icon-holder svg {
-  transform: scale(1);
+	transform: scale(1);
 }
 ```

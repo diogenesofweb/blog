@@ -78,13 +78,13 @@ main.js
 // ~/data/constants.js
 
 export const ROUTES = {
-  about: '/about',
-  dashboard: '/dashboard',
-  index: '/',
-  user: '/user'
-}
+	about: '/about',
+	dashboard: '/dashboard',
+	index: '/',
+	user: '/user',
+};
 
-export const DEFAULT_ERROR = 'Something went wrong 👿'
+export const DEFAULT_ERROR = 'Something went wrong 👿';
 ```
 
 So we get single source of truth, autocompletion and maybe error check
