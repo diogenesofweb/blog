@@ -111,9 +111,6 @@ Install [LSP servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/s
 # javascript & typescript (.js & .ts)
 npm i -g typescript typescript-language-server
 
-# typescript (.ts)
-npm i -g ts-node @swc/core @swc/helpers
-
 # css & html & json
 npm i -g vscode-langservers-extracted
 
@@ -127,7 +124,19 @@ npm i -g vim-language-server
 npm i -g emmet-ls
 
 # all
-npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server emmet-ls ts-node @swc/core @swc/helpers
+npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server emmet-ls
+```
+
+Install utils for typescript server development.
+
+```bash
+npm i -g ts-node @swc/core @swc/helpers
+```
+
+Install [nodemon](https://github.com/remy/nodemon/), for automatically restart your server.
+
+```bash
+npm install -g nodemon
 ```
 
 Install [prettierd](https://github.com/fsouza/prettierd), for instant formatting.
