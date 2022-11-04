@@ -1,7 +1,7 @@
 <script>
 	import '@kazkadien/svelte/css/all.css';
 	import '../css/app.css';
-	import '../css/kazkadien.css';
+	// import '../css/kazkadien.css';
 	import '../css/prism.css';
 	import '../css/card.css';
 
