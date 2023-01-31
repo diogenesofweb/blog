@@ -12,20 +12,20 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.47",
-		"@sveltejs/kit": "next",
-		"@types/markdown-it": "^12.2.3",
-		"prettier": "^2.6.2",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"typescript": "^4.7.4",
-		"vite": "^3.1.0"
+		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/kit": "^1.0.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"@kazkadien/svelte": "^0.15.0",
+		"@types/markdown-it": "^12.2.3",
+		"@kazkadien/svelte": "^0.18.0",
+		"@sveltejs/adapter-static": "^1.0.4",
 		"autoprefixer": "^10.4.13",
 		"gray-matter": "^4.0.3",
 		"markdown-it": "^13.0.1",

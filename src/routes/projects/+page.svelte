@@ -1,17 +1,17 @@
 <script>
 	const arr = [
 		{
-			name: 'Tabulamax',
-			desc: 'Quickly design DB tables and generate code snippets for migrations (SQL, Knex.js)',
-			link: 'https://www.tabulamax.com/',
-			repo: 'https://github.com/tabulamax/app',
-			npm: '',
-		},
-		{
 			name: 'Hotatap',
 			desc: 'Web client for REST API testing',
 			link: 'https://hotatap.pages.dev/app',
 			repo: 'https://github.com/diogenesofweb/hotatap',
+			npm: '',
+		},
+		{
+			name: 'Tabulamax',
+			desc: 'Quickly design DB tables and generate code snippets for migrations (SQL, Knex.js)',
+			link: 'https://www.tabulamax.com/',
+			repo: 'https://github.com/tabulamax/app',
 			npm: '',
 		},
 		{
