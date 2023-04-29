@@ -6,13 +6,12 @@ export async function load() {
 	const fileNames = await fs.promises.readdir('articles');
 	// const articles = fileNames.filter((fileName) => /.+\.md$/.test(fileName))
 
-	// /** @type {import('../typings/types').BlogMetadata[]} */
 	const blogs = await Promise.all(
 		fileNames.map(async (fileName) => {
 			const doc = await fs.promises.readFile(`articles/${fileName}`, 'utf8');
 
 			const { data } = matter(doc);
-			/** @type {import('../typings/types').BlogMetadata} */
+			/** @type {import('../../typings/types').BlogMetadata } */
 			const md = data;
 			return md;
 		})

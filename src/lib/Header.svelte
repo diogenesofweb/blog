@@ -1,14 +1,17 @@
 <script>
 	import { page } from '$app/stores';
 	import { Dropdown, Icon } from '@kazkadien/svelte';
-	import ThemeSelect from '@kazkadien/svelte/ThemeSelect.svelte';
+	import { ThemeSelect } from '@kazkadien/svelte';
 </script>
 
 <header>
 	<nav class="maxy alpha">
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
-				<a href="/">DelphicTop</a>
+				<a href="/">Home</a>
+			</li>
+			<li class:active={$page.url.pathname === '/blog'}>
+				<a href="/blog">Notes</a>
 			</li>
 			<li class:active={$page.url.pathname === '/projects'}>
 				<a href="/projects">Projects</a>
@@ -67,6 +70,7 @@
 		transition: color 300ms ease-in;
 	}
 
+	.active a,
 	a:hover {
 		color: var(--fg-gamma);
 	}

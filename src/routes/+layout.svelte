@@ -1,5 +1,5 @@
 <script>
-	import '@kazkadien/svelte/css/all.css';
+	import '@kazkadien/svelte/styles.css';
 	import '../css/app.css';
 	// import '../css/kazkadien.css';
 	import '../css/prism.css';
@@ -10,7 +10,7 @@
 	import { AppWrapper } from '@kazkadien/svelte';
 </script>
 
-<AppWrapper>
+<AppWrapper checkTheme={false}>
 	<div id="app-container">
 		<div id="view">
 			<StopWar />
@@ -54,6 +54,7 @@
 <style>
 	main {
 		padding: 0 var(--sx-m);
+		min-height: 50vh;
 	}
 
 	footer {

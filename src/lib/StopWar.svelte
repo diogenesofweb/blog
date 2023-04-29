@@ -1,4 +1,4 @@
-<section id="stop-war">
+<section id="stop-war" class="f-mono">
 	<a
 		href="https://war.ukraine.ua/support-ukraine/"
 		target="_blank"
@@ -27,7 +27,6 @@
 		text-align: center;
 	}
 	#stop-war a {
-		font-family: 'Courier New', Courier, monospace;
 		/* color: red; */
 		color: salmon;
 		text-decoration: none;

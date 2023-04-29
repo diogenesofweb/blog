@@ -1,6 +1,13 @@
 <script>
 	const arr = [
 		{
+			name: 'JSON in details',
+			desc: 'Simple JSON viewer',
+			link: 'https://json-in-details.pages.dev/',
+			repo: 'https://github.com/diogenesofweb/json-in-details',
+			npm: 'https://www.npmjs.com/package/json-in-details',
+		},
+		{
 			name: 'Hotatap',
 			desc: 'Web client for REST API testing',
 			link: 'https://hotatap.pages.dev/app',
@@ -44,7 +51,7 @@
 </svelte:head>
 
 <div class="container">
-	<h1>My Projects:</h1>
+	<h1 class="tac f-serif">My Projects:</h1>
 
 	{#each arr as proj}
 		<div class="card">

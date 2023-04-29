@@ -15,7 +15,11 @@
 	<title>Contacts</title>
 </svelte:head>
 
-<form id="my-form" class="form alpha" on:submit|preventDefault={handleSubmit}>
+<form
+	id="my-form"
+	class="form v2 alpha"
+	on:submit|preventDefault={handleSubmit}
+>
 	<label class="field">
 		<i>Name</i>
 		<input
@@ -66,7 +70,7 @@
 	form {
 		display: grid;
 		gap: 2em;
-		border-radius: var(--sx-m);
+		border-radius: var(--sx-s);
 		border: 1px solid var(--bga1);
 		max-width: 80ch;
 		margin-top: 6em;
@@ -75,7 +79,7 @@
 		padding-block: var(--sy-l) var(--sy-l);
 
 		background: var(--bg1);
-		background: linear-gradient(to right, var(--__bga1), var(--bg2));
+		/* background: linear-gradient(to right, var(--__bga1), var(--bg2)); */
 	}
 	/* :global(html.dark) form { */
 	/* 	background: linear-gradient(to right bottom, var(--__bga1), var(--bg2)); */
