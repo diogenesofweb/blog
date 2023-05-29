@@ -8,7 +8,7 @@
 	{#each tags as tag}
 		<li class="alpha">
 			<a
-				href="/?tag={tag}"
+				href="/blog/?tag={tag}"
 				class="btn outlined round gamma"
 				class:active={active == tag}
 			>
