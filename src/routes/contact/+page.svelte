@@ -71,7 +71,7 @@
 		display: grid;
 		gap: 2em;
 		border-radius: var(--sx-s);
-		border: 1px solid var(--bga1);
+		border: 1px solid var(--fl);
 		max-width: 80ch;
 		margin-top: 6em;
 		margin-inline: auto;

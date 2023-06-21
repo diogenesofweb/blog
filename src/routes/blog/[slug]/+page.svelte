@@ -34,7 +34,7 @@
 
 <div class="maxx">
 	<article>
-		<h1 class="font2">{blog.metadata.title}</h1>
+		<h1 class="f-serif">{blog.metadata.title}</h1>
 
 		<p class="created">
 			<i>Created:</i>
@@ -61,7 +61,9 @@
 	</article>
 
 	<section class="tags">
-		<TagList tags={blog.metadata.tags} />
+		<ul class="fce g1">
+			<TagList tags={blog.metadata.tags} />
+		</ul>
 	</section>
 </div>
 
@@ -77,7 +79,7 @@
 		border: none;
 		width: 100%;
 		height: 1px;
-		background-color: var(--fga);
+		background-color: var(--fl);
 	}
 
 	/* article > :global(:is(h1, h2, h3, h4, p)) { */
@@ -93,7 +95,7 @@
 	article :global(iframe) {
 		width: 100%;
 		max-height: 100vh;
-		border: 1px solid var(--fga);
+		border: 1px solid var(--fl);
 	}
 
 	article :global(img) {
@@ -115,9 +117,9 @@
 	} */
 
 	article :global(blockquote) {
-		border-left: 3px solid var(--fga);
+		border-left: 3px solid var(--fl);
 		padding: 1px 1rem;
-		background-color: var(--bg2);
+		background-color: var(--bg);
 	}
 
 	p.created {

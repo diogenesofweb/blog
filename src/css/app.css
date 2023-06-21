@@ -1,16 +1,6 @@
 :root {
-	font-size: 16px;
-	/* font-size: 14px; */
-
-	scrollbar-gutter: stable;
-
-	text-rendering: optimizeSpeed;
-	line-height: 1;
-
 	color: var(--fg);
-	background-color: var(--bg);
-
-	accent-color: var(--fg-alpha);
+	/* background-color: var(--bg); */
 }
 
 body {
@@ -28,19 +18,6 @@ p {
 
 :is(html, body, .f-system) {
 	font-family: system-ui, sans-serif;
-}
-
-.f-mono {
-	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-		monospace;
-}
-
-.f-serif {
-	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-}
-
-:where(.font2, .serif) {
-	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 :root {

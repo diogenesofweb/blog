@@ -10,7 +10,7 @@
 	import { AppWrapper } from '@kazkadien/svelte';
 </script>
 
-<AppWrapper checkTheme={false}>
+<AppWrapper>
 	<div id="app-container">
 		<div id="view">
 			<StopWar />
@@ -64,10 +64,10 @@
 		margin-top: 33vh;
 
 		text-align: center;
-		border-top: 1px solid var(--bga);
+		border-top: 1px solid var(--fl);
 		/* border-top: 1px solid red; */
 
-		background-color: var(--bg2);
+		background-color: var(--bg0);
 	}
 
 	.link {

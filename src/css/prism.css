@@ -1,7 +1,7 @@
 :root {
 	--h-string-attr-name: var(--fg);
 	--h-punctuation: var(--fg1);
-	--h-comment: var(--fga);
+	--h-comment: var(--fg0);
 
 	--h-function-attr-value: var(--fg-danger);
 	--h-atrule: var(--fg-gamma);
@@ -11,9 +11,9 @@
 	--h-tag: var(--fg-beta);
 	--h-namespace: var(--fg-gamma);
 
-	--h-select: hsla(0, 0%, 50%, 0.33);
-	--h-bg: var(--bg1);
-	--h-bg: transparent;
+	--h-select: hsl(0 0% 50% / 0.33);
+	--h-bg: var(--bg2);
+	/* --h-bg: transparent; */
 }
 
 .token.comment,
@@ -112,12 +112,12 @@ pre[class*='language-'] {
 }
 
 pre[class*='language-'] {
-	border: 1px solid var(--bga1);
+	border: 1px solid var(--fl);
 	border-radius: 0.5rem;
 
 	margin: 1.5rem 0;
 	padding: 1em 2ch;
-	background: var(--bg1);
+	background: var(--h-bg);
 }
 
 pre[class*='language-']::selection,
@@ -136,5 +136,5 @@ pre::-webkit-scrollbar-thumb {
 :not(pre) > code {
 	padding: 0.15em 0.2em;
 	white-space: normal;
-	background: var(--bg1);
+	background: var(--h-bg);
 }

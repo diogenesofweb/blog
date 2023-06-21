@@ -3,10 +3,10 @@
 	export let posts;
 </script>
 
-<ol>
+<ol class="alpha">
 	{#each posts as post}
 		<li class="card">
-			<h2 class="font2">
+			<h2 class="f-serif">
 				<a href="/blog/{post.title.replaceAll(' ', '_').toLowerCase()}">
 					{post.title}
 				</a>
@@ -30,6 +30,6 @@
 		list-style: none;
 		padding: 0;
 		display: grid;
-		gap: 2rem;
+		gap: 2em;
 	}
 </style>

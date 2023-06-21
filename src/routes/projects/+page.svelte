@@ -1,8 +1,15 @@
 <script>
 	const arr = [
 		{
-			name: 'JSON in details',
-			desc: 'Simple JSON viewer',
+			name: 'Functional JSON Viewer | Chrome Extension',
+			desc: 'Easily explore JSON data with a nice UI',
+			link: 'https://chrome.google.com/webstore/detail/functional-json-viewer/cokkmplppnaigoodkkjopoblfaelibab',
+			repo: 'https://github.com/diogenesofweb/fjv',
+			npm: '',
+		},
+		{
+			name: 'json-in-details | JS library',
+			desc: 'Simple and preformant JSON viewer with a extendable functionally and beautiful light/dark theme',
 			link: 'https://json-in-details.pages.dev/',
 			repo: 'https://github.com/diogenesofweb/json-in-details',
 			npm: 'https://www.npmjs.com/package/json-in-details',
@@ -51,11 +58,11 @@
 </svelte:head>
 
 <div class="container">
-	<h1 class="tac f-serif">My Projects:</h1>
+	<h1 class="tac beta">My Projects</h1>
 
 	{#each arr as proj}
-		<div class="card">
-			<h2 class="font2">
+		<div class="card alpha">
+			<h2 class="f-serif">
 				<a
 					class="link"
 					href={proj.link}
@@ -107,10 +114,13 @@
 
 	h1 {
 		padding-top: 1rem;
-		color: var(--text);
+		color: var(--fg1);
 	}
 
-	h2 .link {
-		border-bottom: 2px solid currentColor;
-	}
+	/* h2 .link { */
+	/* border-bottom: 2px solid currentColor; */
+	/* text-decoration-line: underline; */
+	/* text-decoration-thickness: max(2px, 0.15em); */
+	/* text-underline-offset: 6px; */
+	/* } */
 </style>

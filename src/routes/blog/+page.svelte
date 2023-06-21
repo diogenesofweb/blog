@@ -1,4 +1,3 @@
-<!-- </script> -->
 <script>
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
@@ -6,10 +5,11 @@
 	import TagList from '$lib/TagList.svelte';
 	import { onDestroy } from 'svelte';
 
-	/** @type {import('./$types').PageData} */
+	/** @type {import('./$types').PageServerData} */
 	export let data;
 	// console.log({ data });
 	const tagSet = new Set();
+	/** @type {import('../../typings/types').BlogMetadata[] } */
 	const blogs = data.blogs;
 
 	blogs.forEach((blog) => {
@@ -44,7 +44,7 @@
 	<meta name="description" content="Webdev and related topics notes" />
 </svelte:head>
 
-<section class="font2 top maxx mx">
+<section class="f-serif top maxx mx">
 	<h1>
 		My notes on
 		<span>web development</span>
@@ -52,17 +52,20 @@
 	</h1>
 </section>
 
-<section class="tags maxx">
-	<!-- <h2 class="">Tags:</h2> -->
+<div class="main">
+	<section class="tags">
+		<!-- <h2 class="">Tags:</h2> -->
 
-	<TagList {tags} active={tag} />
-</section>
+		<ul class="danger">
+			<TagList {tags} active={tag} />
+		</ul>
+	</section>
 
-<section class=" maxx mx">
-	<!-- <h2>Articles:</h2> -->
-
-	<BlogList posts={blogsFilteredByTag} />
-</section>
+	<section class="">
+		<!-- <h2>Articles:</h2> -->
+		<BlogList posts={blogsFilteredByTag} />
+	</section>
+</div>
 
 <style>
 	.maxx {
@@ -71,10 +74,6 @@
 	section.top {
 		margin-block: 15vh;
 		padding: 0 var(--sx-m);
-	}
-
-	section.tags {
-		margin-block: 15vh;
 	}
 
 	section.maxx {
@@ -89,9 +88,47 @@
 		display: inline-block;
 		padding: 0.3rem 0.6rem;
 
-		background-color: var(--bg2);
+		background-color: var(--bg);
 		color: var(--fg-danger);
 
 		transform: rotate(-3deg);
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+		/* align-self: center; */
+		justify-content: center;
+		margin-bottom: 6em;
+	}
+	@media only screen and (min-width: 800px) {
+		.main {
+			/* background: black; */
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: 2em;
+
+			max-width: 1000px;
+			margin-inline: auto;
+		}
+
+		ul {
+			padding-top: 1em;
+			display: grid;
+			/* background: gray; */
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		.main {
+			/* background: black; */
+			grid-template-columns: 200px 1fr 200px;
+			max-width: 1200px;
+		}
 	}
 </style>

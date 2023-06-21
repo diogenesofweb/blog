@@ -3,11 +3,12 @@
 	overflow: hidden;
 
 	padding: 0.5rem var(--sx-m) 0;
-	box-shadow: 0 0 1.2rem -0.4rem var(--fg-alpha);
-	border-radius: 0.75rem;
+	/* box-shadow: 0 0 1.2rem -0.4rem var(--fg-danger); */
+	border-radius: var(--sx-m) 0;
+	border: 1px solid var(--fl0);
 
 	transition: 300ms ease-in;
-	transition-property: background-color, box-shadow;
+	transition-property: background-color, box-shadow, border-radius;
 
 	background-color: transparent;
 }
@@ -20,16 +21,24 @@
 
 	background: linear-gradient(
 		100deg,
-		var(--bg1) 25%,
-		var(--bg) 50%,
+		var(--bg) 25%,
 		var(--bg1) 50%,
-		var(--bg) 75%
+		var(--bg) 50%,
+		var(--bg0) 75%
 	);
 }
 
 .card:hover {
-	box-shadow: 0 0 1.6rem -0.4rem var(--fg-gamma);
-	background-color: var(--bg1);
+	/* box-shadow: 2px 4px 0.6rem -0.1rem var(--__fg); */
+	background-color: var(--bg);
+	border-color: var(--__fl);
+	border-radius: var(--sx-s);
+
+	/* background: radial-gradient( */
+	/* 	circle at top left, */
+	/* 	var(--__mg0) 0%, */
+	/* 	var(--bg2) 50% */
+	/* ); */
 }
 
 .card a {
@@ -42,7 +51,7 @@
 }
 
 .card .tags {
-	border-top: 1px dotted var(--fg-alpha);
+	border-top: 1px dashed var(--fl);
 	padding: 1rem 0 1.5rem;
 
 	display: flex;
@@ -51,16 +60,26 @@
 	/* background-color: rgba(240, 248, 255, 0.356); */
 }
 
-.card .tags a {
-	padding: 0.4rem 1rem;
-	border-radius: 1rem 0;
+.card:hover .tags {
+	border-color: var(--__fl2);
+}
 
-	box-shadow: 3px 3px 1.5rem -1rem inset var(--fg-alpha);
-	transition: box-shadow 300ms ease-in;
+.card .tags a {
+	padding: 0.4em 1em;
+	border-radius: 0.75em 0;
+
+	/* box-shadow: 3px 3px 1.5rem -1rem inset var(--fg-alpha); */
+	transition: background-color 300ms ease-in;
 
 	background-color: var(--bg);
+	border-left: 1px solid;
+	border-top: 1px solid;
+	border-color: var(--__fl);
+	border-color: var(--fl);
 }
 
 .card:hover .tags a {
-	box-shadow: 3px 3px 1.5rem -0.8rem inset var(--fg-gamma);
+	/* box-shadow: 3px 3px 9px inset var(--__bg); */
+	border-color: var(--__fl2);
+	background-color: var(--bg0);
 }

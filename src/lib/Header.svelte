@@ -4,8 +4,8 @@
 	import { ThemeSelect } from '@kazkadien/svelte';
 </script>
 
-<header>
-	<nav class="maxy alpha">
+<header class="alpha">
+	<nav class="maxy">
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
 				<a href="/">Home</a>
@@ -20,7 +20,7 @@
 			<!-- <li class:active={$page.path === '/about'}><a href="/about">About</a></li> -->
 		</ul>
 
-		<Dropdown variant="outlined" iconOnly align="right" overshadow>
+		<Dropdown variant="text" iconOnly align="right" overshadow>
 			<Icon name="brightness_low" slot="dropbtn" />
 			<ThemeSelect heading="" />
 		</Dropdown>
@@ -29,9 +29,10 @@
 
 <style>
 	header {
-		background-color: var(--bg1);
-		box-shadow: 0 0 0.6rem -0.2rem var(--fg-alpha);
+		background-color: var(--bg);
+		/* box-shadow: 0 0 0.6rem -0.2rem var(--fg-alpha); */
 		transition: box-shadow 300ms ease-in;
+		border-bottom: 1px solid var(--__fl);
 	}
 
 	header:hover {
