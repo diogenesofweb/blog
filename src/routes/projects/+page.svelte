@@ -8,12 +8,19 @@
 			npm: '',
 		},
 		{
+			name: 'JSON Viewer | WebApp',
+			desc: 'Explore formatted JSON data',
+			link: 'https://json-viewer.delphic.top',
+			repo: 'https://github.com/diogenesofweb/json-in-details',
+		},
+		{
 			name: 'json-in-details | JS library',
 			desc: 'Simple and preformant JSON viewer with a extendable functionally and beautiful light/dark theme',
-			link: 'https://json-in-details.pages.dev/',
-			repo: 'https://github.com/diogenesofweb/json-in-details',
+			link: 'https://github.com/diogenesofweb/json-in-details/blob/main/README.md',
+			repo: 'https://github.com/diogenesofweb/json-in-details/tree/main/src/lib',
 			npm: 'https://www.npmjs.com/package/json-in-details',
 		},
+
 		{
 			name: 'Hotatap',
 			desc: 'Web client for REST API testing',
