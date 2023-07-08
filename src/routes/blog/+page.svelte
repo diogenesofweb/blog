@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>DelphicTop | Index</title>
+	<title>DelphicTop | Notes</title>
 	<meta name="description" content="Webdev and related topics notes" />
 </svelte:head>
 

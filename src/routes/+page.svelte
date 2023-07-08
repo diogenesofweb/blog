@@ -7,6 +7,11 @@
 	<div>a web developer</div>
 </article>
 
+<svelte:head>
+	<title>DelphicTop | Home</title>
+	<meta name="description" content="Personal website with focus on webdev" />
+</svelte:head>
+
 <style>
 	article {
 		max-width: 80ch;
@@ -23,4 +28,3 @@
 		font-weight: bold;
 	}
 </style>
-

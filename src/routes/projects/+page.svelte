@@ -61,14 +61,14 @@
 
 <svelte:head>
 	<title>Projects</title>
-	<meta name="description" content="My side projects" />
+	<meta name="description" content="My beloved projects" />
 </svelte:head>
 
-<div class="container">
+<article class="container">
 	<h1 class="tac beta">My Projects</h1>
 
 	{#each arr as proj}
-		<div class="card alpha">
+		<section class="card alpha">
 			<h2 class="f-serif">
 				<a
 					class="link"
@@ -105,9 +105,9 @@
 					</a>
 				{/if}
 			</div>
-		</div>
+		</section>
 	{/each}
-</div>
+</article>
 
 <style>
 	.container {
