@@ -26,24 +26,12 @@
 
 			<div>
 				<span> built with </span>
-				<a
-					class="link"
-					href="https://kit.svelte.dev/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					SvelteKit
-				</a>
+				<a class="link" href="https://kit.svelte.dev/"> SvelteKit </a>
 				,
 			</div>
 
 			<div>
-				<a
-					class="link"
-					href="https://github.com/diogenesofweb/blog"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+				<a class="link" href="https://github.com/diogenesofweb/blog">
 					Repo in Github
 				</a>
 			</div>

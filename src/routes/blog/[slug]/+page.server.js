@@ -24,9 +24,9 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 	// console.log(href)
 
 	if (href.startsWith('http')) {
-		tokens[idx].attrPush(['rel', 'noopener noreferrer']);
-		tokens[idx].attrPush(['target', '_blank']);
-		// tokens[idx].attrPush(['class', 'external-link'])
+		// tokens[idx].attrPush(['rel', 'noopener noreferrer']);
+		// tokens[idx].attrPush(['target', '_blank']);
+		tokens[idx].attrPush(['class', 'external-link']);
 	}
 
 	// pass token to default renderer.

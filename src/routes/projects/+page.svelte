@@ -1,6 +1,13 @@
 <script>
 	const arr = [
 		{
+			name: 'Link List | Chrome Extension',
+			desc: 'Show all hyperlinks in one place.',
+			link: 'https://chrome.google.com/webstore/detail/link-list/caifphhfadgaiddefealbdeakngdfdec',
+			repo: 'https://github.com/diogenesofweb/link-list',
+			npm: '',
+		},
+		{
 			name: 'Functional JSON Viewer | Chrome Extension',
 			desc: 'Easily explore JSON data with a nice UI',
 			link: 'https://chrome.google.com/webstore/detail/functional-json-viewer/cokkmplppnaigoodkkjopoblfaelibab',
@@ -70,12 +77,7 @@
 	{#each arr as proj}
 		<section class="card alpha">
 			<h2 class="f-serif">
-				<a
-					class="link"
-					href={proj.link}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+				<a class="link" href={proj.link}>
 					{proj.name}
 				</a>
 			</h2>
@@ -84,25 +86,11 @@
 
 			<div class="tags">
 				{#if proj.repo}
-					<a
-						class="link"
-						href={proj.repo}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Repo
-					</a>
+					<a class="link" href={proj.repo}> Repo </a>
 				{/if}
 
 				{#if proj.npm}
-					<a
-						class="link"
-						href={proj.npm}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						NPM
-					</a>
+					<a class="link" href={proj.npm}> NPM </a>
 				{/if}
 			</div>
 		</section>
