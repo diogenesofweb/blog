@@ -31,7 +31,7 @@
 		{
 			name: 'Hotatap',
 			desc: 'Web client for REST API testing',
-			link: 'https://hotatap.pages.dev/app',
+			link: 'https://hotatap.delphic.top/app',
 			repo: 'https://github.com/diogenesofweb/hotatap',
 			npm: '',
 		},
