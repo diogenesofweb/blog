@@ -63,6 +63,13 @@
 			// repo: 'https://github.com/kazkadien/svelte',
 			npm: 'https://www.npmjs.com/package/@kazkadien/svelte',
 		},
+		{
+			lang: 'uk',
+			name: 'Топ Курс',
+			desc: 'Курс валют у банках України',
+			link: 'https://www.kursvalyut.top/',
+			repo: 'https://github.com/diogenesofweb/kurs-valyut',
+		},
 	];
 </script>
 
@@ -75,11 +82,9 @@
 	<h1 class="tac beta">My Projects</h1>
 
 	{#each arr as proj}
-		<section class="card alpha">
+		<section class="card alpha" lang={proj.lang || 'en'}>
 			<h2 class="f-serif">
-				<a class="link" href={proj.link}>
-					{proj.name}
-				</a>
+				<a class="link" href={proj.link}> {proj.name} </a>
 			</h2>
 
 			<p>{proj.desc}</p>
