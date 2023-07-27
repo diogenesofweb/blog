@@ -8,7 +8,14 @@
 	import MyHeader from '$lib/Header.svelte';
 	import StopWar from '$lib/StopWar.svelte';
 	import { AppWrapper } from '@kazkadien/svelte';
+
+	import { page } from '$app/stores';
+	const MY_ORIGIN = 'https://www.delphic.top';
 </script>
+
+<svelte:head>
+	<link rel="canonical" href="{MY_ORIGIN}{$page.url.pathname}" />
+</svelte:head>
 
 <AppWrapper>
 	<div id="app-container">
