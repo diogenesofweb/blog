@@ -1,18 +1,18 @@
 ---
 title: Svelte Tips
-description: Svelte tips to work with stores, localStorage, watchers
+description: Svelte tips to work with stores, window.localStorage, watchers, dialog element
 created: 2022-07-09
-updated: 2022-07-09
+updated: 2023-07-27
 tags:
   - 'svelte'
   - 'js'
 ---
 
-### Svelte and localStorage without reactivity
+### [Svelte](https://svelte.dev) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) without reactivity.
 
 1. Setup function for localStore.
 
-Work for primitive values and type aware.
+This function works well for primitive values and is type aware.
 
 ```js
 /** ~/localstorage.js */
@@ -124,7 +124,7 @@ export default storage;
 
 ---
 
-### Svelte Store and localStorage
+### [Svelte Store](https://svelte.dev/docs/svelte-store) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 Wrap writable store in a function that will set localStorage item on store update (skipping first subscription call).
 
@@ -203,7 +203,7 @@ export const isActive = setupStore('top_panel', true);
 
 ---
 
-### Watch variable
+### Watch variable in Svelte
 
 Easiest way to watch for value changes.
 
@@ -224,4 +224,38 @@ Easiest way to watch for value changes.
 	Word
 	<input type="text" bind:value={word} />
 </label>
+```
+
+---
+
+### Close [the HTML dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) in Svelte
+
+Simply attach an `on:click` event to the dialog that closes the modal window on click outside.
+
+```svelte
+<script>
+	/** @type {HTMLDialogElement} */
+	let dialog;
+</script>
+
+<button on:click={() => dialog.showModal()}>open</button>
+
+<dialog
+	bind:this={dialog}
+	on:click={(ev) => ev.target === dialog && dialog.close()}
+>
+	<button on:click={() => dialog.close()}>close me</button>
+
+	<slot>
+		<button on:click={(ev) => ev.target.closest('dialog').close()}>
+			close me from child component
+		</button>
+	</slot>
+</dialog>
+
+<style>
+	dialog {
+		padding: 0;
+	}
+</style>
 ```

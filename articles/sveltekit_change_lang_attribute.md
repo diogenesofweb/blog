@@ -44,14 +44,14 @@ routes
  └─ fr
      └─ index.svelte
  └─ index.svelte
- └─ __layouts.svelte
+ └─+layouts.svelte
 
 ```
 
 Now markup.
 
 ```html
-<!-- ~/routes/__layouts.svelte -->
+<!-- ~/routes/+layouts.svelte -->
 
 <main>
 	<nav class="ce">
@@ -66,16 +66,11 @@ Now markup.
 </main>
 ```
 
-All `.svelte` files in routes directory should include.
+The `+layout.js` file in route directory should include.
 
-```html
-<script context="module">
-	import { browser, dev } from '$app/env';
-
-	export const hydrate = dev;
-	export const router = browser;
-	export const prerender = true;
-</script>
+```js
+export const csr = false;
+export const prerender = true;
 ```
 
 A little bit of **HTML** for each route.
@@ -136,7 +131,7 @@ export async function handle({ request, resolve }) {
 }
 ```
 
-To build and then preview on `localhost:3000`.
+To build and then preview on `localhost:5173`.
 
 ```shell
 npm run build
@@ -146,4 +141,4 @@ npm run preview
 The site is not in SPA mode, so on every navigation page will reload.
 
 How to do it in SPA mode and change lang on the fly?
-I suppose we can just watch the `path` property in the [page](https://kit.svelte.dev/docs#loading-input-page) object inside **\_\_layout.svelte** and then update `<html>` accordingly.
+I suppose we can just watch the `path` property in the [page](https://kit.svelte.dev/docs#loading-input-page) object inside **+layout.svelte** and then update `<html>` accordingly.
