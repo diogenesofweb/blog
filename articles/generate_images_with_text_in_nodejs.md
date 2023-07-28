@@ -2,6 +2,7 @@
 title: Generate images with text in nodejs
 description: Generate images with text in NodeJS using canvas
 created: 2021-08-26
+updated: 2023-07-28
 tags:
   - 'JS'
   - 'NodeJS'
@@ -9,7 +10,7 @@ tags:
 
 Sometimes, you may want to make cards with a nice background and some text on it. It may be for generating [Open Graph](https://ogp.me/) images, displaying some quotes, etc.
 
-For example, there is an empty card (1200x630), a png image created in Inkscape.
+For example, there is an empty card (1200x630), a png image created in [Inkscape](https://inkscape.org/).
 
 <img  src="/images/demo-card-empty.png" alt="empty card" width="1200" height="630" />
 
@@ -17,7 +18,7 @@ And “to be or not to be” is generated on it.
 
 <img  src="/images/demo-card-with-text.png" alt="card with text" width="1200" height="630" />
 
-Before diving into nodejs, we can make it work first in the browser, with live updates. It would be a much better experience. For this we’ll be using [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+Before diving into [NodeJS](https://nodejs.org/en), we can make it work first in the browser, with live updates. It would be a much better experience. For this we’ll be using [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
 So, first let’s scaffold `index.html`, then inside the body tag add the following snippets.
 
@@ -147,7 +148,7 @@ At the end we have.
 
 ---
 
-For nodejs, we need to install [canvas](https://www.npmjs.com/package/canvas).
+For NodeJS, we need to install [canvas](https://www.npmjs.com/package/canvas).
 
 ```shell
 npm i canvas
@@ -205,4 +206,4 @@ node make.js
 
 Now we have `card-with-text.png`.
 
-Cone [Repo](https://github.com/diogenesofweb/text-in-image).
+[Code Repository](https://github.com/diogenesofweb/text-in-image).

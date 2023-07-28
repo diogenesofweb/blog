@@ -2,7 +2,7 @@
 title: Install Neovim
 description: Install Neovim on a linux distro as an appimage
 created: 2021-12-27
-updated: 2022-11-04
+updated: 2023-07-28
 tags:
   - 'linux'
   - 'neovim'
@@ -11,7 +11,7 @@ tags:
 ## Install
 
 Install Neovim on linux as an appimage in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
-`~/.local/bin/` (Ubuntu / Debian), or in `~/bin/` (OpenSUSE).
+`~/.local/bin/` ([Ubuntu](https://ubuntu.com/) / [Debian](https://www.debian.org/)), or in `~/bin/` ([OpenSUSE](https://www.opensuse.org/)).
 
 ```bash
 cd .local/bin/
@@ -59,7 +59,7 @@ endif
 
 ---
 
-## Using with VSCode.
+## Using with [VSCode](https://code.visualstudio.com/).
 
 1. Install [VSCode Neovim plugin](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 
@@ -103,7 +103,7 @@ Then open Neovim `$ nvim` and install plugins.
 :PlugIstall
 ```
 
-Prerequisites: Node and NPM to use LSP, install with [FNM](https://github.com/Schniz/fnm), for faster shell startup, or with [NVM](https://github.com/nvm-sh/nvm)
+Prerequisites: [NodeJS](https://nodejs.org/en) and [NPM](https://www.npmjs.com/) to use LSP, install with [FNM](https://github.com/Schniz/fnm), for faster shell startup, or with [NVM](https://github.com/nvm-sh/nvm)
 
 Install [LSP servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
@@ -127,7 +127,7 @@ npm i -g emmet-ls
 npm i -g typescript typescript-language-server vscode-langservers-extracted svelte-language-server vim-language-server emmet-ls
 ```
 
-Install utils for typescript server development.
+Install utils for [TypeScript](https://www.typescriptlang.org/) server development (NodeJS).
 
 ```bash
 npm i -g ts-node @swc/core @swc/helpers
