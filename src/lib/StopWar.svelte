@@ -1,4 +1,4 @@
-<a href="https://war.ukraine.ua/support-ukraine/" title="STAND WITH UKRAINE">
+<a href="https://war.ukraine.ua/support-ukraine" title="STAND WITH UKRAINE">
 	ua
 </a>
 

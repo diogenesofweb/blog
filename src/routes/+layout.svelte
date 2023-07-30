@@ -11,7 +11,7 @@
 
 	import { page } from '$app/stores';
 	const MY_ORIGIN = 'https://www.delphic.top';
-	page.subscribe((p) => console.log(p));
+	// page.subscribe((p) => console.log(p));
 </script>
 
 <svelte:head>

@@ -2,3 +2,4 @@
 User-agent: *
 Disallow: /about
 Disallow: *?tag=*
+Disallow: /cdn-cgi/
