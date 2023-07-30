@@ -16,7 +16,7 @@
 
 			<div class="tags">
 				{#each post.tags as tag}
-					<a href="/?tag={tag}">
+					<a href="/blog/?tag={tag}">
 						<span>#{tag}</span>
 					</a>
 				{/each}
