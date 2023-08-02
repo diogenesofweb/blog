@@ -12,7 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/adapter-cloudflare": "^2.3.2",
 		"@sveltejs/kit": "^1.22.4",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
@@ -24,7 +24,6 @@
 	"type": "module",
 	"dependencies": {
 		"@kazkadien/svelte": "^0.31.0",
-		"@sveltejs/adapter-static": "^2.0.3",
 		"@types/markdown-it": "^12.2.3",
 		"autoprefixer": "^10.4.14",
 		"gray-matter": "^4.0.3",

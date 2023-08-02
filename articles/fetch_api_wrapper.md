@@ -45,19 +45,19 @@ Here's all available back-end API, keeped in one place
 // ~/api.js
 import http from './fetchWrapper.js';
 
-const recipes = '/recipes';
+const recipes = 'recipes';
 
 /** @enum {function} */
 const Recipes = {
-	find: (/** @type {number} */ id) => http.get(`${recipes}/${id}`),
-	list: (query = '') => http.get(`${recipes}${query}`),
+	find: (/** @type {number} */ id) => http.get(`/${recipes}/${id}`),
+	list: (query = '') => http.get(`/${recipes}${query}`),
 	create: (data) => http.post(recipes, { data, auth: true }),
 	update: (/** @type {number} */ id, data) =>
-		http.patch(`${recipes}/${id}`, { data, auth: true }),
+		http.patch(`/${recipes}/${id}`, { data, auth: true }),
 	del: (/** @type {number} */ id) =>
-		http.del(`${recipes}/${id}`, { auth: true }),
+		http.del(`/${recipes}/${id}`, { auth: true }),
 	actions: (/** @type {number} */ id, data) =>
-		http.post(`${recipes}/${id}/actions`, {
+		http.post(`/${recipes}/${id}/actions`, {
 			data,
 			auth: true,
 			timeout: 3 * 30 * 1000,
