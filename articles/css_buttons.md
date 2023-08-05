@@ -6,7 +6,7 @@ tags:
   - 'CSS'
 ---
 
-First global [reset](/blog/css_reset), then:
+First some resets.
 
 ```css
 button {
@@ -29,7 +29,7 @@ button:disabled {
 
 ---
 
-Button should change depending on different events, indicating that user input is well registered.
+[Button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) should change depending on different events, indicating that user input is well registered.
 
 **Distinction** is to be made (visually) between these events:
 
