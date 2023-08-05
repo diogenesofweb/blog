@@ -6,12 +6,6 @@
 	const blog = data.blog;
 
 	const titleURL = blog.metadata.title.replaceAll(' ', '_').toLowerCase();
-
-	const options = {
-		// year: 'numeric',
-		// month: 'short',
-		// day: 'numeric'
-	};
 </script>
 
 <svelte:head>
@@ -38,20 +32,12 @@
 
 		<p class="created">
 			<i>Created:</i>
-			<time
-				>{new Date(blog.metadata.created).toLocaleDateString(
-					'en-GB',
-					options
-				)}</time
-			>
+			<time>{new Date(blog.metadata.created).toLocaleDateString('fr-CA')}</time>
 			{#if blog.metadata.updated}
 				<b>|</b>
 				<i>Updated:</i>
 				<time
-					>{new Date(blog.metadata.updated).toLocaleDateString(
-						'en-GB',
-						options
-					)}</time
+					>{new Date(blog.metadata.updated).toLocaleDateString('fr-CA')}</time
 				>
 			{/if}
 		</p>

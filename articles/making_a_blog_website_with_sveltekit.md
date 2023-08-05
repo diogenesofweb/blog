@@ -2,9 +2,10 @@
 title: Making a blog website with SvelteKit
 description: Build a simple blog website with SvelteKit, statically generated (SSG) from markdown
 created: 2021-06-10
-updated: 2022-01-22
+updated: 2023-08-05
 tags:
   - 'SvelteKit'
+  - 'Svelte'
   - 'SSG'
   - 'Markdown'
 ---
@@ -20,15 +21,15 @@ List of projects used.
 
 Changes to directory structure after initializing SvelteKit project.
 
-```shell
+```bash
 articles
 └─ sveltekit_is_amazing.md
 
 src
 └─ routes
-	 └─ __layout.svelte
+	 └─ +layout.svelte
+	 └─ +page.server.js
 	 └─ index.svelte
-	 └─ blogs.json.js
 	 └─ blog
      ├─ [slug].svelte
      └─ [slug].json.js
@@ -36,7 +37,7 @@ src
 
 Create **articles** folder in your **root** directory. It is home for all future blog posts. Then create the first article, **"SvelteKit is amazing"**.
 
-```shell
+```bash
 mkdir articles
 cd articles
 touch sveltekit_is_amazing.md
@@ -62,14 +63,13 @@ Why SvelteKit is absolutely amazing?
 
 ---
 
-### Endpoints
+### Get
 
-Two [endpoints](https://kit.svelte.dev/docs#routing-endpoints) are to be made.\
-One for a blog page `[slug].json.js`.\
-And one for an index page `blogs.json.js` (getting blogs metadata).
+Two [server endpoints](https://kit.svelte.dev/docs/load#universal-vs-server) are to be made.\
+One for a blog page `~/routes/blog/[slug]/+page.server.js`.\
+And one for an index page `~/routes/+page.server.js` (getting blogs metadata).
 
-Following docs, endpoint files have to export the `get` function for **GET** requests.\
-So, inside the `get` function for fetching a blog, following steps are performed.
+So, inside the `load` function for fetching a blog, following steps are performed.
 
 1. Load corresponding `.md` file as string.
 2. Process separately front-matter and content.
@@ -78,14 +78,13 @@ So, inside the `get` function for fetching a blog, following steps are performed
 5. Return processed data.
 
 ```js
-/* ~/src/routes/blog/[slug].json.js */
-
+/* ~/src/routes/blog/[slug]/+page.server.js */
 import fs from 'fs';
 import mi from 'markdown-it';
 import prism from 'markdown-it-prism';
+import 'prism-svelte';
 import matter from 'gray-matter';
 
-// Init markdown-it
 const md = mi({
 	html: true,
 	linkify: true,
@@ -99,39 +98,31 @@ const defaultRender =
 		return self.renderToken(tokens, idx, options);
 	};
 
-// Make external (http(s)://) links open in a new window
-md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-	const href = tokens[idx].attrs[tokens[idx].attrIndex('href')][1];
-	// console.log(href)
-	if (href.startsWith('http')) {
-		tokens[idx].attrPush(['rel', 'noopener noreferrer']);
-		tokens[idx].attrPush(['target', '_blank']);
-		// tokens[idx].attrPush(['class', 'external-link'])
-	}
-	// pass token to default renderer.
-	return defaultRender(tokens, idx, options, env, self);
-};
+md.use(prism, {});
+/** @typedef {import("../../../typings/types").BlogMetadata} DM*/
 
-// Use Prism for syntax highlighting
-md.use(prism);
-
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get({ params }) {
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params }) {
 	const { slug } = params;
+
 	const doc = await fs.promises.readFile(`articles/${slug}.md`, 'utf8');
 	// console.log(doc)
-	const { data: metadata, content } = matter(doc);
-	// console.log(metadata)
-	// console.log(content)
+
+	const { data, content } = matter(doc);
+	/** @type {DM} */
+	const metadata = data;
+	metadata.tags = metadata.tags.map((t) => t.toLowerCase());
+
+	/* 3. Process content {String}*/
 	const html = md.render(content);
 
 	return {
-		body: JSON.stringify({ metadata, html }),
+		blog: { html, metadata },
 	};
 }
 ```
 
-As all blog posts are placed in **articles** folder, and only there, and only in **.md** format, the `get` function for fetching blogs metadata is much simpler. Steps:
+As all blog posts are placed in **articles** folder, and only there, and only in **.md** format, the `load` function for fetching blogs metadata is much simpler. Steps:
 
 1. Get file names of all blog posts.
 2. Load each file and parse front-matter.
@@ -139,28 +130,26 @@ As all blog posts are placed in **articles** folder, and only there, and only in
 4. Return blogs as array.
 
 ```js
-/* ~/src/routes/blogs.json.js */
-
+/* ~/src/routes/+page.server.js */
 import fs from 'fs';
 import matter from 'gray-matter';
 
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get() {
+/** @type {import('./$types').PageServerLoad} */
+export async function load() {
 	const fileNames = await fs.promises.readdir('articles');
-	// If there are not only .md files: fileNames.filter((fileName) => /.+\.md$/.test(fileName))
+
 	const blogs = await Promise.all(
 		fileNames.map(async (fileName) => {
 			const doc = await fs.promises.readFile(`articles/${fileName}`, 'utf8');
 			const { data } = matter(doc);
-			// console.log({ data })
-			return data;
+			/** @type {import('../../typings/types').BlogMetadata } */
+			const md = data;
+			return md;
 		})
 	);
-	blogs.sort((a, b) => b.created - a.created);
-	// console.log({ blogs })
-	return {
-		body: JSON.stringify(blogs),
-	};
+	blogs.sort((a, b) => b.created.getTime() - a.created.getTime());
+
+	return { blogs };
 }
 ```
 
@@ -169,7 +158,7 @@ export async function get() {
 ### Markup
 
 ```html
-<!-- __layout.svelte -->
+<!-- +layout.svelte -->
 
 <a href="/">Index</a>
 <main>
@@ -184,30 +173,13 @@ Then all tags are listed and blogs are filtered by route param (?tag=) if there 
 ```html
 <!-- index.svelte -->
 
-<script context="module">
-	/** @type {import('@sveltejs/kit').Load} */
-	export async function load({ fetch }) {
-		const url = `/blogs.json`;
-		const res = await fetch(url);
-
-		if (res.ok) {
-			const blogs = await res.json();
-			// console.log({ blogs })
-			return { props: { blogs } };
-		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${url}`),
-		};
-	}
-</script>
-
 <script>
 	import { browser } from '$app/env';
 	import { page } from '$app/stores';
-	/** @type {import('../typings/types').BlogMetadata[]} */
-	export let blogs;
+
+	/** @type {import('./$types').PageServerData} */
+	export let data;
+	const blogs = data.blogs;
 
 	const tagSet = new Set();
 	blogs.forEach((blog) => {
@@ -267,33 +239,9 @@ Then all tags are listed and blogs are filtered by route param (?tag=) if there 
 Just fetching and displaying a blog.
 
 ```html
-<!-- [slug].svelte -->
-<!-- slug = file name of the article -->
-
-<script context="module">
-	import { browser, dev } from '$app/env';
-	export const hydrate = dev;
-	export const router = browser;
-
-	export async function load({ params, fetch }) {
-		const url = `/blog/${params.slug}.json`;
-		const res = await fetch(url);
-		if (res.ok) {
-			const blog = await res.json();
-			// console.log({ blog })
-			return { props: { blog } };
-		}
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${url}`),
-		};
-	}
-</script>
-
 <script>
-	/** @typedef {import('../../typings/types').BlogMetadata} BlogMetadata */
-	/** @type {{ metadata: BlogMetadata, html: String}} */
 	export let blog;
+	const blog = data.blog;
 </script>
 
 <svelte:head>

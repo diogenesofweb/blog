@@ -2,6 +2,7 @@
 title: SvelteKit change lang attribute
 description: SvelteKit, change <html> lang attribute inside hooks on build
 created: 2021-06-08
+updated: 2023-08-05
 tags:
   - 'SvelteKit'
   - 'SSG'

@@ -21,7 +21,5 @@ export async function load() {
 	blogs.forEach((b) => (b.tags = b.tags.map((t) => t.toLowerCase())));
 	// console.log({ blogs })
 
-	return {
-		blogs,
-	};
+	return { blogs };
 }

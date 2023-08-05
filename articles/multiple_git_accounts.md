@@ -2,15 +2,15 @@
 title: Multiple git accounts
 description: Manage multiple git (Github & Gitlab) accounts on same Linux machine via HTTPS
 created: 2022-01-30
-updated: 2022-02-12
+updated: 2023-08-05
 tags:
   - 'git'
   - 'linux'
 ---
 
-# Multiple git accounts
+# Multiple [git](https://git-scm.com/) accounts
 
-Recently, I've reinstalled Linux (Kubuntu) on my old laptop. And I wanted to set up git in a way that I could manage multiple accounts. Essentially, I aimed to be able to do `git pull & push` without typing every time username and password.
+Recently, I've reinstalled Linux [Kubuntu](https://kubuntu.org/) on my old laptop. And I wanted to set up git in a way that I could manage multiple accounts. Essentially, I aimed to be able to do `git pull & push` without typing every time username and password.
 
 So, I googled a little bit and found a good starting point - make separation by directories. Example: `~/code/work/` and `~/code/personal/` - for work and personal usage respectively.
 

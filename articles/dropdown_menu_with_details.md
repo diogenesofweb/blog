@@ -2,9 +2,11 @@
 title: Dropdown menu with details
 description: Dropdown menu with <details> tag
 created: 2021-07-24
+updated: 2023-08-05
 tags:
   - 'HTML'
   - 'CSS'
+  - 'JS'
 ---
 
 <iframe src="https://diogenesofweb.github.io/demo-dropdown/"
@@ -16,7 +18,9 @@ tags:
 
 ---
 
-skeleton
+Making dropdown menu with [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) is easy.
+
+First, create HTML skeleton.
 
 ```html
 <details class="dropdown">
@@ -37,7 +41,7 @@ skeleton
 </details>
 ```
 
-make look like a button
+Then, make it look like a [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button).
 
 ```css
 details.dropdown {
@@ -46,18 +50,13 @@ details.dropdown {
 
 details.dropdown > summary {
 	position: relative;
-
 	overflow: hidden;
-
 	display: flex;
 	gap: 1rem;
 	padding: 1rem 2rem;
 	border-radius: 1rem;
-
 	text-transform: capitalize;
-
 	cursor: pointer;
-
 	background-color: white;
 }
 
@@ -66,7 +65,7 @@ details.dropdown > summary:hover {
 }
 ```
 
-if arrows
+Show arrows depending on the state (open or close).
 
 ```css
 details.dropdown > summary span.up {
@@ -82,27 +81,24 @@ details.dropdown[open] > summary span.down {
 }
 ```
 
-add overlay on open
+Add a backdrop on the open state.
 
 ```css
 details.dropdown[open] > summary::before {
 	z-index: 100;
-
 	position: fixed;
 	inset: 0;
 	content: ' ';
-
 	background-color: hsla(0, 0%, 50%, 0.66);
-
 	cursor: default;
 }
 ```
 
-menu
+Place the menu just on bottom.
 
 ```css
 details.dropdown[open] .menu {
-	z-index: 101;
+	z-index: 1;
 	position: absolute;
 	display: block;
 }
@@ -112,20 +108,16 @@ details.dropdown.right[open] .menu {
 }
 ```
 
-menu list
+Customize the menu list.
 
 ```css
 details.dropdown .menu-list {
 	max-height: 20rem;
 	overflow-y: auto;
-
 	margin-top: 0.5rem;
 	padding: 0.33rem 0;
-
 	border-radius: 1rem;
-
 	box-shadow: 0 0 0.9rem -0.1rem hsla(0, 0%, 0%, 0.75);
-
 	background-color: white;
 }
 
@@ -133,13 +125,10 @@ details.dropdown .menu-list-item {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-
 	width: 100%;
 	padding: 1rem 1.2rem;
-
 	color: var(--text);
 	background-color: transparent;
-
 	text-decoration: none;
 	line-height: 1;
 }
@@ -150,7 +139,7 @@ details.dropdown .menu-list-item:is(:hover, :focus) {
 }
 ```
 
-js util: close dropdown when clicked inside menu
+A little bit of [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript) to close the dropdown on click event inside the menu.
 
 ```js
 function closeDropdown(id) {
@@ -166,7 +155,7 @@ function closeDropdown(id) {
 }
 ```
 
-add util
+Attach the event listener.
 
 ```html
 <div class="menu" onclick="closeDropdown()">

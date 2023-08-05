@@ -2,6 +2,7 @@
 title: Fetch API wrapper
 description: Simple Fetch API wrapper
 created: 2021-05-03
+updated: 2023-08-05
 tags:
   - 'JS'
   - 'Fetch'
@@ -73,7 +74,7 @@ export default api;
 
 I prefer to have a default **timeout** of 30 seconds, with the option to set duration (in ms) on demand.\
 **Bearer token** will be sent only if `{auth:true}` is set\
-_Firebase Auth is used_
+[Firebase Authentication](https://firebase.google.com/docs/auth) is used\_
 
 ```js
 // ~/fetchWrapper.js
@@ -162,7 +163,7 @@ async function wrapper(URL, method = 'GET', opts) {
 }
 ```
 
-As the wrapper is done, one last thing to add
+As the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) wrapper is done, one last thing to add.
 
 ```js
 // ~/fetchWrapper.js
