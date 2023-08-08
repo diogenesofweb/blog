@@ -1,6 +1,6 @@
 ---
 title: Dropdown menu with details
-description: Dropdown menu with <details> tag
+description: How to create a dropdown menu with a HTML details tag using CSS and some JavaScript
 created: 2021-07-24
 updated: 2023-08-05
 tags:

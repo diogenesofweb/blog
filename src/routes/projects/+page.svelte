@@ -75,7 +75,7 @@
 
 <svelte:head>
 	<title>Projects</title>
-	<meta name="description" content="My beloved projects" />
+	<meta name="description" content="List of my beloved webdev projects" />
 </svelte:head>
 
 <article class="container">

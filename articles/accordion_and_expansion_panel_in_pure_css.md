@@ -1,6 +1,6 @@
 ---
 title: Accordion and Expansion Panel in pure CSS
-description: Building Accordion & Expansion Panel in pure CSS without any JS using <details>
+description: Building Accordion and Expansion Panel in pure CSS without any JavaScript using <details>
 created: 2021-06-06
 tags:
   - 'CSS'
@@ -8,7 +8,7 @@ tags:
 
 Recently I needed to build a simple FAQ page for an SSG website and wanted to make it as light and simple as possible. So, I quickly looked for ‘accordion’ and ‘expansion panels’ examples in popular libraries. No one of them used `<details>` tag. All went with a bunch of `<div>`’s with `<button>` and obviously applied some JS. Even though `<details>` is especially suited for that kind of thing, and with 0 JS.
 
-Yes, I know we can't animate `<details>`’s height on state change (open-close) without JS, which is definitely an annoyance, but is it really necessary?
+Yes, I know we can't animate [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)’s height on state change (open-close) without JS, which is definitely an annoyance, but is it really necessary?
 
 `<details>` is a browser native solution, and a good one. Should I not forget it!
 
@@ -21,7 +21,7 @@ Now, let’s build an **accordion** with `<details>`. Here [Demo](https://diogen
         width="300" height="600">
 </iframe>
 
-First, we would need some html
+First, we would need some HTML.
 
 ```html
 <details>

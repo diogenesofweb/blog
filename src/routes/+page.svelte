@@ -2,14 +2,19 @@
 </script>
 
 <article>
-	<div>Hi, I'm</div>
-	<div class="name f-serif">Dmytro</div>
-	<div>a web developer</div>
+	<h1>
+		<span>Hi, I'm</span>
+		<span class="name f-serif">Dmytro</span>
+		<span>a web developer</span>
+	</h1>
 </article>
 
 <svelte:head>
 	<title>DelphicTop | Home</title>
-	<meta name="description" content="Personal website with focus on webdev" />
+	<meta
+		name="description"
+		content="Personal website with focus on webdev and coding in general"
+	/>
 </svelte:head>
 
 <style>
@@ -19,7 +24,8 @@
 		padding-block: 5ch;
 		color: var(--fg1);
 	}
-	div {
+	h1 {
+		display: grid;
 		font-size: clamp(1rem, 5vw, 3.5rem);
 	}
 

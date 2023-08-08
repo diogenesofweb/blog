@@ -1,6 +1,6 @@
 ---
 title: CSS Buttons
-description: Style buttons differentiating between events.
+description: Applay style for HTML buttons to differentiate between the state.
 created: 2021-06-14
 tags:
   - 'CSS'

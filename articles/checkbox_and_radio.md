@@ -107,7 +107,7 @@ So, let’s make HTML. One section with checkboxes and one with radio.
 </form>
 ```
 
-Layout elements
+Layout elements.
 
 ```css
 form {
@@ -150,7 +150,7 @@ Clicking `<input>` and `<label>` triggers state change, so their cursors will be
 }
 ```
 
-The icon holder has a border, color of which will be changed depending on state. Holder for the radio button is round
+The icon holder has a border, color of which will be changed depending on state. Holder for the radio button is round.
 
 ```css
 .icon-holder {
@@ -164,7 +164,7 @@ The icon holder has a border, color of which will be changed depending on state.
 }
 ```
 
-Icon holders and inputs have the same size
+Icon holders and inputs have the same size.
 
 ```css
 .box-item input,

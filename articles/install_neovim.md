@@ -1,6 +1,6 @@
 ---
 title: Install Neovim
-description: Install Neovim on a linux distro as an appimage
+description: How to install Neovim on a linux distro as an appimage with minimal configuration
 created: 2021-12-27
 updated: 2023-08-08
 tags:

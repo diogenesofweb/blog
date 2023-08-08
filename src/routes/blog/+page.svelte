@@ -41,7 +41,10 @@
 
 <svelte:head>
 	<title>DelphicTop | Notes</title>
-	<meta name="description" content="Webdev and related topics notes" />
+	<meta
+		name="description"
+		content="My notes on web development and related topics"
+	/>
 </svelte:head>
 
 <section class="f-serif top maxx mx">

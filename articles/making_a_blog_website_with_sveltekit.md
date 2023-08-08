@@ -1,6 +1,6 @@
 ---
 title: Making a blog website with SvelteKit
-description: Build a simple blog website with SvelteKit, statically generated (SSG) from markdown
+description: How to build a simple blog website with SvelteKit, statically generated (SSG) from markdown
 created: 2021-06-10
 updated: 2023-08-05
 tags:

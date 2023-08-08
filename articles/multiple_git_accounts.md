@@ -8,7 +8,7 @@ tags:
   - 'linux'
 ---
 
-# Multiple [git](https://git-scm.com/) accounts
+## How to manage multiple [git](https://git-scm.com/) accounts
 
 Recently, I've reinstalled Linux [Kubuntu](https://kubuntu.org/) on my old laptop. And I wanted to set up git in a way that I could manage multiple accounts. Essentially, I aimed to be able to do `git pull & push` without typing every time username and password.
 

@@ -1,6 +1,6 @@
 ---
 title: Write linux bootable USB
-description: Create a bootable Live-USB stick of a linux distro in the terminal
+description: How to create a bootable Live-USB stick of a linux distro in the terminal
 created: 2021-12-27
 tags:
   - 'linux'

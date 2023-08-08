@@ -1,6 +1,6 @@
 ---
 title: Customizing PrismJS with CSS variables
-description: Customizing Prism.js syntax highlighter with CSS variables for light / dark color theme
+description: Customizing Prism.js syntax highlighter with CSS variables for light and dark color theme
 created: 2021-06-06
 tags:
   - 'CSS'

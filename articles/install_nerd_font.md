@@ -1,6 +1,6 @@
 ---
 title: Install Nerd Font
-description: Install Nerd Font on a linux distro
+description: How to install Nerd Font on a linux distro
 created: 2021-12-27
 updated: 2023-08-08
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Generate images with text in nodejs
-description: Generate images with text in NodeJS using canvas
+description: How to write a text on images in NodeJS using canvas
 created: 2021-08-26
 updated: 2023-07-28
 tags:
