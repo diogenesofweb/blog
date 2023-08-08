@@ -2,7 +2,7 @@
 title: Install Nerd Font
 description: Install Nerd Font on a linux distro
 created: 2021-12-27
-updated: 2023-07-28
+updated: 2023-08-08
 tags:
   - 'linux'
 ---
@@ -12,7 +12,7 @@ tags:
 Go to [Nerd Fonts](https://www.nerdfonts.com/font-downloads) and download a font (for example [Hack](https://github.com/source-foundry/Hack))
 
 ```bash
-cd Downloads/
+cd ~/Downloads/
 unzip Hack.zip -d ~/.local/share/fonts/
 rm Hack.zip
 fc-cache -fv
@@ -24,7 +24,7 @@ Or download the latest release of [Intel One Mono Typeface](https://github.com/i
 `.ttf` format is recommended for desktop use.
 
 ```bash
-cd Downloads/
+cd ~/Downloads/
 unzip intel-one-mono-1.2.1
 cp intel-one-mono-1.2.1/fonts/ttf/* ~/.local/share/fonts/
 rm -rf intel-one-mono-1.2.1

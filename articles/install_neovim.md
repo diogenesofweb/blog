@@ -2,7 +2,7 @@
 title: Install Neovim
 description: Install Neovim on a linux distro as an appimage
 created: 2021-12-27
-updated: 2023-07-28
+updated: 2023-08-08
 tags:
   - 'linux'
   - 'neovim'
@@ -10,11 +10,11 @@ tags:
 
 ## Install
 
-Install Neovim on linux as an appimage in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
+Install [Neovim](https://neovim.io/) on linux as an [appimage](https://appimage.org/) in [the recommended directory](https://docs.appimage.org/user-guide/faq.html#question-where-do-i-store-my-appimages)
 `~/.local/bin/` ([Ubuntu](https://ubuntu.com/) / [Debian](https://www.debian.org/)), or in `~/bin/` ([OpenSUSE](https://www.opensuse.org/)).
 
 ```bash
-cd .local/bin/
+cd ~/.local/bin/
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
