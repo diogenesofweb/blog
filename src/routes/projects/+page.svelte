@@ -2,55 +2,55 @@
 	const arr = [
 		{
 			name: 'Link List | Chrome Extension',
-			desc: 'Show all hyperlinks in one place.',
+			desc: 'Show all hyperlinks in one place, grouped by internal, external, emails and phone numbers.',
 			link: 'https://chrome.google.com/webstore/detail/link-list/caifphhfadgaiddefealbdeakngdfdec',
 			repo: 'https://github.com/diogenesofweb/link-list',
 			npm: '',
 		},
 		{
 			name: 'Functional JSON Viewer | Chrome Extension',
-			desc: 'Easily explore JSON data with a nice UI',
+			desc: 'Explore JSON data, generate sreenshots, Typescript interfaces, Golang structs. Vim-like keymaps.',
 			link: 'https://chrome.google.com/webstore/detail/functional-json-viewer/cokkmplppnaigoodkkjopoblfaelibab',
 			repo: 'https://github.com/diogenesofweb/fjv',
 			npm: '',
 		},
 		{
 			name: 'JSON Viewer | WebApp',
-			desc: 'Explore formatted JSON data',
+			desc: 'Explore JSON data, generate sreenshots, Typescript interfaces, Golang structs. Vim-like keymaps. History.',
 			link: 'https://json-viewer.delphic.top',
 			repo: 'https://github.com/diogenesofweb/json-in-details',
 		},
 		{
 			name: 'json-in-details | JS library',
-			desc: 'Simple and preformant JSON viewer with a extendable functionally and beautiful light/dark theme',
+			desc: 'Simple and preformant JSON viewer with a extendable functionally and beautiful light and dark theme',
 			link: 'https://github.com/diogenesofweb/json-in-details/blob/main/README.md',
 			repo: 'https://github.com/diogenesofweb/json-in-details/tree/main/src/lib',
 			npm: 'https://www.npmjs.com/package/json-in-details',
 		},
 
 		{
-			name: 'Hotatap',
-			desc: 'Web client for REST API testing',
+			name: 'Hotatap | WebApp',
+			desc: 'Web-client to debug REST API',
 			link: 'https://hotatap.delphic.top/app',
 			repo: 'https://github.com/diogenesofweb/hotatap',
 			npm: '',
 		},
 		{
-			name: 'Tabulamax',
+			name: 'Tabulamax | WebApp',
 			desc: 'Quickly design DB tables and generate code snippets for migrations (SQL, Knex.js)',
 			link: 'https://www.tabulamax.com/',
 			repo: 'https://github.com/tabulamax/app',
 			npm: '',
 		},
 		{
-			name: 'Focus',
+			name: 'Focus | WebApp',
 			desc: 'Productivity timer with focus on breaks',
 			link: 'https://focus.delphic.top/',
 			repo: 'https://github.com/diogenesofweb/focus',
 			npm: '',
 		},
 		{
-			name: 'Dwarform',
+			name: 'Dwarform | WebApp',
 			desc: 'Generate Svelte, Vue, HTML code snippets for making forms with Bootstrap, Bulma or custom CSS',
 			link: 'https://dwarform.delphic.top/',
 			repo: 'https://github.com/diogenesofweb/dwarform',
@@ -75,7 +75,10 @@
 
 <svelte:head>
 	<title>Projects</title>
-	<meta name="description" content="List of my beloved webdev projects" />
+	<meta
+		name="description"
+		content="My beloved projects: webapps, extentions, libraries. Mostly open source and built with Javascript and SvelteJS."
+	/>
 </svelte:head>
 
 <article class="container">
