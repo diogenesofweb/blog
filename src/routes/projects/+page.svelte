@@ -43,9 +43,9 @@
 			npm: '',
 		},
 		{
-			name: 'Focus | WebApp',
-			desc: 'Productivity timer with focus on breaks',
-			link: 'https://focus.delphic.top/',
+			name: 'Online Timers | WebApp',
+			desc: 'Pomodoro, countdown, stopwatch timers.',
+			link: 'https://www.timerone.com',
 			repo: 'https://github.com/diogenesofweb/focus',
 			npm: '',
 		},
