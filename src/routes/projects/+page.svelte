@@ -38,7 +38,7 @@
 		{
 			name: 'Tabulamax | WebApp',
 			desc: 'Quickly design DB tables and generate code snippets for migrations (SQL, Knex.js)',
-			link: 'https://www.tabulamax.com/',
+			link: 'https://tabulamax.delphic.top',
 			repo: 'https://github.com/tabulamax/app',
 			npm: '',
 		},
