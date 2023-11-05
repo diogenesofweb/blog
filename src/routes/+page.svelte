@@ -4,7 +4,7 @@
 			url: 'https://icons.delphic.top',
 			name: 'Icon Explorer',
 			title:
-				'Easily search, copy, download SVG icons form free libraries (Bootstrap, Material and more). Group icons in collections and generate SVG sprites.',
+				'Easily search, copy, download SVG icons from free libraries (Bootstrap, Material and more). Group icons in collections and generate SVG sprites.',
 		},
 		{
 			url: 'https://json-viewer.delphic.top',
