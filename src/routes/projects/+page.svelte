@@ -1,6 +1,12 @@
 <script>
 	const arr = [
 		{
+			name: 'SVG Icon Explorer',
+			desc: 'Easily search, copy, download SVG icons form free libraries (Bootstrap, Material and more). Group icons in collections and generate SVG sprites.',
+			link: 'https://icons.delphic.top',
+			repo: 'https://github.com/diogenesofweb/icon-explorer',
+		},
+		{
 			name: 'Link List | Chrome Extension',
 			desc: 'Show all hyperlinks in one place, grouped by internal, external, emails and phone numbers.',
 			link: 'https://chrome.google.com/webstore/detail/link-list/caifphhfadgaiddefealbdeakngdfdec',
