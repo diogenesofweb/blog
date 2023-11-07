@@ -1,6 +1,12 @@
 <script>
 	const my_projects = [
 		{
+			url: 'https://generator.colorome.com/',
+			name: 'Color Palette Generator',
+			title:
+				'Generate color palettes and gradients. Explore shades, tints and tones.',
+		},
+		{
 			url: 'https://icons.delphic.top',
 			name: 'Icon Explorer',
 			title:

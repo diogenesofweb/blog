@@ -1,6 +1,11 @@
 <script>
 	const arr = [
 		{
+			link: 'https://generator.colorome.com/',
+			name: 'Color Palette Generator',
+			desc: 'Generate color palettes and gradients. Explore shades, tints and tones.',
+		},
+		{
 			name: 'SVG Icon Explorer',
 			desc: 'Easily search, copy, download SVG icons form free libraries (Bootstrap, Material and more). Group icons in collections and generate SVG sprites.',
 			link: 'https://icons.delphic.top',
@@ -92,11 +97,10 @@
 
 	{#each arr as proj}
 		<section class="card alpha" lang={proj.lang || 'en'}>
-			<h2 class="f-serif">
-				<a class="link" href={proj.link}> {proj.name} </a>
-			</h2>
-
-			<p>{proj.desc}</p>
+			<a class="link" href={proj.link}>
+				<h2 class="f-serif">{proj.name}</h2>
+				<p>{proj.desc}</p>
+			</a>
 
 			<div class="tags">
 				{#if proj.repo}
@@ -123,7 +127,20 @@
 
 	h1 {
 		padding-top: 1rem;
-		color: var(--fg1);
+		/* color: var(--fg1); */
+	}
+	h2 {
+		color: inherit;
+		color: var(--clr, var(--fg-alpha));
+	}
+
+	a.link {
+		color: var(--fg);
+
+		&:is(:hover, :focus-visible) {
+			color: var(--fg-alpha);
+			--clr: var(--fg-alpha);
+		}
 	}
 
 	/* h2 .link { */
