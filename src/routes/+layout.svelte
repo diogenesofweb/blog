@@ -7,7 +7,7 @@
 
 	import MyHeader from '$lib/Header.svelte';
 	import StopWar from '$lib/StopWar.svelte';
-	import { AppWrapper } from '@kazkadien/svelte';
+	import { AppWrapper, AppIcons } from '@kazkadien/svelte';
 
 	import { page } from '$app/stores';
 	const MY_ORIGIN = 'https://www.delphic.top';
@@ -19,6 +19,7 @@
 </svelte:head>
 
 <AppWrapper>
+	<AppIcons />
 	<div id="app-container">
 		<div id="view">
 			<StopWar />
@@ -30,17 +31,11 @@
 		</div>
 
 		<footer class="fce">
-			<div>DelphicTop,</div>
-
 			<div>
-				<span> built with </span>
-				<a class="link" href="https://kit.svelte.dev/"> SvelteKit </a>
-				,
-			</div>
-
-			<div>
+				<span>Built with </span>
+				<a class="link" href="https://kit.svelte.dev/"> SvelteKit </a> -
 				<a class="link" href="https://github.com/diogenesofweb/blog">
-					Repo in Github
+					Github
 				</a>
 			</div>
 		</footer>
