@@ -21,7 +21,7 @@
 		{
 			url: 'https://hotatap.delphic.top/app',
 			name: 'HoTaTaP',
-			title: 'Test and dubug REST API in the browser',
+			title: 'Test and dubug REST API in the browser.',
 		},
 		{
 			url: 'https://tabulamax.delphic.top',
