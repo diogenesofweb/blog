@@ -1,6 +1,13 @@
 <script>
 	const arr = [
 		{
+			name: 'HTML Hyperlinks Viewer | Chrome Extension',
+			desc: 'Extract and view links in a side panel.',
+			link: 'https://chromewebstore.google.com/detail/link-viewer/mpmngcbadijpkifafmbiioghlnbbgnam',
+			repo: '',
+			npm: '',
+		},
+		{
 			link: 'https://generator.colorome.com/',
 			name: 'Color Palette Generator',
 			desc: 'Generate color palettes and gradients. Explore shades, tints and tones.',
@@ -74,6 +81,14 @@
 			// repo: 'https://github.com/kazkadien/svelte',
 			npm: 'https://www.npmjs.com/package/@kazkadien/svelte',
 		},
+
+		{
+			lang: 'uk',
+			name: 'юКалендар',
+			desc: 'Який сьогодні день?',
+			link: 'https://www.ukalendar.com',
+			// repo: 'https://github.com/diogenesofweb/kurs-valyut',
+		},
 		{
 			lang: 'uk',
 			name: 'Топ Курс',
@@ -85,22 +100,26 @@
 </script>
 
 <svelte:head>
-	<title>Projects</title>
+	<title>My Projects</title>
 	<meta
 		name="description"
 		content="My beloved projects: webapps, extentions, libraries. Mostly open source and built with Javascript and SvelteJS."
 	/>
 </svelte:head>
 
-<article class="container">
+<div class="container">
 	<h1 class="tac beta">My Projects</h1>
 
 	{#each arr as proj}
-		<section class="card alpha" lang={proj.lang || 'en'}>
-			<a class="link" href={proj.link}>
-				<h2 class="f-serif">{proj.name}</h2>
+		<article class="card alpha" lang={proj.lang || 'en'}>
+			<header>
+				<h2 class="f-serif">
+					<a class="link" href={proj.link}>
+						{proj.name}
+					</a>
+				</h2>
 				<p>{proj.desc}</p>
-			</a>
+			</header>
 
 			<div class="tags">
 				{#if proj.repo}
@@ -111,9 +130,9 @@
 					<a class="link" href={proj.npm}> NPM </a>
 				{/if}
 			</div>
-		</section>
+		</article>
 	{/each}
-</article>
+</div>
 
 <style>
 	.container {
@@ -131,15 +150,18 @@
 	}
 	h2 {
 		color: inherit;
-		color: var(--clr, var(--fg-alpha));
+		/* color: var(--clr, var(--fg-alpha)); */
 	}
 
 	a.link {
-		color: var(--fg);
+		/* color: var(--fg); */
+		/* color: var(--fg-beta); */
+		color: var(--fg-alpha);
 
 		&:is(:hover, :focus-visible) {
-			color: var(--fg-alpha);
-			--clr: var(--fg-alpha);
+			color: var(--fg-gamma);
+			/* color: var(--fg-alpha); */
+			/* --clr: var(--fg-alpha); */
 		}
 	}
 

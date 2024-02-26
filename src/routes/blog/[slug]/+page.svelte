@@ -28,29 +28,33 @@
 
 <div class="maxx">
 	<article>
-		<h1 class="f-serif">{blog.metadata.title}</h1>
+		<header>
+			<h1 class="f-serif">{blog.metadata.title}</h1>
 
-		<p class="created">
-			<i>Created:</i>
-			<time>{new Date(blog.metadata.created).toLocaleDateString('fr-CA')}</time>
-			{#if blog.metadata.updated}
-				<b>|</b>
-				<i>Updated:</i>
+			<p class="created">
+				<i>Created:</i>
 				<time
-					>{new Date(blog.metadata.updated).toLocaleDateString('fr-CA')}</time
+					>{new Date(blog.metadata.created).toLocaleDateString('fr-CA')}</time
 				>
-			{/if}
-		</p>
+				{#if blog.metadata.updated}
+					<b>|</b>
+					<i>Updated:</i>
+					<time
+						>{new Date(blog.metadata.updated).toLocaleDateString('fr-CA')}</time
+					>
+				{/if}
+			</p>
+		</header>
 
 		<hr />
 		{@html blog.html}
 	</article>
 
-	<section class="tags">
+	<nav class="tags">
 		<ul class="fce g1">
 			<TagList tags={blog.metadata.tags} />
 		</ul>
-	</section>
+	</nav>
 </div>
 
 <style>

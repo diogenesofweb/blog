@@ -6,21 +6,23 @@
 <ol class="alpha">
 	{#each posts as post}
 		<li class="card">
-			<h2 class="f-serif">
-				<a href="/blog/{post.title.replaceAll(' ', '_').toLowerCase()}">
-					{post.title}
-				</a>
-			</h2>
-
-			<p>{post.description}</p>
-
-			<div class="tags">
-				{#each post.tags as tag}
-					<a href="/blog/?tag={tag}">
-						<span>#{tag}</span>
+			<article>
+				<h2 class="f-serif">
+					<a href="/blog/{post.title.replaceAll(' ', '_').toLowerCase()}">
+						{post.title}
 					</a>
-				{/each}
-			</div>
+				</h2>
+
+				<p>{post.description}</p>
+
+				<div class="tags">
+					{#each post.tags as tag}
+						<a href="/blog/?tag={tag}">
+							<span>#{tag}</span>
+						</a>
+					{/each}
+				</div>
+			</article>
 		</li>
 	{/each}
 </ol>

@@ -14,7 +14,7 @@
 		},
 		{
 			url: 'https://json-viewer.delphic.top',
-			name: 'JSON Viewer',
+			name: 'JSON-in-details | JSON Viewer',
 			title:
 				'View, explore, convert JSON data. Copy nodes & path. VIM inspired keymaps.',
 		},
@@ -46,10 +46,10 @@
 		<span>a web developer</span>
 	</h1>
 
-	<section class="btns">
+	<div class="btns">
 		<a href="https://github.com/diogenesofweb" class="btn filled">GitHub</a>
 		<a href="https://dev.to/diogenesofweb" class="btn filled">Dev.to</a>
-	</section>
+	</div>
 
 	<section class="projects">
 		<h2 class="hh">Projects</h2>

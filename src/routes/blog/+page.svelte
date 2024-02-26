@@ -47,40 +47,37 @@
 	/>
 </svelte:head>
 
-<section class="f-serif top maxx mx">
+<div class="f-serif top maxx mx">
 	<h1>
 		My notes on
 		<span>web development</span>
 		and related topics.
 	</h1>
-</section>
+</div>
 
 <div class="main">
-	<section class="tags">
+	<aside class="tags">
 		<!-- <h2 class="">Tags:</h2> -->
 
 		<ul class="danger">
 			<TagList {tags} active={tag} />
 		</ul>
-	</section>
+	</aside>
 
-	<section class="">
+	<div class="">
 		<!-- <h2>Articles:</h2> -->
 		<BlogList posts={blogsFilteredByTag} />
-	</section>
+	</div>
 </div>
 
 <style>
 	.maxx {
 		margin-inline: auto;
+		max-width: var(--content-max-width);
 	}
-	section.top {
+	.top {
 		margin-block: 15vh;
 		padding: 0 var(--sx-m);
-	}
-
-	section.maxx {
-		max-width: var(--content-max-width);
 	}
 
 	h1 {
