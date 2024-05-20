@@ -49,6 +49,7 @@
 	<div class="btns">
 		<a href="https://github.com/diogenesofweb" class="btn filled">GitHub</a>
 		<a href="https://dev.to/diogenesofweb" class="btn filled">Dev.to</a>
+		<a href="https://linktr.ee/diogenesofweb" class="btn filled">LinkTree</a>
 	</div>
 
 	<section class="projects">

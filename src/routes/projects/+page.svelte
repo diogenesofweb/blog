@@ -1,6 +1,11 @@
 <script>
 	const arr = [
 		{
+			link: 'https://www.emojion.top/?view=search',
+			name: 'Emoji copy and paste',
+			desc: 'Generate color palettes and gradients. Explore shades, tints and tones.',
+		},
+		{
 			name: 'HTML Hyperlinks Viewer | Chrome Extension',
 			desc: 'Extract and view links in a side panel.',
 			link: 'https://chromewebstore.google.com/detail/link-viewer/mpmngcbadijpkifafmbiioghlnbbgnam',
@@ -95,6 +100,18 @@
 			desc: 'Курс валют у банках України',
 			link: 'https://www.kursvalyut.top/',
 			repo: 'https://github.com/diogenesofweb/kurs-valyut',
+		},
+		{
+			lang: 'uk',
+			name: 'Прапорія',
+			desc: 'Прапори всіх країн світу',
+			link: 'https://www.praporia.com/'
+		},
+		{
+			lang: 'uk',
+			name: 'Колором',
+			desc: 'Все про кольори',
+			link: 'https://www.colorome.com/'
 		},
 	];
 </script>
